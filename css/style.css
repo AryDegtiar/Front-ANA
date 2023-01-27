@@ -306,7 +306,7 @@ ol {
 .header__nav {
 	position: relative;
 	z-index: 9;
-	padding-top: 15px;
+	/*padding-top: 15px;*/
 }
 
 .header__menu {
