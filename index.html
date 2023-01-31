@@ -15,6 +15,7 @@
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/barfiller.css" type="text/css">
@@ -30,34 +31,8 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
+    <!-- Header Section Begin 
     <header class="header">
-        <!--
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3">
-                        <div class="header__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9">
-                        <div class="header__top__widget">
-                            <ul>
-                                <li>CALL US: + 1 800-567-8990</li>
-                                <li>WRITE US: OFFICE@EXAMPLE.COM</li>
-                                <li>OPENING TIMES: MON - FRI: 9:00 - 19:00</li>
-                            </ul>
-                            <a href="#" class="primary-btn">JOIN US</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="canvas__open">
-                    <i class="fa fa-bars"></i>
-                </div>
-            </div>
-        </div>
-        -->
         <div class="header__nav">
             <div class="container">
                 <div class="row pt-2">
@@ -66,11 +41,11 @@
                             <ul>
                                 <li><a href="#"><img src="img/ChakanaLogo.png" alt="" style="width: 120px"></a>
                                 <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="#">Clases</a>
+                                <li><a href="./classes.html">Clases</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Challenges</a></li>
-                                        <li><a href="./blog-details.html">Courses</a></li>
-                                        <li><a href="./pricing.html">Lessons</a></li>
+                                        <li><a href="./classes-details.html">Handstand training</a></li>
+                                        <li><a href="./classes-details2.html">Front training</a></li>
+                                        <li><a href="./classes-details3.html">Yoga training</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="./about-us.html">About</a></li>
@@ -93,9 +68,92 @@
     </header>
     <!-- Header Section End -->
 
+    <!--
+    <div class="container mb-5">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="img/ChakanaLogo.png" alt="" style="width: 120px">
+          </a>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+          </ul>
+    
+          <div class="col-md-3 d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-primary">Login</button>
+            <button type="button" class="btn btn-primary ms-4">Sign-up</button>
+          </div>
+        </header>
+      </div>
+      -->
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-md-5">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/ChakanaLogo.png" width="120" height="30" alt="">
+        </a>
+        <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav flex-row ml-auto order-1 px-4" style="gap: 10px;">
+            <li class="nav-item">
+                <a *ngIf="estaVisibleUsuario" [routerLink]="['/carrito']" class="text-decoration-none text-w">
+                    <button type="button" class="btn btn-success position-relative me-4">
+                        <i class="fas fa-shopping-cart"></i>
+                      Carrito
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger px-2">
+                        0
+                      </span>
+                    </button>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                &times;
+              </button>
+          <ul class="navbar-nav h-100 d-flex justify-content-center align-items-center">
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="./classes.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Clases
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-muted" href="./classes-details.html">Handstand training</a>
+                  <a class="dropdown-item text-muted" href="./classes-details2.html">Front training</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item text-muted" href="./classes-details3.html">Yoga training</a>
+                </div>
+              </li>
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./about-us.html">About</a>
+            </li>
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./blog.html">Blog</a>
+            </li>
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+
     <!-- Hero Section Begin -->
     <section class="hero">
-        <div class="hero__sliders owl-carousel object-fit: cover" >
+        <div class="hero__sliders owl-carousel">
             <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
@@ -143,17 +201,17 @@
                     <div class="home__about__text">
                         <div class="section-title">
                             <img src="img/icon.png" alt="">
-                            <h4>Bienvenido</h4>
+                            <h2>Welcome to Zogin</h2>
                         </div>
-                        <span>En Chakana</span>
-                        <p> Creamos un espacio donde la cultura y el bienestar se unen para ofrecerle una experiencia única.
-                             Nuestra misión es brindarle un espacio donde pueda explorar su creatividad y al mismo tiempo mejorar su salud física y mental.
-                              Ofrecemos una amplia variedad de clases de pilates, dirigidas por instructores altamente capacitados y apasionados.
-                              Además, ofrecemos una programación cultural variada, con eventos como conferencias,
-                              talleres y exhibiciones que le permitirán ampliar sus horizontes y conectarse con otras personas interesadas en las artes y la cultura.
-                             ¡Únase a nosotros hoy y descubra cómo la práctica del pilates y la cultura pueden transformar su vida!</p>
-               
-                        
+                        <span>“What hurts today makes you stronger tomorrow.”</span>
+                        <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
+                            hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
+                            experience in The world capital of Yoga in Rishikesh.</p>
+                        <p class="para-2">Zogin is a great place for those who are in search of the ancient practice and
+                            true essence of yoga, meditation, health, peace and learning the art of creating a class to
+                            teach safely. We are passionate about adjustments and mainly focus on the alignment of the
+                            asanas.</p>
+                        <a href="#" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>
@@ -236,11 +294,10 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="chooseus__text">
-                        <h2>¿Porque Elegirnos?</h2>
-                        <p> En el Centro Cultural y Estudio de Chakana, nos esforzamos por ofrecer una experiencia única y personalizada para cada uno de nuestros estudiantes.
-                            Nuestros instructores, altamente capacitados y apasionados, brindan una enseñanza de calidad y personalizada para asegurar que cada estudiante alcance sus metas y objetivos.
-                            Además, nuestra programación cultural variada y eventos en vivo le permitirán ampliar sus horizontes y conectarse con otras personas interesadas en nuestras prácticas .
-                            Ofrecemos un ambiente tranquilo y acogedor para que puedas disfrutar de tu experiencia y aprendizaje.</p>
+                        <h2>Why Choose Us</h2>
+                        <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
+                            hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
+                            experience in The world capital of Yoga in Rishikesh.</p>
                     </div>
                     <div class="chooseus__item">
                         <div class="chooseus__item__icon">
@@ -295,8 +352,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title normal-title">
-                        <h2>Proximos Cursos</h2>
-                        <p>"Descubre nuestra programación de cursos próximos y únete a nuestra comunidad de aprendizaje"</p>
+                        <h2>Upcoming Courses</h2>
+                        <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa (flow)<br /> and
+                            Yin Yoga.</p>
                     </div>
                 </div>
             </div>
@@ -351,8 +409,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title normal-title">
-                        <h2>Nuestro Espacio</h2>
-                        <p>"Experimenta nuestra atmósfera única en nuestro espacio diseñado para el juego, la práctica y el aprendizaje"</p>
+                        <h2>Our Gallery</h2>
+                        <p>This is the beautiful yogi and yoginis that have shared their journey and growth with<br />
+                            us. Take a look!</p>
                     </div>
                 </div>
             </div>
@@ -466,6 +525,81 @@
     </section> -->
     <!-- Team Section End -->
 
+    <!-- Pricing Section Begin -->
+    <section class="pricing spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title normal-title">
+                        <h2>Our Pricing</h2>
+                        <p>Yoga is popular with people with arthritis for its gentle way of <br />promoting flexibility
+                            and strength.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 p-0 col-md-6">
+                    <div class="pricing__item set-bg" data-setbg="img/pricing/price-bg-1.png">
+                        <h4>Pack Yoga</h4>
+                        <div class="pricing__item__price">
+                            <h2>$34</h2>
+                            <span>/month</span>
+                        </div>
+                        <ul>
+                            <li>Alignment breath and mind</li>
+                            <li>Origin of Asanas</li>
+                            <li>Rules of therapy</li>
+                            <li>Teaching ethics</li>
+                            <li>Layers of consciousness</li>
+                            <li>Storytelling & Mythology</li>
+                        </ul>
+                        <a href="#" class="primary-btn">BUY NOW</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 p-0 col-md-6">
+                    <div class="pricing__item active set-bg" data-setbg="img/pricing/price-bg-2.png">
+                        <div class="pricing__item__star">
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <h4>Pack Ñandu</h4>
+                        <div class="pricing__item__price">
+                            <h2>$64</h2>
+                            <span>/month</span>
+                        </div>
+                        <ul>
+                            <li>Alignment breath and mind</li>
+                            <li>Origin of Asanas</li>
+                            <li>Rules of therapy</li>
+                            <li>Teaching ethics</li>
+                            <li>Layers of consciousness</li>
+                            <li>Storytelling & Mythology</li>
+                        </ul>
+                        <a href="#" class="primary-btn">BUY NOW</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 p-0 col-md-6">
+                    <div class="pricing__item set-bg" data-setbg="img/pricing/price-bg-3.png">
+                        <h4>Premium</h4>
+                        <div class="pricing__item__price">
+                            <h2>$84</h2>
+                            <span>/month</span>
+                        </div>
+                        <ul>
+                            <li>Alignment breath and mind</li>
+                            <li>Origin of Asanas</li>
+                            <li>Rules of therapy</li>
+                            <li>Teaching ethics</li>
+                            <li>Layers of consciousness</li>
+                            <li>Storytelling & Mythology</li>
+                        </ul>
+                        <a href="#" class="primary-btn">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section End -->
+
     <!-- Appoinment Section Begin -->
     <section class="appointment pt-5">
         <div class="container">
@@ -474,29 +608,29 @@
                     <div class="col-lg-12">
                         <div class="section-title">
                             <img src="img/icon-white.png" alt="">
-                            <h2>Ponte en contacto con nosotros!</h2>
+                            <h2>Make An Appointment</h2>
                         </div>
                     </div>
                 </div>
                 <form action="#" class="appointment__form">
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Nombre">
+                            <input type="text" placeholder="Name">
                         </div>
                         <div class="col-lg-6">
                             <input type="text" placeholder="Email">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Telefono">
+                            <input type="text" placeholder="Phone">
                         </div>
                         <div class="col-lg-6">
                             <select class="class-select">
-                                <option value="">Asunto</option>
+                                <option value="">Choose Your Class</option>
                             </select>
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="Mensaje"></textarea>
-                            <button type="submit">Enviar</button>
+                            <textarea placeholder="Message"></textarea>
+                            <button type="submit">Submit</button>
                         </div>
                     </div>
                 </form>

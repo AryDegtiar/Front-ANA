@@ -28,6 +28,7 @@
     });
 
     //Canvas Menu
+    /*
     $(".canvas__open").on('click', function () {
         $(".offcanvas-menu").addClass("show-offcanvas-menu");
         $(".offcanvas-menu-overlay").addClass("active");
@@ -39,6 +40,7 @@
         $(".offcanvas-menu-overlay").removeClass("active");
         $("body").removeClass("over-hid");
     });
+    */
 
     /*------------------
 		Navigation
@@ -164,3 +166,11 @@
     });
 
 })(jQuery);
+
+$(document).click(function(event) {
+    var clickover = $(event.target);
+    var _opened = $(".navbar-collapse").hasClass("show");
+    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+      $(".navbar-toggler").click();
+    }
+  });

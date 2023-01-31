@@ -263,176 +263,30 @@ ol {
   Header
 -----------------------*/
 
-.header__logo {
-	padding: 25px 0 25px;
-}
-
-.header__top__widget {
-	text-align: right;
-	padding: 28px 0 24px;
-}
-
-.header__top__widget ul {
-	display: inline-block;
-	margin-right: 65px;
-}
-
-.header__top__widget ul li {
-	font-size: 12px;
-	color: #585856;
-	text-transform: uppercase;
-	list-style: none;
-	display: inline-block;
-	position: relative;
-	margin-right: 5px;
-}
-
-.header__top__widget ul li:last-child {
-	margin-right: 0;
-}
-
-.header__top__widget ul li:last-child:after {
-	display: none;
-}
-
-.header__top__widget ul li:after {
-	position: absolute;
-	right: -5px;
-	top: 8px;
-	height: 2px;
-	width: 2px;
-	background: #58787f;
-	content: "";
-	border-radius: 50%;
-}
-
-.header__top__widget .primary-btn {
-	display: inline-block;
-}
-
-.header__nav {
-	position: relative;
-	z-index: 9;
-	/*padding-top: 15px;*/
-}
-
-.header__menu {
-	display: inline-block;
-}
-
-.header__menu ul li {
-	list-style: none;
-	display: inline-block;
-	margin-right: 55px;
-	position: relative;
-}
-
-.header__menu ul li:last-child {
-	margin-right: 0;
-}
-
-.header__menu ul li:hover .dropdown {
-	opacity: 1;
-	top: 34px;
-	visibility: visible;
-}
-
-.header__menu ul li:hover .dropdown li a:after {
-	display: none;
-}
-
-.header__menu ul li:hover a:after {
-	opacity: 1;
-	width: 100%;
-}
-
-.header__menu ul li.active a:after {
-	opacity: 1;
-	width: 100%;
-}
-
-.header__menu ul li .dropdown {
-	position: absolute;
-	left: 0;
-	top: 50px;
-	width: 180px;
-	background: #f5f3f2;
-	text-align: left;
-	-webkit-transition: all, 0.3s;
-	-moz-transition: all, 0.3s;
-	-ms-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-	opacity: 0;
-	visibility: hidden;
-	padding: 5px 0;
-	z-index: 9;
-}
-
-.header__menu ul li .dropdown li {
-	margin-right: 0;
+.dropdown:hover .dropdown-menu {
 	display: block;
-}
+  }
 
-.header__menu ul li .dropdown li a {
-	padding: 6px 15px;
-	font-weight: 400;
-	font-size: 15px;
-	color: #222222;
-	text-transform: capitalize;
-	font-weight: 500;
-}
-
-.header__menu ul li a {
-	font-size: 16px;
-	color: #f5f3f2;
-	font-weight: 700;
-	padding: 5px 0;
-	display: block;
-	font-weight: 700;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	position: relative;
-}
-
-.header__menu ul li a:after {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	height: 2px;
-	width: 0%;
-	background: #f5f3f2;
-	content: "";
-	opacity: 0;
-	-webkit-transition: all, 0.3s;
-	-moz-transition: all, 0.3s;
-	-ms-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.header__social {
-	text-align: right;
-}
-
-.header__social a {
-	display: inline-block;
-	font-size: 14px;
-	color: #f5f3f2;
-	margin-right: 25px;
-}
-
-.header__social a:last-child {
-	margin-right: 0;
-}
-
-.canvas__open {
-	display: none;
-}
-
-.offcanvas-menu {
-	display: none;
-}
+@media (max-width: 992px) {
+	.navbar-collapse {
+	  position: fixed;
+	  top: 0;
+	  bottom: 0;
+	  right: 0;
+	  z-index: 1040;
+	  display: flex;
+	  flex-direction: column;
+	  width: 250px;
+	  padding: 1.5rem;
+	  background-color: white;
+	  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	  transform: translateX(100%);
+	  transition: transform 0.3s ease-in-out;
+	}
+	.navbar-collapse.show {
+	  transform: translateX(0);
+	}
+  }
 
 /*---------------------
   Hero
