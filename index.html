@@ -15,6 +15,7 @@
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/barfiller.css" type="text/css">
@@ -30,7 +31,7 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
+    <!-- Header Section Begin 
     <header class="header">
         <div class="header__nav">
             <div class="container">
@@ -66,6 +67,89 @@
         </div>
     </header>
     <!-- Header Section End -->
+
+    <!--
+    <div class="container mb-5">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="img/ChakanaLogo.png" alt="" style="width: 120px">
+          </a>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+          </ul>
+    
+          <div class="col-md-3 d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-primary">Login</button>
+            <button type="button" class="btn btn-primary ms-4">Sign-up</button>
+          </div>
+        </header>
+      </div>
+      -->
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-md-5">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/ChakanaLogo.png" width="120" height="30" alt="">
+        </a>
+        <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav flex-row ml-auto order-1 px-4" style="gap: 10px;">
+            <li class="nav-item">
+                <a *ngIf="estaVisibleUsuario" [routerLink]="['/carrito']" class="text-decoration-none text-w">
+                    <button type="button" class="btn btn-success position-relative me-4">
+                        <i class="fas fa-shopping-cart"></i>
+                      Carrito
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger px-2">
+                        0
+                      </span>
+                    </button>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                &times;
+              </button>
+          <ul class="navbar-nav h-100 d-flex justify-content-center align-items-center">
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="./classes.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Clases
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-muted" href="./classes-details.html">Handstand training</a>
+                  <a class="dropdown-item text-muted" href="./classes-details2.html">Front training</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item text-muted" href="./classes-details3.html">Yoga training</a>
+                </div>
+              </li>
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./about-us.html">About</a>
+            </li>
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./blog.html">Blog</a>
+            </li>
+            <li class="nav-item py-2">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
 
     <!-- Hero Section Begin -->
     <section class="hero">
