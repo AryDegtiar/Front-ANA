@@ -262,6 +262,14 @@ ol {
 /*---------------------
   Header
 -----------------------*/
+.custom-navbar {
+	background-color: rgba(255, 255, 255, 0.8);
+	transition: background-color 0.5s ease;
+  }
+  
+  body.body-scrolled .custom-navbar {
+	background-color: #fff;
+  }  
 
 .dropdown:hover .dropdown-menu {
 	display: block;

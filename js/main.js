@@ -174,3 +174,7 @@ $(document).click(function(event) {
       $(".navbar-toggler").click();
     }
   });
+  
+  $(document).scroll(function () {
+    $("body").toggleClass("body-scrolled", $(document).scrollTop() > 100);
+  });
