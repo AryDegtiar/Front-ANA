@@ -2,7 +2,9 @@
 /*---------------------
   Breadcrumb
 -----------------------*/
-
+*{
+  font-family: 'omnes-light'
+}
 .breadcrumb-option,
 .blog-hero {
 	padding-top: 215px;

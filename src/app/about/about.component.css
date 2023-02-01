@@ -2,7 +2,12 @@
 /*---------------------
   Home About
 -----------------------*/
+.container {
+  max-width: 1170px;
+  margin:auto;
+  padding: 0 15px;
 
+}
 .home-about {
 	padding-bottom: 0;
 }
@@ -53,6 +58,7 @@
 	z-index: 1;
 	overflow: hidden;
 	padding-bottom: 0;
+
 }
 
 .about:before {

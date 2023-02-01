@@ -1,6 +1,6 @@
 
 .footer {
-	background: #585856;
+	background: #585856b6;
 	padding-top: 70px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .footer__about ul li {
-	color: #585856;
+	color: #f5f3f2 !important;
 	line-height: 37px;
 	font-size: 16px;
 	list-style: none;
@@ -22,7 +22,7 @@
 
 .footer__about ul li i {
 	font-size: 16px;
-	color: #585856;
+	color: #f5f3f2 !important;
 	margin-right: 5px;
 }
 
@@ -94,16 +94,16 @@
 
 .footer__copyright__text p {
 	font-size: 14px;
-	color: #6e7580;
+	color: #6e758000;
 	margin-bottom: 0;
 }
 
 .footer__copyright__text i {
-	color: #a11f1f;
+	color: #a11f1f00;
 }
 
 .footer__copyright__text a {
-	color: #58787f;
+	color: #58787f00;
 }
 
 .footer__copyright__social {

@@ -1,3 +1,4 @@
+import { ArticulosComponent } from './blog/articulos/articulos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'registrar', component: RegistrarComponent },
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent},
+  { path: 'blog', component: ArticulosComponent},
   { path: '**', redirectTo: '' }
 ];
 
