@@ -9,16 +9,24 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ClasesGeneralComponent } from './clases/clases-general/clases-general.component';
 import { SubclaseComponent } from './clases/subclase/subclase.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { LoginComponent } from './logIn-register/login/login.component';
+import { RegistrarComponent } from './logIn-register/registrar/registrar.component';
+import { AboutComponent } from './about/about.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
       InicioComponent,
       ClasesGeneralComponent,
       SubclaseComponent,
-      ContactoComponent
+      ContactoComponent,
+      LoginComponent,
+      RegistrarComponent,
+      AboutComponent,
+      BlogComponent
    ],
   imports: [
     BrowserModule,
