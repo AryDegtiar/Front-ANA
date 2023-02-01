@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './general/navbar/navbar.component';
 import { FooterComponent } from './general/footer/footer.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ClasesGeneralComponent } from './clases/clases-general/clases-general.component';
+import { SubclaseComponent } from './clases/subclase/subclase.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
     NavbarComponent,
     FooterComponent,
-      InicioComponent
+      InicioComponent,
+      ClasesGeneralComponent,
+      SubclaseComponent,
+      ContactoComponent
    ],
   imports: [
     BrowserModule,

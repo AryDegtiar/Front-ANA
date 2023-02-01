@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar p-0 mb-md-5 fixed-top" id="navbar">
   <div class="container">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" routerLink="/">
     <img src="../../../assets/img/ChakanaLogo.png" width="120" height="30" alt="">
   </a>
   <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,17 +31,17 @@
         </button>
     <ul class="navbar-nav h-100 d-flex justify-content-center align-items-center">
       <li class="nav-item py-2">
-        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" routerLink="/">Home</a>
       </li>
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="./classes.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" routerLink="/clases" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Clases
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-muted" href="./classes-details.html">Handstand training</a>
-            <a class="dropdown-item text-muted" href="./classes-details2.html">Front training</a>
+            <a class="dropdown-item text-muted" routerLink="/subclase">Handstand training</a>
+            <a class="dropdown-item text-muted" routerLink="/subclase">Front training</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-muted" href="./classes-details3.html">Yoga training</a>
+            <a class="dropdown-item text-muted" routerLink="/subclase">Yoga training</a>
           </div>
         </li>
       <li class="nav-item py-2">
@@ -51,7 +51,7 @@
         <a class="nav-link" href="./blog.html">Blog</a>
       </li>
       <li class="nav-item py-2">
-        <a class="nav-link" href="./contact.html">Contact</a>
+        <a class="nav-link" routerLink="/contacto">Contact</a>
       </li>
     </ul>
   </div>
