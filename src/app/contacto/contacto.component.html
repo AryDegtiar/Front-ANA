@@ -1,45 +1,104 @@
-
-    <!-- Breadcrumb Begin -->
-    <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="breadcrumb__text">
-                      <img src="../../assets/img/ChakanaLogo.png" alt="">
-                  </div>
+<section class="container-fluid py-5" data-aos="fade-up">
+  <div class="content pb-2">
+    <div class="container">
+      <div class="row align-items-stretch no-gutters contact-wrap">
+        <div class="col-md-8">
+          <div class="form h-100">
+            <h3>Envia un mensaje</h3>
+            <form
+              class="mb-5"
+              method="post"
+              id="contactForm"
+              name="contactForm"
+            >
+              <div class="row">
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Nombre *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    placeholder="Tu nombre"
+                  />
+                </div>
+                <div class="col-md-6 form-group mb-5">
+                  <label for="" class="col-form-label">Mail *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="Tu mail"
+                  />
+                </div>
               </div>
-          </div>
-      </div>
-  </section>
-  <!-- Breadcrumb End -->
 
-  <!-- Leave Comment Begin -->
-  <div class="leave-comment comment-form spad">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="leave__comment__text">
-                      <h2>Realiza tu consulta</h2>
-                      <form action="#">
-                          <div class="row">
-                              <div class="col-lg-6 col-md-6">
-                                  <input type="text" placeholder="Nombre*">
-                              </div>
-                              <div class="col-lg-6 col-md-6">
-                                  <input type="text" placeholder="Email*">
-                              </div>
-                              <div class="col-lg-12 text-center">
-                                  <textarea placeholder="Dejanos tu mensaje aqui."></textarea>
-                                  <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">Enviar</button>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
+              <div class="row">
+                <div class="col-md-12 form-group mb-5">
+                  <label for="" class="col-form-label">Telefono</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="phone"
+                    id="phone"
+                    placeholder="Telefono"
+                  />
+                </div>
               </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group mb-5">
+                  <label for="message" class="col-form-label"
+                    >Mensaje *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    id="message"
+                    cols="30"
+                    rows="4"
+                    placeholder="Escribi tu mensaje...."
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="d-grid col-12 mx-auto justify-content-md-start">
+                  <button class="btn btn-primary btn-lg px-4" type="button">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div id="form-message-warning mt-4"></div>
+            <div id="form-message-success">
+              Tu mensaje se envio, Gracias!!!
+            </div>
           </div>
+        </div>
+        <div class="col-md-4" id="relleno">
+          <div class="contact-info h-100">
+            <h3>Informacion de contacto</h3>
+            <p class="mb-5">
+              Para todas las consultas, contactanos por correo electronico llenando el formulario o via whatsapp.
+            </p>
+            <ul class="list-unstyled">
+              <li class="d-flex">
+                <span class="wrap-icon icon-phone mr-3"></span>
+                <span class="text">+1 (291) 939 9321</span>
+              </li>
+              <li class="d-flex">
+                <span class="wrap-icon icon-envelope mr-3"></span>
+                <span class="text">info@mywebsite.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-  <!-- Leave Comment End -->
+</section>
 
   <!-- Contact Section Begin -->
   <section class="contact pt-5 pb-3">

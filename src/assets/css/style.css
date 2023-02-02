@@ -29,7 +29,7 @@
 /*----------------------------------------*/
 
 /* Template default CSS
-/*----------------------------------------*/
+/*----------------------------------------
 
 html,
 body {
@@ -117,6 +117,24 @@ ol {
 /*---------------------
   Helper CSS
 -----------------------*/
+
+.color-orange{
+  color: #c79c67;
+}
+
+a{
+  text-decoration: none;
+}
+
+.fs-0{
+  font-size: 5rem;
+}
+
+@media (max-width: 767px) {
+  .fs-0{
+    font-size: 2rem;
+  }
+}
 
 .section-title {
 	margin-bottom: 45px;

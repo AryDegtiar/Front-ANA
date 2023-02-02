@@ -1,4 +1,18 @@
 /*---------------------
+  Carousel
+-----------------------*/
+.carousel-caption2 {
+  position: absolute;
+  bottom: 40%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/*---------------------
   Hero
 -----------------------*/
 
@@ -107,6 +121,18 @@
 /*---------------------
   Home About
 -----------------------*/
+
+#aboutPic1 {
+  background-image: url(../../assets/img/about/about-1.jpg);
+}
+
+#aboutPic2 {
+  background-image: url(../../assets/img/about/about-2.jpg);
+}
+
+#aboutPic3 {
+  background-image: url(../../assets/img/about/about-3.jpg);
+}
 
 .home-about {
 	padding-bottom: 0;
@@ -338,6 +364,9 @@
 /*---------------------
   Classes
 -----------------------*/
+.bg-gallery5{
+    background-image: url(../../assets/img/gallery/gallery-5.jpg);
+}
 
 .classes__filter {
 	background: #f5f3f2;
@@ -569,13 +598,25 @@
 -----------------------*/
 
 .gallery__pic img {
-	min-width: 100%;
+	width: 100%;
 }
 
 
 /*---------------------
   Pricing
 -----------------------*/
+
+#pricingItem1{
+  background-image: url(../../assets/img/pricing/price-bg-1.png);
+}
+
+#pricingItem2{
+  background-image: url(../../assets/img/pricing/price-bg-2.png);
+}
+
+#pricingItem3{
+  background-image: url(../../assets/img/pricing/price-bg-3.png);
+}
 
 .pricing {
 	padding-top: 80px;
@@ -675,6 +716,8 @@
 
 .pricing__item ul {
 	margin-bottom: 12px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .pricing__item ul li {
