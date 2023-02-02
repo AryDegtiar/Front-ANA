@@ -1,4 +1,4 @@
-import { ArticulosComponent } from './blog/articulos/articulos.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
@@ -9,7 +9,7 @@ import { LoginComponent } from './logIn-register/login/login.component';
 import { RegistrarComponent } from './logIn-register/registrar/registrar.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
-
+import { ArticulosComponent } from './blog/articulos/articulos.component';
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'clases', component: ClasesGeneralComponent },
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'registrar', component: RegistrarComponent },
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent},
-  { path: 'blog', component: ArticulosComponent},
+  { path: 'articulos', component: ArticulosComponent},
   { path: '**', redirectTo: '' }
 ];
 
