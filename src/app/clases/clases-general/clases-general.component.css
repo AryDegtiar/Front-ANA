@@ -59,6 +59,14 @@
 	margin-bottom: 60px;
 }
 
+@media (max-width: 991px) {
+  .classes__filter {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+}
+
 .classes__filter form {
 	position: relative;
 	width: 100%;
