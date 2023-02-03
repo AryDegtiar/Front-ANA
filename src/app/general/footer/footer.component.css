@@ -5,11 +5,12 @@
 }
 
 .footer__about {
-	margin-bottom: 30px;
+	margin-bottom: 0px;
+  color: #f5f3f2 !important;
 }
 
 .footer__about ul {
-	margin-bottom: 25px;
+	margin-bottom: 0px;
 	margin-top: 20px;
 }
 
@@ -55,7 +56,7 @@
 }
 
 .footer__widget {
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 }
 
 .footer__widget h5 {
@@ -118,5 +119,6 @@
 }
 
 .footer__copyright__social a:last-child {
-	margin-right: 0;
+
 }
+
