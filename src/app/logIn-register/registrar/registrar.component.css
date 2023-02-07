@@ -88,3 +88,15 @@ a {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+
+  .btn-grey{
+    background-color: #58787f85;
+    color: #FFF;
+    border: #58787f85;
+  }
+
+  .btn-grey:hover{
+      background-color: #c79c67;
+      color: #FFF;
+      border: #c79c67;
+  }
