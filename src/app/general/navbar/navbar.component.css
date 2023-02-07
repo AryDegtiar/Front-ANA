@@ -31,3 +31,15 @@
 	  transform: translateX(0);
 	}
   }
+
+  .btn-orange:hover{
+    background-color: #58787f85;
+    color: #FFF;
+    border: #58787f85;
+}
+
+.btn-orange{
+    background-color: #c79c67;
+    color: #FFF;
+    border: #c79c67;
+}
