@@ -74,7 +74,7 @@ h1 {
 
 .btn {
   padding: 15px 30px;
-  background-color: #00b0ff;
+  background-color: #c79c67;
   color: #ffffff;
   border: none;
   border-radius: 50px;
@@ -83,7 +83,7 @@ h1 {
 }
 
 .btn:hover {
-  background-color: #333;
+  background-color: #58787f85;
   color: #ffffff;
 }
 

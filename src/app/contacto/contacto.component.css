@@ -1,6 +1,9 @@
 /*---------------------
   Formulario
 -----------------------*/
+*{
+  font-family: omnes-light;
+}
 .content {
   padding: 6rem 0; }
 
@@ -49,14 +52,14 @@
       color: rgba(255, 255, 255, 0.5); }
       .contact-wrap .contact-info ul li .wrap-icon {
         font-size: 20px;
-        color: #fff;
+        color: #f5f3f2;
         margin-top: 5px; }
   .contact-wrap .form {
-    background: #fff; }
+    background: #f5f3f2; }
   .contact-wrap .contact-info {
-    background: #35477d; }
+    background: #c79c67; }
     .contact-wrap .contact-info h3 {
-      color: #fff;
+      color: #f5f3f2;
       font-size: 20px;
       margin-bottom: 30px; }
 
@@ -88,7 +91,7 @@ label.error {
   color: #000; }
 
 #relleno {
-background-color: #35477d;
+background-color: #c79c67;
 }
 
 /*---------------------
@@ -118,4 +121,13 @@ background-color: #35477d;
 .contact__widget__item p {
 	color: #9B9EA3;
 	margin-bottom: 0;
+}
+
+.btn{
+  background-color: #c79c67;
+}
+.btn:hover{
+  background-color: #58787f85;
+  color: #FFF;
+  border: #58787f85;
 }
