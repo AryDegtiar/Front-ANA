@@ -1,3 +1,53 @@
+
+/*---------------------
+  Breadcrumb
+-----------------------*/
+
+.breadcrumb-option,
+.blog-hero {
+	padding-top: 215px;
+	padding-bottom: 170px;
+	margin-top: -50px;
+  background: url(../../../assets/img/ChakanalogoS.png) no-repeat center;
+}
+
+.breadcrumb__text,
+.blog-hero {
+	text-align: center;
+}
+
+.breadcrumb__text h2,
+.blog-hero h2 {
+	font-size: 44px;
+	color: #f5f3f2;
+	margin-bottom: 6px;
+}
+
+.breadcrumb__widget a {
+	display: inline-block;
+	font-size: 16px;
+	color: #f5f3f2;
+	font-weight: 700;
+	margin-right: 15px;
+	position: relative;
+}
+
+.breadcrumb__widget a:after {
+	position: absolute;
+	right: -14px;
+	top: 1px;
+	font-weight: 400;
+	content: "/";
+}
+
+.breadcrumb__widget span {
+	display: inline-block;
+	font-size: 16px;
+	color: #f5f3f2;
+	font-weight: 400;
+}
+
+
 body {
   background-color: #f7f7f7;
   font-family: sans-serif;
@@ -110,4 +160,35 @@ label {
   font-weight: 700;
   margin-bottom: 10px;
   display: block;
+}
+
+.slogan-section
+{
+  background-color: #33333300;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-top: solid 1px #333333;
+  border-bottom: solid 1px #333333;
+}
+
+.appointment
+{
+  margin-bottom: 50px;
+}
+
+.seccion_1{
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px #333333;
+}
+
+.seccion_2
+{
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px #333333;
 }

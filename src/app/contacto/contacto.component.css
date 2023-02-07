@@ -1,127 +1,98 @@
-
 /*---------------------
-  Breadcrumb
+  Formulario
 -----------------------*/
 *{
-  font-family: 'omnes-light'
+  font-family: omnes-light;
 }
-.breadcrumb-option,
-.blog-hero {
-	padding-top: 215px;
-	padding-bottom: 170px;
-	margin-top: -50px;
+.content {
+  padding: 6rem 0; }
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 900; }
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  background: none; }
+  .form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; }
+
+.col-form-label {
+  color: #000;
+  font-size: 13px; }
+
+.custom-select:active, .custom-select:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #000; }
+
+.contact-wrap {
+  -webkit-box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2); }
+  .contact-wrap .col-form-label {
+    font-size: 14px;
+    color: #000000;
+    margin: 0 0 10px 0;
+    display: inline-block;
+    padding: 0; }
+  .contact-wrap .form, .contact-wrap .contact-info {
+    padding: 40px; }
+  .contact-wrap .contact-info {
+    color: rgba(255, 255, 255, 0.5); }
+    .contact-wrap .contact-info ul li {
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.5); }
+      .contact-wrap .contact-info ul li .wrap-icon {
+        font-size: 20px;
+        color: #f5f3f2;
+        margin-top: 5px; }
+  .contact-wrap .form {
+    background: #f5f3f2; }
+  .contact-wrap .contact-info {
+    background: #c79c67; }
+    .contact-wrap .contact-info h3 {
+      color: #f5f3f2;
+      font-size: 20px;
+      margin-bottom: 30px; }
+
+label.error {
+  font-size: 12px;
+  color: red; }
+
+#message {
+  resize: vertical; }
+
+#form-message-warning, #form-message-success {
+  display: none; }
+
+#form-message-warning {
+  color: #B90B0B; }
+
+#form-message-success {
+  color: #55A44E;
+  font-size: 18px;
+  font-weight: bold; }
+
+.submitting {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+  font-weight: bold;
+  font-size: 12px;
+  color: #000; }
+
+#relleno {
+background-color: #c79c67;
 }
-
-.breadcrumb__text,
-.blog-hero {
-	text-align: center;
-}
-
-.breadcrumb__text h2,
-.blog-hero h2 {
-	font-size: 44px;
-	color: #f5f3f2;
-	margin-bottom: 6px;
-}
-
-.breadcrumb__widget a {
-	display: inline-block;
-	font-size: 16px;
-	color: #f5f3f2;
-	font-weight: 700;
-	margin-right: 15px;
-	position: relative;
-}
-
-.breadcrumb__widget a:after {
-	position: absolute;
-	right: -14px;
-	top: 1px;
-	font-weight: 400;
-	content: "/";
-}
-
-.breadcrumb__widget span {
-	display: inline-block;
-	font-size: 16px;
-	color: #f5f3f2;
-	font-weight: 400;
-}
-
-
-/*---------------------
-  Leave Comment
------------------------*/
-
-.leave-comment {
-	background: #f5f6fa;
-	padding-bottom: 70px;
-	padding-top: 80px;
-}
-
-.leave__comment__text h2 {
-	font-size: 44px;
-	color: #585856;
-	text-align: center;
-	margin-bottom: 35px;
-}
-
-.leave__comment__text form input {
-	width: 100%;
-	font-size: 16px;
-	color: #6E7580;
-	padding-left: 30px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	background: #f5f3f2;
-	border-radius: 2px;
-	height: 50px;
-	margin-bottom: 20px;
-}
-
-.leave__comment__text form input::placeholder {
-	color: #6E7580;
-}
-
-.leave__comment__text form .leave__comment__rating {
-	margin-bottom: 20px;
-}
-
-.leave__comment__text form .leave__comment__rating h5 {
-	font-size: 20px;
-	color: #585856;
-	display: inline-block;
-	font-weight: 700;
-	margin-right: 12px;
-}
-
-.leave__comment__text form .leave__comment__rating i {
-	font-size: 16px;
-	color: #F5C136;
-	margin-right: -4px;
-}
-
-.leave__comment__text form .leave__comment__rating i:last-child {
-	color: #9B9EA3;
-}
-
-.leave__comment__text form textarea {
-	width: 100%;
-	font-size: 16px;
-	color: #6E7580;
-	padding-left: 30px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	background: #f5f3f2;
-	border-radius: 2px;
-	height: 132px;
-	margin-bottom: 35px;
-	resize: none;
-	padding-top: 14px;
-}
-
-.leave__comment__text form textarea::placeholder {
-	color: #6E7580;
-}
-
 
 /*---------------------
   Contact
@@ -150,4 +121,16 @@
 .contact__widget__item p {
 	color: #9B9EA3;
 	margin-bottom: 0;
+}
+
+.btn-grey:hover{
+  background-color: #58787f85;
+  color: #FFF;
+  border: #58787f85;
+}
+
+.btn-grey{
+  background-color: #c79c67;
+  color: #FFF;
+  border: #c79c67;
 }

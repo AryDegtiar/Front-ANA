@@ -8,11 +8,13 @@
 	padding-top: 215px;
 	padding-bottom: 170px;
 	margin-top: -50px;
+  background-image: url(../../../assets/img/breadcrumb.jpg);
 }
 
 .breadcrumb__text,
 .blog-hero {
 	text-align: center;
+
 }
 
 .breadcrumb__text h2,
@@ -57,6 +59,12 @@
 	border-radius: 2px;
 	padding: 25px 100px 30px;
 	margin-bottom: 60px;
+}
+@media (max-width: 991px) {
+  .classes__filter {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .classes__filter form {
@@ -137,6 +145,7 @@
 	box-shadow: 0px 0px 65px rgba(12, 26, 39, 0.05);
 	margin-bottom: 30px;
 	background: #f5f3f2;
+
 }
 
 .classes__item.classes__item__page .classes__item__pic span {
@@ -146,6 +155,7 @@
 .classes__item__pic {
 	height: 241px;
 	position: relative;
+  background-image: url(../../../assets/img/ChakanalogoS.png)
 }
 
 .classes__item__pic span {

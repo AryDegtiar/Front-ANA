@@ -1,4 +1,18 @@
 /*---------------------
+  Carousel
+-----------------------*/
+.carousel-caption2 {
+  position: absolute;
+  bottom: 40%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/*---------------------
   Hero
 -----------------------*/
 
@@ -107,6 +121,18 @@
 /*---------------------
   Home About
 -----------------------*/
+
+#aboutPic1 {
+  background-image: url(../../assets/img/classes/classes-10.jpg);
+}
+
+#aboutPic2 {
+  background-image: url(../../assets/img/about/about-2.jpg);
+}
+
+#aboutPic3 {
+  background-image: url(../../assets/img/about/about-3.jpg);
+}
 
 .home-about {
 	padding-bottom: 0;
@@ -248,6 +274,24 @@
 	border-radius: 50px;
 }
 
+.btn{
+  background-color: #58787f;
+  color: #f5f3f2;
+
+}
+.btn:hover{
+  background-color: #c79c67;
+  color: #f5f3f2;
+}
+.btn-2{
+  background-color: #585856 !important;
+  border: 1px solid #f5f3f2 !important;
+  color: #f5f3f2 !important;
+}
+.btn-2:hover{
+  background-color: #c79c67 !important;
+  color: #f5f3f2 !important;
+}
 
 /*---------------------
   Services
@@ -338,6 +382,9 @@
 /*---------------------
   Classes
 -----------------------*/
+.bg-gallery5{
+    background-image: url(../../assets/img/gallery/gallery-5.jpg);
+}
 
 .classes__filter {
 	background: #f5f3f2;
@@ -569,13 +616,25 @@
 -----------------------*/
 
 .gallery__pic img {
-	min-width: 100%;
+	width: 100%;
 }
 
 
 /*---------------------
   Pricing
 -----------------------*/
+
+#pricingItem1{
+  background-image: url(../../assets/img/pricing/price-bg-1.png);
+}
+
+#pricingItem2{
+  background-image: url(../../assets/img/pricing/price-bg-2.png);
+}
+
+#pricingItem3{
+  background-image: url(../../assets/img/pricing/price-bg-3.png);
+}
 
 .pricing {
 	padding-top: 80px;
@@ -675,6 +734,8 @@
 
 .pricing__item ul {
 	margin-bottom: 12px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .pricing__item ul li {

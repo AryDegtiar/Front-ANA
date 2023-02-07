@@ -53,6 +53,10 @@
     About
 -----------------------*/
 
+#bg-counter{
+  background-color: #bbd4c6;
+}
+
 .about {
 	position: relative;
 	z-index: 1;

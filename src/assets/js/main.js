@@ -166,7 +166,7 @@
     });
 
 })(jQuery);
-
+/*
 $(document).click(function(event) {
     var clickover = $(event.target);
     var _opened = $(".navbar-collapse").hasClass("show");
@@ -174,7 +174,8 @@ $(document).click(function(event) {
       $(".navbar-toggler").click();
     }
   });
-  
+
   $(document).scroll(function () {
     $("body").toggleClass("body-scrolled", $(document).scrollTop() > 100);
   });
+  */
