@@ -123,7 +123,7 @@
 -----------------------*/
 
 #aboutPic1 {
-  background-image: url(../../assets/img/about/about-1.jpg);
+  background-image: url(../../assets/img/classes/classes-10.jpg);
 }
 
 #aboutPic2 {
@@ -274,6 +274,24 @@
 	border-radius: 50px;
 }
 
+.btn{
+  background-color: #58787f;
+  color: #f5f3f2;
+
+}
+.btn:hover{
+  background-color: #c79c67;
+  color: #f5f3f2;
+}
+.btn-2{
+  background-color: #585856 !important;
+  border: 1px solid #f5f3f2 !important;
+  color: #f5f3f2 !important;
+}
+.btn-2:hover{
+  background-color: #c79c67 !important;
+  color: #f5f3f2 !important;
+}
 
 /*---------------------
   Services
