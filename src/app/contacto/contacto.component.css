@@ -123,11 +123,14 @@ background-color: #c79c67;
 	margin-bottom: 0;
 }
 
-.btn{
-  background-color: #c79c67;
-}
-.btn:hover{
+.btn-grey:hover{
   background-color: #58787f85;
   color: #FFF;
   border: #58787f85;
+}
+
+.btn-grey{
+  background-color: #c79c67;
+  color: #FFF;
+  border: #c79c67;
 }
