@@ -10,6 +10,7 @@ import { RegistrarComponent } from './logIn-register/registrar/registrar.compone
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { ArticulosComponent } from './blog/articulos/articulos.component';
+import { CarritoComponent } from './carrito/carrito.component';
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'clases', component: ClasesGeneralComponent },
@@ -18,8 +19,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registrar', component: RegistrarComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'blog', component: BlogComponent},
-  { path: 'articulos', component: ArticulosComponent},
+  { path: 'blog', component: BlogComponent },
+  { path: 'articulos', component: ArticulosComponent },
+  { path: 'carrito', component: CarritoComponent },
   { path: '**', redirectTo: '' }
 ];
 

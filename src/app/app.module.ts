@@ -14,6 +14,7 @@ import { RegistrarComponent } from './logIn-register/registrar/registrar.compone
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { ArticulosComponent } from './blog/articulos/articulos.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ArticulosComponent } from './blog/articulos/articulos.component';
       RegistrarComponent,
       AboutComponent,
       BlogComponent,
-      ArticulosComponent
+      ArticulosComponent,
+      CarritoComponent
    ],
   imports: [
     BrowserModule,
