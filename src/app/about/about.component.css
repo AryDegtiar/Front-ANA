@@ -2,6 +2,9 @@
 /*---------------------
   Home About
 -----------------------*/
+.presentation{
+  padding-top: 40px;
+}
 .container {
   max-width: 1170px;
   margin:auto;
