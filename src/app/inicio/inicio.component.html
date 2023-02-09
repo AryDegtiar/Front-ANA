@@ -215,7 +215,7 @@
               </div>
           </div>
           <div class="row">
-              <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let item of [1,2,3]">
                   <div class="classes__item">
                       <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-1.jpg">
                           <span>20 Jun 2019</span>
@@ -228,6 +228,7 @@
                       </div>
                   </div>
               </div>
+ <!--
               <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="classes__item">
                       <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-2.jpg">
@@ -254,6 +255,8 @@
                       </div>
                   </div>
               </div>
+-->
+
           </div>
       </div>
   </section>
@@ -274,11 +277,13 @@
       </div>
       <div class="container-fluid">
           <div class="row">
-              <div class="col-lg-3 col-md-4 col-6 p-0">
+              <div class="col-lg-3 col-md-4 col-6 p-0" *ngFor="let item of [1,2,3,4,5,6,7,8]">
                   <div class="gallery__pic">
                       <img src="../../assets/img/gallery/gallery-1.jpg" alt="">
                   </div>
               </div>
+
+<!--
               <div class="col-lg-3 col-md-4 col-6 p-0">
                   <div class="gallery__pic">
                       <img src="../../assets/img/gallery/gallery-2.jpg" alt="">
@@ -314,6 +319,8 @@
                       <img src="../../assets/img/gallery/gallery-8.jpg" alt="">
                   </div>
               </div>
+
+-->
           </div>
       </div>
   </section>
