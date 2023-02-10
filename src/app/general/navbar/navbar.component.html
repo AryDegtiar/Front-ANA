@@ -6,10 +6,10 @@
   <button class="navbar-toggler order-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <ul class="navbar-nav flex-row ml-auto order-1 px-4" style="gap: 10px;">
+  <ul class="navbar-nav flex-row ml-auto order-1 px-lg-4 p-0" style="gap: 10px;">
       <li class="nav-item">
           <a class="text-decoration-none text-w">
-              <button type="button" class="btn btn-orange position-relative me-4" routerLink="/carrito">
+              <button type="button" class="btn btn-orange position-relative me-lg-4 m-0" routerLink="/carrito">
                   <i class="fas fa-shopping-cart"></i>
                 Carrito
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger px-2">
@@ -18,10 +18,10 @@
               </button>
           </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item d-none d-lg-inline">
         <a class="nav-link" routerLink="/login">Login</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item d-none d-lg-inline">
         <a class="nav-link" routerLink="/registrar">Register</a>
       </li>
   </ul>
@@ -33,11 +33,11 @@
       <li class="nav-item py-2">
         <a class="nav-link" routerLink="/">Home</a>
       </li>
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink="/clases" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown w-lg-100 text-center">
+          <a class="nav-link dropdown-toggle w-lg-100" routerLink="/clases" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Clases
           </a>
-          <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-muted" routerLink="/subclase">Handstand training</a>
             <a class="dropdown-item text-muted" routerLink="/subclase">Front training</a>
             <div class="dropdown-divider"></div>
@@ -53,7 +53,7 @@
       <li class="nav-item py-2">
         <a class="nav-link" routerLink="/contacto">Contact</a>
       </li>
-      <li class="nav-item d-xl-none">
+      <li class="nav-item d-lg-none">
         <hr>
         <div class="row">
           <a class="nav-link col-6" routerLink="/login">Login</a>
