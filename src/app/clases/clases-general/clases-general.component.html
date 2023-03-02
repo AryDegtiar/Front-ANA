@@ -33,162 +33,29 @@
          </div>
      </div>
      <div class="row">
-         <div class="col-lg-4 col-md-6" *ngFor="let item of [1,2,3,4,5,6]">
+         <div class="col-lg-4 col-md-6" *ngFor="let producto of productosPage">
              <div class="classes__item classes__item__page">
                  <div class="classes__item__pic set-bg object-fit-cover">
-                     <span>Beginer</span>
+                     <span>{{producto.nombre}}</span>
                  </div>
                  <div class="classes__item__text">
                      <ul>
                          <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
                          <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
                      </ul>
-                     <h4><a [routerLink]="['/']">100 Hour Handstand Training Course</a></h4>
-                     <h6>Jordan Lawson <span>- Handstand Teacher</span></h6>
+                     <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
+                     <h6>Ana Hepner <span>- {{producto.categoria}} Teacher</span></h6>
                      <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
                      <a [routerLink]="['/']" class="class-btn">Read More</a>
                  </div>
              </div>
          </div>
 
-
-
-         <!--
-
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-2.jpg">
-                     <span>All levels</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">200 Hour Handstand Training Course</a></h4>
-                     <h6>Jordan Lawson <span>- Handstand Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-3.jpg">
-                     <span>Beginer</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">300 Hour Handstand Training Course</a></h4>
-                     <h6>Jordan Lawson <span>- Handstand Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-4.jpg">
-                     <span>Beginer</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">100 Hour Yoga Course Rishikesh</a></h4>
-                     <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-5.jpg">
-                     <span>All levels</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">200 Hour Yoga Course Rishikesh</a></h4>
-                     <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-6.jpg">
-                     <span>Beginer</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">300 Hour Yoga Course Rishikesh</a></h4>
-                     <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-7.jpg">
-                     <span>Beginer</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">100 Hour Stretching Course</a></h4>
-                     <h6>Jordan Lawson <span>- Stretching Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-8.jpg">
-                     <span>All levels</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">200 Hour Stretching Course</a></h4>
-                     <h6>Jordan Lawson <span>- Stretching Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-9.jpg">
-                     <span>Beginer</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <ul>
-                         <li><span class="icon_calendar"></span> Mon, Wed, Fri</li>
-                         <li><span class="icon_clock_alt"></span> 18:30 - 19:30</li>
-                     </ul>
-                     <h4><a [routerLink]="['/']">300 Hour Stretching Course</a></h4>
-                     <h6>Jordan Lawson <span>- Stretching Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                 </div>
-             </div>
-         </div>
-         -->
          <div class="col-lg-12">
              <div class="classes__pagination">
-                 <a [routerLink]="['/']">1</a>
-                 <a [routerLink]="['/']">2</a>
-                 <a [routerLink]="['/']"><span class="arrow_carrot-right"></span></a>
+                 <a *ngIf="numPage > 0"(click)= "paginaAnterior()"><span class="arrow_carrot-left"></span></a>
+                 <a>{{numPage+1}}</a>
+                 <a *ngIf="numPage < dataPaginada.totalPages-1"(click)="siguientePagina()"><span class="arrow_carrot-right"></span></a>
              </div>
          </div>
      </div>
@@ -209,7 +76,7 @@
          </div>
      </div>
      <div class="row">
-         <div class="col-lg-4 col-md-6" *ngFor="let item of [1,2,3]">
+         <div class="col-lg-4 col-md-6" *ngFor="let producto of productos">
              <div class="classes__item">
                  <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-10.jpg">
                      <span>20 Jun 2019</span>
