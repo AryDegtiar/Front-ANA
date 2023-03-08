@@ -23,4 +23,7 @@ export class ProductoService {
         }
 
 
+        gettop3ProductsPage(page: number){
+          return this.http.get(this.url + "/page?page=" + page + "&size=3");
+        }
 }
