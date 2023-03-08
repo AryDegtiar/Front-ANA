@@ -1,4 +1,4 @@
-import { ProductosService } from './../../service/productos.service';
+import { ProductoService } from './../../service/productos/producto.service';
 import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
@@ -12,9 +12,9 @@ export class ClasesGeneralComponent implements OnInit {
   productosPage:any = [ ];
   dataPaginada : any;
   numPage : number = 0;
-  
 
-  constructor(private productosService: ProductosService, private crd: ChangeDetectorRef){
+
+  constructor(private productosService: ProductoService, private crd: ChangeDetectorRef){
    }
 
   ngOnInit(): void {

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductosService {
+export class ProductoService {
     private url = 'http://localhost:8086/api/v1/productos';
 
      constructor(private http: HttpClient) {
@@ -24,4 +24,3 @@ export class ProductosService {
 
 
 }
-
