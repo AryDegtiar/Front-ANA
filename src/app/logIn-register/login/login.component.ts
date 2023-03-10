@@ -10,16 +10,22 @@ import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@
 })
 export class LoginComponent implements OnInit {
 
+  email: string = "";
+  password: string = "";
+
     constructor(private usuarioService:UsuarioService, private cdr:ChangeDetectorRef,private router:Router) { }
 
     ngOnInit(): void {
     }
 
-    login(email:string, password:string){
-
-      this.usuarioService.login(email, password).subscribe(
+    login(event: Event){
+      console.log(this.email);
+      console.log(this.password);
+      event.preventDefault();
+      this.usuarioService.login(this.email, this.password).subscribe(
         res => {
-          if (res != null){
+          console.log(res);
+          if (res != "Usuario o contraseña invalidos"){
             this.usuarioService.setLogeo(res);
             this.cdr.detectChanges();
             this.router.navigate(['/home']);
@@ -27,7 +33,7 @@ export class LoginComponent implements OnInit {
            //localStorage.setItem('token', res.token);
           }
         },
-        err => console.log(err)
+        err => alert("Error al logearse")
       )
     }
 

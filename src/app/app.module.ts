@@ -16,6 +16,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ArticulosComponent } from './blog/articulos/articulos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
