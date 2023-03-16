@@ -22,8 +22,14 @@ export class ProductoService {
           return this.http.get(this.url + "/page?page=" + page + "&size=6");
         }
 
-
         gettop3ProductsPage(page: number){
-          return this.http.get(this.url + "/page?page=" + page + "&size=3");
+          return this.http.get(this.url + "/page?page=" + page + "&size=3" + "&sort=visitas,desc");
+        }
+
+        sumarVisita(productoID: String){
+          const sumarVisitaDTO ={
+            sumarVisita: true
+          }
+          return this.http.put(this.url + "/" + productoID + "/sumarVisita", sumarVisitaDTO);
         }
 }

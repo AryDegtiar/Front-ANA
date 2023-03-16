@@ -45,8 +45,8 @@
                      </ul>
                      <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
                      <h6>Ana Hepner <span>- {{producto.categoria}} Teacher</span></h6>
-                     <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                     <a [routerLink]="['/']" class="class-btn">Read More</a>
+                     <a class="class-btn" (click)="sumarAlCarrito(producto.id)" >Añadir al Carrito</a>
+                    <!-- <a [routerLink]="['/']" class="class-btn">Read More</a> -->
                  </div>
              </div>
          </div>

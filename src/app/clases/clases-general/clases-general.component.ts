@@ -55,15 +55,15 @@ export class ClasesGeneralComponent implements OnInit {
     }
   }
 
-  /*getAllProductos(){
-    this.productosService.getAllProducts().subscribe(
+  sumarAlCarrito(productoID: String){
+    this.productosService.sumarVisita(productoID).subscribe(
       (data) => {
-        this.productos = data;
         console.log(data);
-        console.log("productoslista");
-        console.log(this.productos);
+        this.crd.detectChanges();
       }
-    );
-  }*/
+    , error => {
+      console.log(error);
+    });
+  }
 
 }

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit,ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   estaLogeado = false;
 
-  constructor(private usuarioService: UsuarioService, private cdr: ChangeDetectorRef) { }
+  constructor(private usuarioService: UsuarioService, private cdr: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit(): void {
     this.verificarLogeo();
@@ -31,6 +32,9 @@ export class NavbarComponent implements OnInit {
 
   logOut(){
     this.usuarioService.cerrarSesion();
+    this.estaLogeado = false;
+    this.cdr.detectChanges();
+    this.router.navigate(['/home']);
   }
 
 }

@@ -215,48 +215,19 @@
               </div>
           </div>
           <div class="row">
-              <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let item of [1,2,3]">
+              <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let producto of top3Productos; let i = index">
                   <div class="classes__item">
                       <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-1.jpg">
-                          <span>20 Jun 2019</span>
+                        <span class="bg-warning px-2 py-1 text-white "><i class="bi bi-star-fill"></i> Top {{i+1}}</span>
                       </div>
                       <div class="classes__item__text">
                           <p>14 Days | Start on 10th Every Month</p>
-                          <h4><a [routerLink]="['/']">100 Hour Yoga Course Rishikesh</a></h4>
+                          <h4><a [routerLink]="['/']">{{producto.nombre}}</a></h4>
                           <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                          <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
+                          <a (click)="sumarAlCarrito(producto.id)" class="class-btn">Añadir al carrito</a>
                       </div>
                   </div>
               </div>
- <!--
-              <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="classes__item">
-                      <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-2.jpg">
-                          <span>20 Jun 2019</span>
-                      </div>
-                      <div class="classes__item__text">
-                          <p>14 Days | Start on 10th Every Month</p>
-                          <h4><a [routerLink]="['/']">200 Hour Yoga Course Rishikesh</a></h4>
-                          <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                          <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="classes__item">
-                      <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-3.jpg">
-                          <span>20 Jun 2019</span>
-                      </div>
-                      <div class="classes__item__text">
-                          <p>14 Days | Start on 10th Every Month</p>
-                          <h4><a [routerLink]="['/']">300 Hour Yoga Course Rishikesh</a></h4>
-                          <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                          <a [routerLink]="['/']" class="class-btn">JOIN NOW</a>
-                      </div>
-                  </div>
-              </div>
--->
-
           </div>
       </div>
   </section>

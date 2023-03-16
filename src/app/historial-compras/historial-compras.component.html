@@ -1,0 +1,45 @@
+<div class="container" style="min-height: 100vmin; margin-top:100px">
+  <div *ngIf="mostrarHistorial">
+    <div *ngFor="let compra of listCompras" class="card my-5 text-center" style="background-color: #e9fcfa;">
+      <div class="card-header">
+        Fecha: {{compra.fecha}} | Hora: {{compra.hora}}
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Producto</th>
+                <th scope="col">P.Unitario</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let producto of compra.productos">
+                <th scope="row">{{producto.cantidad}}</th>
+                <td>{{producto.nombre}}</td>
+                <td>$ {{producto.precio}}</td>
+                <td>$ {{producto.precio * producto.cantidad}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="card-text">Total: ${{compra.total}} - {{compra.metodoPago}}</p>
+      </div>
+      <div class="card-footer text-muted">
+         Direccion envio: {{compra.direccionEnvio}} | Tienda: {{compra.productos[0].tienda}}
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="!mostrarHistorial" class="text-center">
+    <div class="container">
+      <h1 class="my-4"><b>Historial de compras vacio</b></h1>
+      <img src="../../assets/img/empty_cart_retina.png" style="width: 100%;">
+    </div>
+  </div>
+
+</div>
+
