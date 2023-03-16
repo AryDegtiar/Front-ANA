@@ -1,17 +1,5 @@
 <!-- Breadcrumb Begin -->
-<section class="breadcrumb-option set-bg object-fit-cover"  data-setbg="../../assets/img/ChakanaLogo.png">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="breadcrumb__text">
-                  <h2>Our Classes</h2>
-                  <div class="breadcrumb__widget">
-                      <a href="./index.html">Home</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+<section class="breadcrumb-option set-bg object-fit-cover">
 </section>
 <!-- Breadcrumb End -->
 
@@ -24,18 +12,14 @@
                       <div class="blog__sidebar__categories">
                           <h4>Categories</h4>
                           <ul>
-                              <li><a [routerLink]="['/']">All</a></li>
-                              <li><a [routerLink]="['/']">Handstand (20)</a></li>
-                              <li><a [routerLink]="['/']">Training Core (5)</a></li>
-                              <li><a [routerLink]="['/']">Flexibility (9)</a></li>
-                              <li><a [routerLink]="['/']">Biomechanics(10)</a></li>
+                              <li *ngFor="let categoria of categorias"><a (click)="redirigirACategoria()" >{{categoria.nombre}}</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
               <div class="col-lg-8 order-lg-2 order-1">
                   <div class="row">
-                      <div class="col-lg-6 col-sm-6">
+                      <div class="col-lg-6 col-sm-6" *ngFor="let item of [1,2,3,4]">
                           <div class="blog__item">
                               <div class="blog__item__pic">
                                   <img src="../../assets/img/blog/blog-1.jpg" alt="">
@@ -53,106 +37,16 @@
                               </div>
                           </div>
                       </div>
-                      <div class="col-lg-6 col-sm-6">
-                          <div class="blog__item">
-                              <div class="blog__item__pic">
-                                  <img src="../../assets/img/blog/blog-2.jpg" alt="">
-                              </div>
-                              <div class="blog__item__text">
-                                  <ul>
-                                      <li><i class="fa fa-calendar-o"></i> May 4, 2019</li>
-                                      <li><i class="fa fa-comment-o"></i> 5</li>
-                                  </ul>
-                                  <h5><a [routerLink]="['/']">Entendiendo la biomecánica del ejercicio: cómo evitar lesiones</a></h5>
-                                  <p>
-                                    En este artículo, profundizaremos en la biomecánica del ejercicio para entender cómo nuestro cuerpo se mueve durante el entrenamiento y cómo evitar lesiones. Aprenderás cómo realizar ejercicios de manera segura y efectiva.
-                                  </p>
-                                  <a [routerLink]="['/articulos']" class="blog_read_more">READ MORE <span class="arrow_right"></span></a>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 col-sm-6">
-                          <div class="blog__item">
-                              <div class="blog__item__pic">
-                                  <img src="../../assets/img/blog/blog-3.jpg" alt="">
-                              </div>
-                              <div class="blog__item__text">
-                                  <ul>
-                                      <li><i class="fa fa-calendar-o"></i> May 4, 2019</li>
-                                      <li><i class="fa fa-comment-o"></i> 5</li>
-                                  </ul>
-                                  <h5><a [routerLink]="['/']"> El poder del entrenamiento funcional: cómo mejorar la movilidad y la fuerza</a></h5>
-                                  <p>
-                                    Descubre cómo el entrenamiento funcional puede ayudarte a mejorar la movilidad, la fuerza y la función corporal general. Aprenderás sobre ejercicios específicos y cómo incorporarlos en tu rutina de entrenamiento.
-                                  </p>
-                                  <a [routerLink]="['/articulos']" class="blog_read_more">READ MORE <span class="arrow_right"></span></a>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 col-sm-6">
-                          <div class="blog__item">
-                              <div class="blog__item__pic">
-                                  <img src="../../assets/img/blog/blog-4.jpg" alt="">
-                              </div>
-                              <div class="blog__item__text">
-                                  <ul>
-                                      <li><i class="fa fa-calendar-o"></i> May 4, 2019</li>
-                                      <li><i class="fa fa-comment-o"></i> 5</li>
-                                  </ul>
-                                  <h5><a [routerLink]="['/']">Beneficios del yoga para el entrenamiento físico y la salud mental</a></h5>
-                                  <p>
-                                  Descubre cómo el yoga puede mejorar tu entrenamiento físico y salud mental. Aprenderás sobre las posturas y técnicas de respiración más efectivas para mejorar la flexibilidad, fortalecer los músculos y reducir el estrés.
-                                  </p>
-                                  <a [routerLink]="['/articulos']" class="blog_read_more">READ MORE <span class="arrow_right"></span></a>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 col-sm-6">
-                          <div class="blog__item">
-                              <div class="blog__item__pic">
-                                  <img src="../../assets/img/blog/blog-5.jpg" alt="">
-                              </div>
-                              <div class="blog__item__text">
-                                  <ul>
-                                      <li><i class="fa fa-calendar-o"></i> May 4, 2019</li>
-                                      <li><i class="fa fa-comment-o"></i> 5</li>
-                                  </ul>
-                                  <h5><a [routerLink]="['/']">Entrenamiento de fuerza para principiantes: cómo empezar de manera segura y efectiva</a></h5>
-                                  <p>
-                                    Descripción: Aprende cómo empezar con un entrenamiento de fuerza de manera segura y efectiva. Este artículo te proporcionará información sobre los diferentes tipos de ejercicios de fuerza y cómo incorporarlos en tu rutina de entrenamiento.
-                                  </p>
-                                  <a [routerLink]="['/articulos']" class="blog_read_more">READ MORE <span class="arrow_right"></span></a>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 col-sm-6">
-                          <div class="blog__item">
-                              <div class="blog__item__pic">
-                                  <img src="../../assets/img/blog/blog-6.jpg" alt="">
-                              </div>
-                              <div class="blog__item__text">
-                                  <ul>
-                                      <li><i class="fa fa-calendar-o"></i> May 4, 2019</li>
-                                      <li><i class="fa fa-comment-o"></i> 5</li>
-                                  </ul>
-                                  <h5><a [routerLink]="['/']">Cómo mejorar tu postura: soluciones para la mala postura en el trabajo y en el deporte</a></h5>
-                                  <p>
-                                    En este artículo, aprenderás cómo mejorar tu postura en el trabajo y en el deporte. Descubrirás ejercicios y técnicas que te ayudarán a aliviar el dolor y prevenir lesiones relacionadas con la mala postura.
-                                  </p>
-                                  <a [routerLink]="['/articulos']" class="blog_read_more">READ MORE <span class="arrow_right"></span></a>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-12">
-                          <div class="classes__pagination blog__pagination">
-                              <a [routerLink]="['/']">1</a>
-                              <a [routerLink]="['/']">2</a>
-                              <a [routerLink]="['/']"><span class="arrow_carrot-right"></span></a>
-                          </div>
-                      </div>
                   </div>
               </div>
           </div>
+          <div class="col-12">
+            <div class="classes__pagination">
+                <a *ngIf="numPage > 0"(click)= "paginaAnterior()"><span class="arrow_carrot-left"></span></a>
+                <a>{{numPage+1}}</a>
+                <a *ngIf="(numPage < dataPaginada.totalPages-1)"(click)="siguientePagina()">   <span class="arrow_carrot-right"></span></a>
+            </div>
+        </div>
       </div>
   </section>
   <!-- Blog Section End -->

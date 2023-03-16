@@ -7,7 +7,7 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] { -moz-appearance:textfield; }
 
 #carrito{
-  background-color: #efdfc9;
+  background-color: #f5f3f2;
   min-height: 100vh;
   display: flex;
   align-items: center;

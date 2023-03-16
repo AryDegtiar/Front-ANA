@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { ArticulosComponent } from './blog/articulos/articulos.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'clases', component: ClasesGeneralComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'articulos', component: ArticulosComponent },
   { path: 'carrito', component: CarritoComponent },
+  { path: 'historial', component: HistorialComprasComponent },
+  { path: 'home', redirectTo: '' },
   { path: '**', redirectTo: '' }
 ];
 

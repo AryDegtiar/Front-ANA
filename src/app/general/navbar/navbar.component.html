@@ -1,15 +1,88 @@
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar pb-1 mb-md-5 fixed-top" id="navbar">
   <div class="container">
-  <a class="navbar-brand" routerLink="/">
-    <img src="../../../assets/img/ChakanaLogo.png" width="120" height="30" alt="">
-  </a>
-  <button class="navbar-toggler order-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <ul class="navbar-nav flex-row ml-auto order-1 px-lg-4 p-0" style="gap: 10px;">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/img/ChakanaLogo.png" width="120" height="30" alt="">
+    </a>
+    <button class="navbar-toggler order-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <ul class="account-desktop navbar-nav flex-row ml-auto order-1 px-4" style="gap: 10px;">
+        <li class="nav-item">
+            <a class="text-decoration-none text-w">
+                <button type="button" class="btn btn-orange position-relative me-4" routerLink="/carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                  Carrito
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger px-2">
+                    0
+                  </span>
+                </button>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/registrar">Register</a>
+        </li>
+    </ul> -->
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <button class="navbar-toggler py-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+        <span class="fas fa-arrow-right"></span>
+      </button>
+      <ul class="navbar-nav h-100 d-flex justify-content-center align-items-center">
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="/clases" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Clases
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-muted" routerLink="/subclase">FlexiLab</a>
+              <a class="dropdown-item text-muted" routerLink="/subclase">Stretching</a>
+            </div>
+          </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/blog">Blog</a>
+        </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/contacto">Contact</a>
+        </li>
+
+        <li *ngIf="!estaLogeado" class="nav-item mobile-only">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!estaLogeado" class="nav-item mobile-only">
+          <a class="nav-link" routerLink="/registrar">Register</a>
+        </li>
+      <li class="nav-item mobile-only mt-4">
+        <a class="text-decoration-none text-w">
+            <button type="button" class="btn btn-orange position-relative" routerLink="/carrito">
+                <i class="fas fa-shopping-cart"></i>
+              Carrito
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger px-2">
+                0
+              </span>
+            </button>
+        </a>
+      </li>
+      </ul>
+    </div>
+     <ul class="desktop-only navbar-nav flex-row ml-auto order-1 px-4" style="gap: 10px;">
+
+      <li *ngIf="!estaLogeado" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!estaLogeado" class="nav-item">
+          <a class="nav-link" routerLink="/registrar">Register</a>
+       </li>
       <li class="nav-item">
           <a class="text-decoration-none text-w">
-              <button type="button" class="btn btn-orange position-relative me-lg-4 m-0" routerLink="/carrito">
+              <button type="button" class="btn btn-orange position-relative me-4" routerLink="/carrito">
                   <i class="fas fa-shopping-cart"></i>
                 Carrito
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger px-2">
@@ -18,50 +91,28 @@
               </button>
           </a>
       </li>
-      <li class="nav-item d-none d-lg-inline">
-        <a class="nav-link" routerLink="/login">Login</a>
-      </li>
-      <li class="nav-item d-none d-lg-inline">
-        <a class="nav-link" routerLink="/registrar">Register</a>
-      </li>
-  </ul>
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
-    <button class="navbar-toggler py-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
-      <span class="fas fa-arrow-right"></span>
-    </button>
-    <ul class="navbar-nav h-100 d-flex justify-content-center align-items-center">
-      <li class="nav-item py-2">
-        <a class="nav-link" routerLink="/">Home</a>
-      </li>
-      <li class="nav-item dropdown w-lg-100 text-center">
-          <a class="nav-link dropdown-toggle w-lg-100" routerLink="/clases" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Clases
+      <li>
+        <div *ngIf="estaLogeado" class="dropdown text-end">
+          <a class="d-block link-dark text-decoration-none dropdown-toggle px-2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img
+              src="../../../assets/img/user.png"
+              alt="mdo"
+              width="32"
+              height="32"
+              class="rounded-circle"
+            />
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-muted" routerLink="/subclase">Handstand training</a>
-            <a class="dropdown-item text-muted" routerLink="/subclase">Front training</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-muted" routerLink="/subclase">Yoga training</a>
-          </div>
-        </li>
-      <li class="nav-item py-2">
-        <a class="nav-link" routerLink="/about">About</a>
-      </li>
-      <li class="nav-item py-2">
-        <a class="nav-link" routerLink="/blog">Blog</a>
-      </li>
-      <li class="nav-item py-2">
-        <a class="nav-link" routerLink="/contacto">Contact</a>
-      </li>
-      <li class="nav-item d-lg-none">
-        <hr>
-        <div class="row">
-          <a class="nav-link col-6" routerLink="/login">Login</a>
-          <a class="nav-link col-6" routerLink="/registrar">Register</a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" [routerLink]="['/historial']">Historial de compras</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li><a class="dropdown-item" (click)="logOut()">Cerrar sesion</a></li>
+          </ul>
         </div>
       </li>
+
     </ul>
-  </div>
   </div>
 </nav>
 

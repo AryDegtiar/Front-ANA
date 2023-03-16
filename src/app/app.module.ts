@@ -15,6 +15,9 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { ArticulosComponent } from './blog/articulos/articulos.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,14 @@ import { CarritoComponent } from './carrito/carrito.component';
       AboutComponent,
       BlogComponent,
       ArticulosComponent,
-      CarritoComponent
+      CarritoComponent,
+      HistorialComprasComponent
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

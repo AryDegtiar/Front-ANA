@@ -1,0 +1,25 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+@Injectable({
+  providedIn: 'root'
+})
+export class ArticuloBlogService {
+
+  private url = 'http://localhost:8086/api/v1/articulosblog';
+
+  constructor(private http: HttpClient) {
+
+   }
+     getAllarticulosblog(){
+       return this.http.get(this.url);
+     };
+
+     getarticulosblogById(id: number){
+       return this.http.get(this.url + '/' + id);
+     };
+
+     getarticulosblogPage(page: number){
+       return this.http.get(this.url + "/page?page=" + page + "&size=6");
+     }
+
+}

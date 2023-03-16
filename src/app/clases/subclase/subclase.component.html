@@ -1,17 +1,6 @@
 <!-- Breadcrumb Begin -->
 <section class="breadcrumb-option set-bg imagen">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="breadcrumb__text">
-                  <h2>Handstand training</h2>
-                  <div class="breadcrumb__widget">
-                      <a href="./index.html">Home</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+  
 </section>
 <!-- Breadcrumb End -->
 
@@ -27,7 +16,7 @@
               </div>
           </div>
           <div class="row">
-              <div class="col-lg-4 col-md-6">
+              <div class="col-lg-4 col-md-6" *ngFor="let item of [1,2,3]">
                   <div class="classes__item">
                       <div class="classes__item__pic set-bg">
                           <span>20 Jun 2019</span>
@@ -40,6 +29,8 @@
                       </div>
                   </div>
               </div>
+
+              <!--
               <div class="col-lg-4 col-md-6">
                   <div class="classes__item">
                       <div class="classes__item__pic set-bg">
@@ -66,6 +57,7 @@
                       </div>
                   </div>
               </div>
+-->
           </div>
       </div>
   </section>
