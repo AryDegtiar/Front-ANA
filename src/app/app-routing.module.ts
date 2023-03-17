@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'historial', component: HistorialComprasComponent },
   { path: 'home', redirectTo: '' },
+  { path: 'panelAdmin', loadChildren: () => import('./panel-admin/panel-admin.module').then(m => m.PanelAdminModule) },
   { path: '**', redirectTo: '' }
 ];
 

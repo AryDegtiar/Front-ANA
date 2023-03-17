@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
