@@ -12,12 +12,15 @@ export class ClasesGeneralComponent implements OnInit {
   productosPage:any = [ ];
   dataPaginada : any;
   numPage : number = 0;
+  paginadoTop3Productos : any;
+  top3Productos : any = [];
 
 
   constructor(private productosService: ProductoService, private crd: ChangeDetectorRef){
    }
 
   ngOnInit(): void {
+    /*
    this.productosService.getAllProducts().subscribe(
       (data) => {
         this.productos = data;
@@ -26,8 +29,9 @@ export class ClasesGeneralComponent implements OnInit {
         console.log(this.productos);
         this.crd.detectChanges();
       }
-    );
+    ); */
     this.getProductPage(this.numPage);
+    this.obtenerTop3Productos();
   }
   getProductPage(page: number){
     this.productosService.getProductsPage(this.numPage).subscribe(
@@ -64,6 +68,16 @@ export class ClasesGeneralComponent implements OnInit {
     , error => {
       console.log(error);
     });
+  }
+
+  obtenerTop3Productos(){
+    this.productosService.gettop3ProductsPage(0).subscribe(
+      (data) => {
+        this.paginadoTop3Productos = data;
+        this.top3Productos = this.paginadoTop3Productos.content;
+        this.crd.detectChanges();
+      }
+    );
   }
 
 }

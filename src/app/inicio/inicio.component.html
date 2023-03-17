@@ -215,19 +215,23 @@
               </div>
           </div>
           <div class="row">
-              <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let producto of top3Productos; let i = index">
-                  <div class="classes__item">
-                      <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-1.jpg">
-                        <span class="bg-warning px-2 py-1 text-white "><i class="bi bi-star-fill"></i> Top {{i+1}}</span>
-                      </div>
-                      <div class="classes__item__text">
-                          <p>14 Days | Start on 10th Every Month</p>
-                          <h4><a [routerLink]="['/']">{{producto.nombre}}</a></h4>
-                          <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                          <a (click)="sumarAlCarrito(producto.id)" class="class-btn">Añadir al carrito</a>
-                      </div>
+            <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let producto of top3Productos; let i = index">
+              <div class="classes__item">
+                  <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-1.jpg">
+                    <span class="bg-warning px-2 py-1 text-white"><i class="bi bi-star-fill"></i> Top {{i+1}}</span>
                   </div>
+                  <div class="classes__item__text">
+                    <p>{{producto.nombre}}</p>
+                    <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
+                    <div class="row">
+                     <h6 class="col-8">Ana Hepner <span>- {{producto.categoria}} Teacher</span></h6>
+                     <p class="col-4 text-end pe-5">Online</p>
+                    </div>
+                    <a class="class-btn" (click)="sumarAlCarrito(producto.id)" >Añadir al Carrito</a>
+                   <!-- <a [routerLink]="['/']" class="class-btn">Read More</a> -->
+                </div>
               </div>
+            </div>
           </div>
       </div>
   </section>
