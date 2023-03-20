@@ -224,7 +224,7 @@
                     <p>{{producto.nombre}}</p>
                     <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
                     <div class="row">
-                     <h6 class="col-8">Ana Hepner <span>- {{producto.categoria}} Teacher</span></h6>
+                     <h6 class="col-8">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
                      <p class="col-4 text-end pe-5">Online</p>
                     </div>
                     <a class="class-btn" (click)="sumarAlCarrito(producto.id)" >Añadir al Carrito</a>

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit,ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { CategoriaService } from 'src/app/service/categorias/categoria.service';
 import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
 
 @Component({
@@ -9,13 +10,19 @@ import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
-
+  categorias:any = null;
   estaLogeado = false;
 
-  constructor(private usuarioService: UsuarioService, private cdr: ChangeDetectorRef, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private cdr: ChangeDetectorRef, private router: Router,
+              private categoriaService: CategoriaService) { }
 
   ngOnInit(): void {
     this.verificarLogeo();
+
+    this.categoriaService.getAllcategorias().subscribe(data => {
+      this.categorias = data;
+      this.cdr.detectChanges();
+    });
   }
 
   verificarLogeo(){

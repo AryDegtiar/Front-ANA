@@ -39,8 +39,7 @@
                 Clases
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-muted" routerLink="/subclase">FlexiLab</a>
-              <a class="dropdown-item text-muted" routerLink="/subclase">Stretching</a>
+              <a *ngFor="let categoria of categorias" class="dropdown-item text-muted" routerLink="/subclase">{{categoria.nombre}}</a>
             </div>
           </li>
         <li class="nav-item py-2">

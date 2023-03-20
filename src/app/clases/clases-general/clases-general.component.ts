@@ -1,5 +1,6 @@
 import { ProductoService } from './../../service/productos/producto.service';
 import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { CategoriaService } from 'src/app/service/categorias/categoria.service';
 
 @Component({
   selector: 'app-clases-general',
@@ -8,6 +9,9 @@ import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class ClasesGeneralComponent implements OnInit {
+  categorias:any = null;
+  categoriaSeleccionada = "";
+  nivelSeleccionado = "";
   productos:any = [ ];
   productosPage:any = [ ];
   dataPaginada : any;
@@ -16,32 +20,27 @@ export class ClasesGeneralComponent implements OnInit {
   top3Productos : any = [];
 
 
-  constructor(private productosService: ProductoService, private crd: ChangeDetectorRef){
-   }
+  constructor(private productosService: ProductoService, private crd: ChangeDetectorRef,
+              private categoriaService: CategoriaService){}
 
   ngOnInit(): void {
-    /*
-   this.productosService.getAllProducts().subscribe(
-      (data) => {
-        this.productos = data;
-        console.log(data);
-        console.log("productoslista");
-        console.log(this.productos);
-        this.crd.detectChanges();
-      }
-    ); */
     this.getProductPage(this.numPage);
     this.obtenerTop3Productos();
+
+    this.categoriaService.getAllcategorias().subscribe(data => {
+      this.categorias = data;
+      this.crd.detectChanges();
+    });
   }
+
   getProductPage(page: number){
-    this.productosService.getProductsPage(this.numPage).subscribe(
+    this.productosService.getProductsPage(this.numPage, this.categoriaSeleccionada, this.nivelSeleccionado).subscribe(
       (data) => {
         this.dataPaginada = data;
         this.productosPage = this.dataPaginada.content;
-        console.log(this.dataPaginada);
-        console.log("productoslista");
-        console.log(this.productosPage);
         this.crd.detectChanges();
+        console.log("Productos Page:");
+        console.log(this.productosPage);
       }
     );
   }
@@ -78,6 +77,12 @@ export class ClasesGeneralComponent implements OnInit {
         this.crd.detectChanges();
       }
     );
+  }
+
+  actualizo(){
+    console.log("Actualizo");
+    console.log(this.categoriaSeleccionada);
+    console.log(this.nivelSeleccionado);
   }
 
 }

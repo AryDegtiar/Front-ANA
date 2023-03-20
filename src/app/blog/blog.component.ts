@@ -1,6 +1,8 @@
 import { CategoriaBlogService } from './../service/categoriasBlog/categoria-blog.service';
 import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ArticuloBlogService } from '../service/articulosBlog/articulo-blog.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -8,19 +10,18 @@ import { ArticuloBlogService } from '../service/articulosBlog/articulo-blog.serv
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogComponent implements OnInit {
-  categorias : any;
-  dataPaginada : any;
+  categorias : any = null;
+  dataPaginada : any = null;
   numPage : number = 0;
-  articulosblog : any;
+  articulosblog : any = null;
 
-  constructor(private categoriaService:CategoriaBlogService,private cdr : ChangeDetectorRef, private articuloBlogService:ArticuloBlogService) {
+  constructor(private categoriaService:CategoriaBlogService,private cdr : ChangeDetectorRef, private articuloBlogService:ArticuloBlogService,  private router: Router) {
     }
 
   ngOnInit() {
     this.categoriaService.getAllcategoriasblog().subscribe(data => {
       this.categorias = data;
-      console.log("categorias");
-      console.log(this.categorias);
+      this.cdr.detectChanges();
     });
   }
   redirigirACategoria(){
@@ -54,6 +55,5 @@ export class BlogComponent implements OnInit {
       this.getarticulosblog(this.numPage);
     }
   }
-
 
 }

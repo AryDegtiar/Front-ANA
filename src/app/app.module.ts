@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './general/navbar/navbar.component';
@@ -24,23 +25,24 @@ import { HistorialComprasComponent } from './historial-compras/historial-compras
     AppComponent,
     NavbarComponent,
     FooterComponent,
-      InicioComponent,
-      ClasesGeneralComponent,
-      SubclaseComponent,
-      ContactoComponent,
-      LoginComponent,
-      RegistrarComponent,
-      AboutComponent,
-      BlogComponent,
-      ArticulosComponent,
-      CarritoComponent,
-      HistorialComprasComponent
+    InicioComponent,
+    ClasesGeneralComponent,
+    SubclaseComponent,
+    ContactoComponent,
+    LoginComponent,
+    RegistrarComponent,
+    AboutComponent,
+    BlogComponent,
+    ArticulosComponent,
+    CarritoComponent,
+    HistorialComprasComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

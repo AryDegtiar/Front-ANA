@@ -10,25 +10,26 @@
      <div class="classes__filter">
          <div class="row">
              <div class="col-lg-12">
-                 <form action="#">
+                <!--<form>-->
+                  <div class="formualrio">
                      <div class="class__filter__select">
                          <p>Level:</p>
-                         <select class="class-select nice-select">
+                         <select class="class-select nice-select" [(ngModel)]="nivelSeleccionado" (ngModelChange)="actualizo()">
                             <option class=".option" value="">Todos</option>
-                            <option class=".option" value="">inicial</option>
-                            <option class=".option" value="">intermedio</option>
-                            <option class=".option" value="">avanzado</option>
+                            <option class=".option" value="inicial">Inicial</option>
+                            <option class=".option" value="intermedio">Intermedio</option>
+                            <option class=".option" value="avanzado">Avanzado</option>
                           </select>
                      </div>
                      <div class="class__filter__select ms-4">
                          <p>Style:</p>
-                         <select class="class-select nice-select">
+                         <select class="class-select nice-select" [(ngModel)]="categoriaSeleccionada" (ngModelChange)="actualizo()">
                           <option class=".option" value="">Todos</option>
-                          <option class=".option" value="">Stretching</option>
-                          <option class=".option" value="">Metodo Bata</option>
+                          <option *ngFor="let categoria of categorias" class=".option" [value]="categoria.nombre">{{categoria.nombre}}</option>
                         </select>
                      </div>
-                 </form>
+                  </div>
+                 <!--</form>-->
              </div>
          </div>
      </div>
@@ -41,7 +42,7 @@
                  <div class="classes__item__text">
                      <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
                      <div class="row">
-                      <h6 class="col-8">Ana Hepner <span>- {{producto.categoria}} Teacher</span></h6>
+                      <h6 class="col-8">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
                       <p class="col-4 text-end pe-5">Online</p>
                      </div>
                      <a class="class-btn" (click)="sumarAlCarrito(producto.id)" >Añadir al Carrito</a>
@@ -84,7 +85,7 @@
                   <p>{{producto.nombre}}</p>
                   <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
                   <div class="row">
-                   <h6 class="col-8">Ana Hepner <span>- {{producto.categoria}} Teacher</span></h6>
+                   <h6 class="col-8">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
                    <p class="col-4 text-end pe-5">Online</p>
                   </div>
                   <div class="text-center p-0 m-0">
