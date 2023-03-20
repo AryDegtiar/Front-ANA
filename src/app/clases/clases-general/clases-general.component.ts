@@ -79,10 +79,4 @@ export class ClasesGeneralComponent implements OnInit {
     );
   }
 
-  actualizo(){
-    console.log("Actualizo");
-    console.log(this.categoriaSeleccionada);
-    console.log(this.nivelSeleccionado);
-  }
-
 }

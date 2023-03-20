@@ -14,7 +14,7 @@
                   <div class="formualrio">
                      <div class="class__filter__select">
                          <p>Level:</p>
-                         <select class="class-select nice-select" [(ngModel)]="nivelSeleccionado" (ngModelChange)="actualizo()">
+                         <select class="class-select nice-select" [(ngModel)]="nivelSeleccionado" (ngModelChange)="getProductPage(0)">
                             <option class=".option" value="">Todos</option>
                             <option class=".option" value="inicial">Inicial</option>
                             <option class=".option" value="intermedio">Intermedio</option>
@@ -23,7 +23,7 @@
                      </div>
                      <div class="class__filter__select ms-4">
                          <p>Style:</p>
-                         <select class="class-select nice-select" [(ngModel)]="categoriaSeleccionada" (ngModelChange)="actualizo()">
+                         <select class="class-select nice-select" [(ngModel)]="categoriaSeleccionada" (ngModelChange)="getProductPage(0)">
                           <option class=".option" value="">Todos</option>
                           <option *ngFor="let categoria of categorias" class=".option" [value]="categoria.nombre">{{categoria.nombre}}</option>
                         </select>
@@ -37,10 +37,11 @@
          <div class="col-lg-4 col-md-6" *ngFor="let producto of productosPage">
              <div class="classes__item classes__item__page">
                  <div class="classes__item__pic set-bg object-fit-cover">
-                     <span>{{producto.nombre}}</span>
+                     <span>{{producto.nivel}}</span>
                  </div>
                  <div class="classes__item__text">
-                     <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
+                     <h4 class="mb-2"><a>{{producto.nombre}}</a></h4>
+                     <p class="mb-3">{{producto.descripcion}}</p>
                      <div class="row">
                       <h6 class="col-8">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
                       <p class="col-4 text-end pe-5">Online</p>

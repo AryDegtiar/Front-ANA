@@ -22,11 +22,11 @@ export class ProductoService {
           if(categoria == "" && nivel == ""){
             return this.http.get(this.url + "/page?page=" + page + "&size=6");
           }else if(categoria == "" && nivel != ""){
-            return this.http.get(this.url + "/filtros?page=" + page + "&size=6&nivel=" + nivel);
+            return this.http.get(this.url + "/filtrar?page=" + page + "&size=6&nivel=" + nivel);
           }else if(categoria != "" && nivel == ""){
-            return this.http.get(this.url + "/filtros?page=" + page + "&size=6&categoria=" + categoria);
+            return this.http.get(this.url + "/filtrar?page=" + page + "&size=6&categoria=" + categoria);
           }else{
-            return this.http.get(this.url + "/filtros?page=" + page + "&size=6&categoria=" + categoria + "&nivel=" + nivel);
+            return this.http.get(this.url + "/filtrar?page=" + page + "&size=6&categoria=" + categoria + "&nivel=" + nivel);
           }
         }
 
