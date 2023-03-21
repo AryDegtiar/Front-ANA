@@ -1,4 +1,8 @@
 #modificarProductos{
-  height: 100vh;
-  background-color: #1d1d1d;
+  height: 200vh;
+  background-color: #58787f;
+}
+
+.form-control{
+  background-color: #f5f3f2;
 }

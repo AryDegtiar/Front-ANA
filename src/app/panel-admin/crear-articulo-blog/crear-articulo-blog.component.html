@@ -1,33 +1,56 @@
-<!-- CARGA DE PRODUCTOS -->
 <section id="modificarProductos">
   <div class="container pt-5">
     <div class="p-5 rounded text-white" data-aos="zoom-in" data-aos-duration="500">
-        <legend>Crear producto</legend>
-        <div class="mb-3">
-          <label class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Descripcion</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Url ficha tecnica</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la url de la ficha tecnica">
-        </div>
-        <!--
-        <div class="mb-3">
-          <label class="form-label">Url imagen</label>
-          <input [(ngModel)]="producto.imagen" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la url de la imagen">
-        </div>
-        -->
-        <div class="mb-4">
-          <label class="form-label w-100">Imagen</label>
-          <input type="file" class="rounded">
-        </div>
-        <button type="submit" class="btn btn-secondary me-4" routerLink="/administrar/productos">Cancelar</button>
-        <button  type="submit" class="btn btn-success" >Generar</button>
-        <button  type="submit" class="btn btn-warning dissabled" disabled>Cargando...</button>
+      <legend>Crear artículo de blog</legend>
+
+      <div class="mb-3">
+        <label class="form-label">Título</label>
+        <input type="text" class="form-control" placeholder="Ingrese el nombre">
       </div>
+      <div class="mb-3">
+        <label class="form-label">Breve Introduccion</label>
+        <textarea class="form-control" placeholder="Ingrese descripcion" rows="4"></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="form-label w-100">Imagen</label>
+        <input type="file" class="rounded">
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label w-100">Video</label>
+        <input type="file" class="rounded">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Subtítulo 1</label>
+        <input type="text" class="form-control" placeholder="Ingrese la descripción">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Párrafo 1</label>
+        <textarea class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Subtítulo 2</label>
+        <input type="text" class="form-control" placeholder="Ingrese la descripción">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Párrafo 2</label>
+        <textarea class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Subtítulo 3</label>
+        <input type="text" class="form-control" placeholder="Ingrese la descripción">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Párrafo 3</label>
+        <textarea class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-secondary me-4" routerLink="/administrar/productos">Cancelar</button>
+      <button type="submit" class="btn btn-success">Generar</button>
+      <button type="submit" class="btn btn-warning disabled" disabled>Cargando...</button>
+    </div>
   </div>
 </section>

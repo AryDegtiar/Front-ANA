@@ -12,6 +12,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ArticulosComponent } from './blog/articulos/articulos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'clases', component: ClasesGeneralComponent },
@@ -24,8 +25,8 @@ const routes: Routes = [
   { path: 'articulos', component: ArticulosComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'historial', component: HistorialComprasComponent },
+  { path: 'paneladmin', loadChildren: () => import('./panel-admin/panel-admin.module').then(m => m.PanelAdminModule) },
   { path: 'home', redirectTo: '' },
-  { path: 'panelAdmin', loadChildren: () => import('./panel-admin/panel-admin.module').then(m => m.PanelAdminModule) },
   { path: '**', redirectTo: '' }
 ];
 

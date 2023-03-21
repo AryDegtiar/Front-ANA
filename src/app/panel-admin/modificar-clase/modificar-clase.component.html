@@ -1,32 +1,47 @@
 <!-- CARGA DE PRODUCTOS -->
-<section id="modificarProductos" style="height: 100vh;">
+<section id="modificarProductos">
   <div class="container pt-5">
     <div class="p-5 rounded text-white" data-aos="zoom-in" data-aos-duration="500">
-        <legend>Modifique los campos elegidos</legend>
+        <legend>Modificar clase</legend>
         <div class="mb-3">
           <label class="form-label">Nombre</label>
-          <input type="text"  class="form-control" id="exampleInputEmail1" placeholder="producto.nombre">
+          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
         </div>
         <div class="mb-3">
           <label class="form-label">Descripcion</label>
-          <input type="text"  class="form-control" id="exampleInputEmail1" placeholder="producto.descripcion">
+          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
         </div>
         <div class="mb-3">
-          <label class="form-label">Url ficha tecnica</label>
-          <input type="text"  class="form-control" id="exampleInputEmail1" placeholder="producto.fichaTecnica">
+          <label class="form-label">nivel</label>
+          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nivel de la clase">
         </div>
+        <div class="mb-3">
+          <label class="form-label">categoria</label>
+          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese categoria de la clase">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">precio en pesos</label>
+          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">precio en dolares</label>
+          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+        </div>
+
         <!--
         <div class="mb-3">
           <label class="form-label">Url imagen</label>
-          <input type="text" [(ngModel)]="producto.imagen" class="form-control" id="exampleInputEmail1" placeholder="{{producto.imagen}}">
+          <input [(ngModel)]="producto.imagen" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la url de la imagen">
         </div>
         -->
         <div class="mb-4">
           <label class="form-label w-100">Imagen</label>
           <input type="file" class="rounded">
         </div>
+
         <button type="submit" class="btn btn-secondary me-4" routerLink="/administrar/productos">Cancelar</button>
-        <button  type="submit"  class="btn btn-warning">Modificar</button>
+        <button  type="submit" class="btn btn-success" >Generar</button>
         <button  type="submit" class="btn btn-warning dissabled" disabled>Cargando...</button>
       </div>
   </div>
+</section>
