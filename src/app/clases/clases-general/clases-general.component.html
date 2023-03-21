@@ -56,7 +56,7 @@
              <div class="classes__pagination">
                  <a *ngIf="numPage > 0"(click)= "paginaAnterior()"><span class="arrow_carrot-left"></span></a>
                  <a>{{numPage+1}}</a>
-                 <a *ngIf="(numPage < dataPaginada.totalPages-1)"(click)="siguientePagina()">   <span class="arrow_carrot-right"></span></a>
+                 <a *ngIf="(numPage < totalPages-1)"(click)="siguientePagina()">   <span class="arrow_carrot-right"></span></a>
              </div>
          </div>
      </div>

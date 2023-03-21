@@ -15,6 +15,7 @@ export class ClasesGeneralComponent implements OnInit {
   productos:any = [ ];
   productosPage:any = [ ];
   dataPaginada : any;
+  totalPages : number = 0;
   numPage : number = 0;
   paginadoTop3Productos : any;
   top3Productos : any = [];

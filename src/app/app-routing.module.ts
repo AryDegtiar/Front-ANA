@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'registrar', component: RegistrarComponent },
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent },
-  { path: 'articulos', component: ArticulosComponent },
+  { path: 'articulos/:id', component: ArticulosComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'historial', component: HistorialComprasComponent },
   { path: 'home', redirectTo: '' },

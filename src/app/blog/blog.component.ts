@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class BlogComponent implements OnInit {
   categorias : any = null;
   dataPaginada : any = null;
+  totalPages : number = 0;
   numPage : number = 0;
   articulosblog : any = null;
 
@@ -23,10 +24,8 @@ export class BlogComponent implements OnInit {
       this.categorias = data;
       this.cdr.detectChanges();
     });
-  }
-  redirigirACategoria(){
 
-    console.log("redirigirACategoria");
+    this.getarticulosblog(this.numPage);
   }
 
   getarticulosblog(page: number){
@@ -35,9 +34,6 @@ export class BlogComponent implements OnInit {
       (data) => {
         this.dataPaginada = data;
         this.articulosblog = this.dataPaginada.content;
-        console.log(this.dataPaginada);
-        console.log("articulosbloglista");
-        console.log(this.articulosblog);
         this.cdr.detectChanges();
       }
     );

@@ -11,29 +11,28 @@
                   <div class="blog__sidebar ">
                       <div class="blog__sidebar__categories">
                           <h4>Categories</h4>
-                          <ul>
-                              <li *ngFor="let categoria of categorias"><a (click)="redirigirACategoria()" >{{categoria.nombre}}</a></li>
+                          <ul class="ps-2">
+                              <li *ngFor="let categoria of categorias"><a>{{categoria.nombre}}</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
               <div class="col-lg-8 order-lg-2 order-1">
                   <div class="row">
-                      <div class="col-lg-6 col-sm-6" *ngFor="let item of [1,2,3,4]">
+                      <div class="col-lg-6 col-sm-6" *ngFor="let articulo of articulosblog">
                           <div class="blog__item">
                               <div class="blog__item__pic">
                                   <img src="../../assets/img/blog/blog-1.jpg" alt="">
                               </div>
                               <div class="blog__item__text">
                                   <ul>
-                                      <li><i class="fa fa-calendar-o"></i> May 4, 2019</li>
-                                      <li><i class="fa fa-comment-o"></i> 5</li>
+                                      <li><i class="fa fa-calendar-o"></i>{{articulo.fechaCreacion}}</li>
                                   </ul>
-                                  <h5><a>Cómo mejorar la flexibilidad con estiramientos dinámicos</a></h5>
+                                  <h5><a>{{articulo.titulo}}</a></h5>
                                   <p>
                                     En este artículo exploraremos cómo mejorar la flexibilidad mediante estiramientos dinámicos en lugar de estáticos, y por qué son más efectivos para prevenir lesiones y mejorar el rendimiento.
                                   </p>
-                                  <a routerLink="/articulos" class="blog_read_more">READ MORE <span class="arrow_right"></span></a>
+                                  <a [routerLink]="['/articulos', articulo.id]" class="blog_read_more">READ MORE <span class="arrow_right"></span></a>
                               </div>
                           </div>
                       </div>
@@ -44,7 +43,7 @@
             <div class="classes__pagination">
                 <a *ngIf="numPage > 0"(click)= "paginaAnterior()"><span class="arrow_carrot-left"></span></a>
                 <a>{{numPage+1}}</a>
-                <a *ngIf="(numPage < dataPaginada.totalPages-1)"(click)="siguientePagina()">   <span class="arrow_carrot-right"></span></a>
+                <a *ngIf="(numPage < totalPages-1)"(click)="siguientePagina()">   <span class="arrow_carrot-right"></span></a>
             </div>
         </div>
       </div>
