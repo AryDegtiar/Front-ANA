@@ -6,7 +6,7 @@ import { CrearArticuloBlogComponent } from './crear-articulo-blog/crear-articulo
 import { CrearClaseComponent } from './crear-clase/crear-clase.component';
 import { ModificarArticuloBlogComponent } from './modificar-articulo-blog/modificar-articulo-blog.component';
 import { ModificarClaseComponent } from './modificar-clase/modificar-clase.component';
-
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 const routes: Routes = [
   { path: '', component: PanelClasesComponent},
   { path: 'creararticulo', component: CrearArticuloBlogComponent},
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'modificarclase', component: ModificarClaseComponent},
   { path: 'panelarticulos', component: PanelArticulosBlogComponent},
   { path: 'panelclases', component: PanelClasesComponent},
+  { path: 'homeadmin', component: HomeAdminComponent},
   { path: 'home', redirectTo: '' },
   { path: '**', redirectTo: '' }
 ];

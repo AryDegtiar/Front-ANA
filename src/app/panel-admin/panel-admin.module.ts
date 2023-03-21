@@ -7,6 +7,7 @@ import { PanelArticulosBlogComponent } from './panel-articulos-blog/panel-articu
 import { PanelClasesComponent } from './panel-clases/panel-clases.component';
 import { CrearArticuloBlogComponent } from './crear-articulo-blog/crear-articulo-blog.component';
 import { CrearClaseComponent } from './crear-clase/crear-clase.component';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CrearClaseComponent } from './crear-clase/crear-clase.component';
     ModificarArticuloBlogComponent,
     ModificarClaseComponent,
     PanelArticulosBlogComponent,
-    PanelClasesComponent
+    PanelClasesComponent,
+    HomeAdminComponent
   ],
   imports: [
     CommonModule,
