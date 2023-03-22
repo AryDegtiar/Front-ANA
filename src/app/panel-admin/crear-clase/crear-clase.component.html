@@ -11,14 +11,19 @@
           <label class="form-label">Descripcion</label>
           <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
         </div>
+        <!--
         <div class="mb-3">
-          <label class="form-label">nivel</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nivel de la clase">
+          <label class="form-label">Nivel</label>
+          <select class="form-select" [(ngModel)]="nivelSeleccionado">
+            <option *ngFor="let opcion of opcionesNivel" [value]="opcion.id">{{ opcion.nombre }}</option>
+          </select>
         </div>
         <div class="mb-3">
-          <label class="form-label">categoria</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese categoria de la clase">
-        </div>
+          <label class="form-label">Categoría</label>
+          <select class="form-select" [(ngModel)]="categoriaSeleccionada">
+            <option *ngFor="let opcion of opcionesCategoria" [value]="opcion.id">{{ opcion.nombre }}</option>
+          </select>
+        </div>-->
         <div class="mb-3">
           <label class="form-label">precio en pesos</label>
           <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
@@ -38,7 +43,7 @@
           <label class="form-label w-100">Imagen</label>
           <input type="file" class="rounded">
         </div>
-        
+
         <button type="submit" class="btn btn-secondary me-4" routerLink="/administrar/productos">Cancelar</button>
         <button  type="submit" class="btn btn-success" >Generar</button>
         <button  type="submit" class="btn btn-warning dissabled" disabled>Cargando...</button>

@@ -2,7 +2,8 @@ section
 {
   display: flex ;
   width: 600px;
-  height: 430px;
+  height: 730px;
+  margin: auto;
 }
 
 section img{
