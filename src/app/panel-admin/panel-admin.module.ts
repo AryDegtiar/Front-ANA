@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PanelAdminRoutingModule } from './panel-admin-routing.module';
@@ -21,7 +22,8 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
   ],
   imports: [
     CommonModule,
-    PanelAdminRoutingModule
+    PanelAdminRoutingModule,
+    FormsModule
   ]
 })
 export class PanelAdminModule { }

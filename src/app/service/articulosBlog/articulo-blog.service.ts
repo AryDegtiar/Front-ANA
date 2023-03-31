@@ -22,4 +22,8 @@ export class ArticuloBlogService {
        return this.http.get(this.url + "/page?page=" + page + "&size=6");
      }
 
+     postarticulosBlog(articulo: any){
+      return this.http.post(this.url, articulo);
+     }
+
 }
