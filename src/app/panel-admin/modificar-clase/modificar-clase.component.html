@@ -5,11 +5,11 @@
         <legend>Modificar clase</legend>
         <div class="mb-3">
           <label class="form-label">Nombre</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
+          <input [(ngModel)]="nombre" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
         </div>
         <div class="mb-3">
           <label class="form-label">Descripcion</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
+          <input [(ngModel)]="descripcion"  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
         </div>
         <div class="mb-3">
           <label class="form-label">nivel</label>
@@ -21,11 +21,11 @@
         </div>
         <div class="mb-3">
           <label class="form-label">precio en pesos</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+          <input [(ngModel)]="precioPesos" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
         </div>
         <div class="mb-3">
           <label class="form-label">precio en dolares</label>
-          <input  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+          <input [(ngModel)]="precioDolares" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
         </div>
 
         <!--
@@ -36,12 +36,12 @@
         -->
         <div class="mb-4">
           <label class="form-label w-100">Imagen</label>
-          <input type="file" class="rounded">
+          <input [(ngModel)]="Urlimagen" type="file" class="rounded">
         </div>
 
-        <button type="submit" class="btn btn-secondary me-4" routerLink="/administrar/productos">Cancelar</button>
+        <button  class="btn btn-secondary me-4" routerLink="">Cancelar</button>
         <button  type="submit" class="btn btn-success" >Generar</button>
-        <button  type="submit" class="btn btn-warning dissabled" disabled>Cargando...</button>
+        <button  class="btn btn-warning dissabled" disabled>Cargando...</button>
       </div>
   </div>
 </section>

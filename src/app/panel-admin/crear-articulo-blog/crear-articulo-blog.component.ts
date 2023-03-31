@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 
 export class CrearArticuloBlogComponent implements OnInit {
 
-  urlImagen: string = "";
+    urlImagen: string = "";
     titulo: string = "";
     video: string = "";
     breveIntroduccion: string = "";
@@ -46,25 +46,33 @@ export class CrearArticuloBlogComponent implements OnInit {
   }
 
   crearArticulo(event: any){
-    console.log ("entre a la funcion"); 
+    console.log ("entre a la funcion");
+
+    this.articulo.urlImagen = this.urlImagen;
+    this.articulo.titulo = this.titulo;
+    this.articulo.video = this.video;
+    this.articulo.breveIntroduccion = this.breveIntroduccion;
+    this.articulo.subtitulo1 = this.subtitulo1;
+    this.articulo.descripcion1 = this.descripcion1;
+    this.articulo.subtitulo2 = this.subtitulo2;
+    this.articulo.descripcion2 = this.descripcion2;
+    this.articulo.subtitulo3 = this.subtitulo3;
+    this.articulo.descripcion3 = this.descripcion3;
+    this.articulo.categoriaBlogId = this.categoriaBlogId;
+
+    console.log(this.titulo , "titulo es igual a:");
+
+   // for (const key in this.articulo) {
+    //  for (const elemento of event.target) {
+      //  if (Object.prototype.hasOwnProperty.call(elemento.name, key)) {
+      //      this.articulo[key] = elemento.value;
+      //  }
+    //  }
+   // }
 
     // for (let i = 0; i < event.target.length; i++) {
     //   console.log(event.target[i].value);
     // }
-
-
-
-    for (const key in this.articulo) {
-      for (const elemento of event.target) {
-        if (Object.prototype.hasOwnProperty.call(elemento.name, key)) {
-            this.articulo[key] = elemento.value;
-        }
-      }
-    }
-
-
-
-
 
     // console.log (event.target.urlImagen);
     // console.log (event.target.titulo);

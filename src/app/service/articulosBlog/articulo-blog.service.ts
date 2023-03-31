@@ -26,4 +26,15 @@ export class ArticuloBlogService {
       return this.http.post(this.url, articulo);
      }
 
+     putarticulosBlog(articulo: any){
+      return this.http.put(this.url, articulo);
+     }
+     patcharticulosBlog(articulo: any){
+      return this.http.patch(this.url, articulo);
+     }
+     deletearticulosBlog(id: number){
+        return this.http.delete(this.url + '/' + id);
+     }
+
+
 }
