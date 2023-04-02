@@ -5,15 +5,15 @@
       <form (ngSubmit)="crearArticulo($event)">
           <div class="mb-3">
             <label class="form-label">Título</label>
-            <input [(ngModel)]="titulo" type="text" class="form-control" placeholder="Ingrese el nombre">
+            <input [(ngModel)]="articulo.titulo" name="titulo" type="text" class="form-control" placeholder="Ingrese el nombre">
           </div>
           <div class="mb-3">
             <label class="form-label">Breve Introduccion</label>
-            <textarea [(ngModel)]="breveIntroduccion" class="form-control" placeholder="Ingrese descripcion" rows="4"></textarea>
+            <textarea [(ngModel)]="articulo.breveIntroduccion" name="introduccion" class="form-control" placeholder="Ingrese descripcion" rows="4"></textarea>
           </div>
           <div class="mb-4">
             <label  class="form-label w-100">Imagen</label>
-            <input [(ngModel)]="urlImagen" type="file" class="rounded">
+            <input [(ngModel)]="articulo.urlImagen" name="imagen" type="file" class="rounded">
           </div>
           <!--
             <div class="mb-3">
@@ -24,34 +24,34 @@
             </div>-->
           <div class="mb-4">
             <label  class="form-label w-100">Video</label>
-            <input [(ngModel)]="video" type="file" class="rounded">
+            <input [(ngModel)]="articulo.video" name="video" type="file" class="rounded">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Subtítulo 1</label>
-            <input [(ngModel)]="subtitulo1" type="text" class="form-control" placeholder="Ingrese la descripción">
+            <input [(ngModel)]="articulo.subtitulo1" name="subtitulo1" type="text" class="form-control" placeholder="Ingrese la descripción">
           </div>
           <div class="mb-3">
             <label class="form-label">Párrafo 1</label>
-            <textarea [(ngModel)]="descripcion1" class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
+            <textarea [(ngModel)]="articulo.descripcion1" name="parrafo1" class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Subtítulo 2</label>
-            <input [(ngModel)]="subtitulo2" type="text" class="form-control" placeholder="Ingrese la descripción">
+            <input [(ngModel)]="articulo.subtitulo2" name="subtitulo2" type="text" class="form-control" placeholder="Ingrese la descripción">
           </div>
           <div class="mb-3">
             <label class="form-label">Párrafo 2</label>
-            <textarea [(ngModel)]="descripcion2" class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
+            <textarea [(ngModel)]="articulo.descripcion2" name="parrafo2" class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Subtítulo 3</label>
-            <input [(ngModel)]="subtitulo3" type="text" class="form-control" placeholder="Ingrese la descripción">
+            <input [(ngModel)]="articulo.subtitulo3" name="subtitulo3" type="text" class="form-control" placeholder="Ingrese la descripción">
           </div>
           <div class="mb-3">
             <label class="form-label">Párrafo 3</label>
-            <textarea [(ngModel)]="descripcion3" class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
+            <textarea [(ngModel)]="articulo.descripcion3" name="parrafo3" class="form-control" placeholder="Ingrese la descripción" rows="4"></textarea>
           </div>
 
           <button  class="btn btn-secondary me-4" routerLink="/administrar/productos">Cancelar</button>

@@ -11,19 +11,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 
 export class CrearArticuloBlogComponent implements OnInit {
 
-    urlImagen: string = "";
-    titulo: string = "";
-    video: string = "";
-    breveIntroduccion: string = "";
-    subtitulo1: string = "";
-    descripcion1: string = "";
-    subtitulo2: string = "";
-    descripcion2: string = "";
-    subtitulo3: string = "";
-    descripcion3: string = "";
-    categoriaBlogId: number = 0;
-
-
   articulo: any = {
 
     urlImagen:"",
@@ -36,7 +23,9 @@ export class CrearArticuloBlogComponent implements OnInit {
     descripcion2:"",
     subtitulo3:"",
     descripcion3:"",
-    categoriaBlog:"",
+    categoriaBlog:{
+      id:0,
+    },
     admin:""
   }
 
@@ -48,44 +37,9 @@ export class CrearArticuloBlogComponent implements OnInit {
   crearArticulo(event: any){
     console.log ("entre a la funcion");
 
-    this.articulo.urlImagen = this.urlImagen;
-    this.articulo.titulo = this.titulo;
-    this.articulo.video = this.video;
-    this.articulo.breveIntroduccion = this.breveIntroduccion;
-    this.articulo.subtitulo1 = this.subtitulo1;
-    this.articulo.descripcion1 = this.descripcion1;
-    this.articulo.subtitulo2 = this.subtitulo2;
-    this.articulo.descripcion2 = this.descripcion2;
-    this.articulo.subtitulo3 = this.subtitulo3;
-    this.articulo.descripcion3 = this.descripcion3;
-    this.articulo.categoriaBlogId = this.categoriaBlogId;
+    console.log(this.articulo);
 
-    console.log(this.titulo , "titulo es igual a:");
-
-   // for (const key in this.articulo) {
-    //  for (const elemento of event.target) {
-      //  if (Object.prototype.hasOwnProperty.call(elemento.name, key)) {
-      //      this.articulo[key] = elemento.value;
-      //  }
-    //  }
-   // }
-
-    // for (let i = 0; i < event.target.length; i++) {
-    //   console.log(event.target[i].value);
-    // }
-
-    // console.log (event.target.urlImagen);
-    // console.log (event.target.titulo);
-    // console.log (event.target.video);
-    // console.log (event.target.breveIntroduccion);
-    // console.log (event.target.subtitulo1);
-    // console.log (event.target.descripcion1);
-    // console.log (event.target.subtitulo2);
-    // console.log (event.target.descripcion2);
-    // console.log (event.target.subtitulo3);
-    // console.log (event.target.descripcion3);
-    // console.log (event.target.categoriaBlogId);
-    // console.log (event);
+    this.cdr.detectChanges();
   }
 
 }
