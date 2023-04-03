@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModificarArticuloBlogComponent implements OnInit {
-
+/*
   urlImagen: string = "";
     titulo: string = "";
     video: string = "";
@@ -21,7 +21,7 @@ export class ModificarArticuloBlogComponent implements OnInit {
     subtitulo3: string = "";
     descripcion3: string = "";
     categoriaBlogId: number = 0;
-
+*/
 
   articulo: any = {
 
@@ -47,6 +47,13 @@ export class ModificarArticuloBlogComponent implements OnInit {
 
   modificarArticulo(event: any){
     console.log ("entre a la funcion");
+
+    console.log(this.articulo);
+
+    this.cdr.detectChanges();
+
+
+  /*
     console.log (event.target.urlImagen);
     console.log (event.target.titulo);
     console.log (event.target.video);
@@ -59,7 +66,7 @@ export class ModificarArticuloBlogComponent implements OnInit {
     console.log (event.target.descripcion3);
     console.log (event.target.categoriaBlogId);
     console.log (event);
-    
+    */
   }
 
 }

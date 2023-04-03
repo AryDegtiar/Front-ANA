@@ -11,21 +11,21 @@ import { Router } from '@angular/router';
 })
 export class CrearClaseComponent  implements OnInit {
 
-  nombre: string = "";
-  descripcion: string = "";
-  precioPesos: number = 0;
-  precioDolares: number = 0;
-  Urlimagen: string = "";
+  //nombre: string = "";
+  //descripcion: string = "";
+ // precioPesos: number = 0;
+  //precioDolares: number = 0;
+  //urlImagen: string = "";
 
   clase: any = {
     nombre: "",
     descripcion: "",
     precioPesos: 0,
     precioDolares: 0,
-    Urlimagen: ""
+    urlImagen: ""
   }
 
-  constructor(private ProductoService:ProductoService, cdr:ChangeDetectorRef, private router:Router) { }
+  constructor(private ProductoService:ProductoService, private cdr:ChangeDetectorRef, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -33,14 +33,9 @@ export class CrearClaseComponent  implements OnInit {
   crearClase(event:any){
     console.log("entre a la funcion");
 
-      for (const key in this.clase) {
-        for (const elemento of event.target) {
-            if (Object.prototype.hasOwnProperty.call(elemento.name, key)) {
-                this.clase[key] = elemento.value;
-            }
-        }
-      }
-      console.log(this.clase);
+    console.log(this.clase);
+
+    this.cdr.detectChanges();
   }
 
 }

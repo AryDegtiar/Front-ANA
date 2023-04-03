@@ -9,18 +9,12 @@ import { Router } from '@angular/router';
 })
 export class ModificarClaseComponent {
 
-  nombre: string = "";
-  descripcion: string = "";
-  precioPesos: number = 0;
-  precioDolares: number = 0;
-  Urlimagen: string = "";
-
   clase: any = {
     nombre: "",
     descripcion: "",
     precioPesos: 0,
     precioDolares: 0,
-    Urlimagen: ""
+    urlImagen: ""
   }
 
   constructor(private ProductoService:ProductoService ,private cdr:ChangeDetectorRef, private router:Router) { }
@@ -31,6 +25,11 @@ export class ModificarClaseComponent {
   modificarClase(event:any){
     console.log("entre a la funcion");
 
+    console.log(this.clase);
+
+    this.cdr.detectChanges();
+    
+    /*
       for (const key in this.clase) {
         for (const elemento of event.target) {
             if (Object.prototype.hasOwnProperty.call(elemento.name, key)) {
@@ -38,6 +37,8 @@ export class ModificarClaseComponent {
             }
         }
       }
+
+*/
   }
 
 }

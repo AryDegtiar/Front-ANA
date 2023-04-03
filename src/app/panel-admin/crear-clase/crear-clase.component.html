@@ -5,11 +5,11 @@
         <legend>Crear clase</legend>
         <div class="mb-3">
           <label class="form-label">Nombre</label>
-          <input [(ngModel)]="nombre" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
+          <input [(ngModel)]="clase.nombre" name="nombre" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
         </div>
         <div class="mb-3">
           <label class="form-label">Descripcion</label>
-          <input [(ngModel)]="descripcion" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
+          <input [(ngModel)]="clase.descripcion" name="descripcion" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
         </div>
         <!--
         <div class="mb-3">
@@ -26,11 +26,11 @@
         </div>-->
         <div class="mb-3">
           <label class="form-label">precio en pesos</label>
-          <input [(ngModel)]="precioPesos" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+          <input [(ngModel)]="clase.precioPesos" name="presioPesos" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
         </div>
         <div class="mb-3">
           <label class="form-label">precio en dolares</label>
-          <input [(ngModel)]="precioDolares"  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+          <input [(ngModel)]="clase.precioDolares" name="precioDolares" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
         </div>
 
         <!--
@@ -41,7 +41,7 @@
         -->
         <div class="mb-4">
           <label class="form-label w-100">Imagen</label>
-          <input [(ngModel)]="Urlimagen" type="file" class="rounded">
+          <input [(ngModel)]="clase.urlImagen" name="urlImagen" type="file" class="rounded">
         </div>
 
         <button  class="btn btn-secondary me-4" routerLink="/administrar/productos">Cancelar</button>
