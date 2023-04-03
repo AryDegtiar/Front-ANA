@@ -3,13 +3,14 @@
   <div class="container pt-5">
     <div class="p-5 rounded text-white" data-aos="zoom-in" data-aos-duration="500">
         <legend>Modificar clase</legend>
+        <form (ngSubmit)="modificarClase($event)">
         <div class="mb-3">
           <label class="form-label">Nombre</label>
-          <input [(ngModel)]="clase.nombre" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
+          <input [(ngModel)]="clase.nombre" type="text" name="nombre" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el nombre">
         </div>
         <div class="mb-3">
           <label class="form-label">Descripcion</label>
-          <input [(ngModel)]="clase.descripcion"  type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
+          <input [(ngModel)]="clase.descripcion"  type="text" name="descripcion" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la descripcion">
         </div>
         <div class="mb-3">
           <label class="form-label">nivel</label>
@@ -21,11 +22,11 @@
         </div>
         <div class="mb-3">
           <label class="form-label">precio en pesos</label>
-          <input [(ngModel)]="clase.precioPesos" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+          <input [(ngModel)]="clase.precioPesos" type="text" name="precioPesos" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
         </div>
         <div class="mb-3">
           <label class="form-label">precio en dolares</label>
-          <input [(ngModel)]="clase.precioDolares" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
+          <input [(ngModel)]="clase.precioDolares" type="text" name="precioDolares" class="form-control" id="exampleInputEmail1" placeholder="Ingrese precio de la clase">
         </div>
 
         <!--
@@ -36,12 +37,14 @@
         -->
         <div class="mb-4">
           <label class="form-label w-100">Imagen</label>
-          <input [(ngModel)]="clase.urlImagen" type="file" class="rounded">
+          <input [(ngModel)]="clase.urlImagen" type="file" name="imagen" class="rounded">
         </div>
 
         <button  class="btn btn-secondary me-4" routerLink="">Cancelar</button>
         <button  type="submit" class="btn btn-success" >Generar</button>
         <button  class="btn btn-warning dissabled" disabled>Cargando...</button>
+      </form>
+
       </div>
   </div>
 </section>
