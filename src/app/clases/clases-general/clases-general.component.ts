@@ -39,6 +39,7 @@ export class ClasesGeneralComponent implements OnInit {
       (data) => {
         this.dataPaginada = data;
         this.productosPage = this.dataPaginada.content;
+        this.totalPages = this.dataPaginada.totalPages;
         this.crd.detectChanges();
         console.log("Productos Page:");
         console.log(this.productosPage);
