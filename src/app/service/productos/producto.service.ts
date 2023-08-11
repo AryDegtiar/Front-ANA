@@ -40,4 +40,21 @@ export class ProductoService {
           }
           return this.http.put(this.url + "/" + productoID + "/sumarVisita", sumarVisitaDTO);
         }
+
+        postcrearClase(producto: any){
+          return this.http.post(this.url, producto);
+        }
+
+        putcrearClase(producto: any){
+          return this.http.put(this.url, producto);
+        }
+
+        patchcrearClase( producto: any){
+          return this.http.patch(this.url, producto);
+        }
+
+        deletecrearClase(id: number){
+          return this.http.delete(this.url + '/' + id);
+        }
+
 }
