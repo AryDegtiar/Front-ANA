@@ -1,4 +1,4 @@
-import { ProductoService } from './../../service/productos/producto.service';
+import { ClasesService } from '../../service/clases/clases.service';
 import { ChangeDetectionStrategy, Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -25,7 +25,7 @@ export class CrearClaseComponent  implements OnInit {
     urlImagen: ""
   }
 
-  constructor(private ProductoService:ProductoService, private cdr:ChangeDetectorRef, private router:Router) { }
+  constructor(private ClasesService:ClasesService, private cdr:ChangeDetectorRef, private router:Router) { }
 
   ngOnInit(): void {
   }

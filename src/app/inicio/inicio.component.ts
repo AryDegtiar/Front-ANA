@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductoService } from '../service/productos/producto.service';
+import { ClasesService } from '../service/clases/clases.service';
 import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
@@ -13,14 +13,14 @@ export class InicioComponent implements OnInit {
   paginadoTop3Productos: any;
   top3Productos: any = [];
 
-  constructor(private productoService: ProductoService, private cdr: ChangeDetectorRef) { }
+  constructor(private ClasesService: ClasesService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.obtenerTop3Productos();
   }
 
   obtenerTop3Productos(){
-    this.productoService.gettop3ProductsPage(0).subscribe(
+    this.ClasesService.gettop3ProductsPage(0).subscribe(
       (data) => {
         this.paginadoTop3Productos = data;
         this.top3Productos = this.paginadoTop3Productos.content;
@@ -30,7 +30,7 @@ export class InicioComponent implements OnInit {
   }
 
   sumarAlCarrito(productoID: String){
-    this.productoService.sumarVisita(productoID).subscribe(
+    this.ClasesService.sumarVisita(productoID).subscribe(
       (data) => {
         console.log(data);
         this.cdr.detectChanges();

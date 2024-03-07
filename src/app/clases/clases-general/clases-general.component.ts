@@ -1,4 +1,4 @@
-import { ProductoService } from './../../service/productos/producto.service';
+import { ClasesService } from '../../service/clases/clases.service';
 import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CategoriaService } from 'src/app/service/categorias/categoria.service';
 
@@ -21,7 +21,7 @@ export class ClasesGeneralComponent implements OnInit {
   top3Productos : any = [];
 
 
-  constructor(private productosService: ProductoService, private crd: ChangeDetectorRef,
+  constructor(private productosService: ClasesService, private crd: ChangeDetectorRef,
               private categoriaService: CategoriaService){}
 
   ngOnInit(): void {

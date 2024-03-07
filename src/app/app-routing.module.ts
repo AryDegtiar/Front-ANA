@@ -12,19 +12,21 @@ import { BlogComponent } from './blog/blog.component';
 import { ArticulosComponent } from './blog/articulos/articulos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+import { ProductosComponent } from './productos/productos.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'clases', component: ClasesGeneralComponent },
-  { path: 'subclase', component: SubclaseComponent },
+  //{ path: 'subclase', component: SubclaseComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registrar', component: RegistrarComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'articulos/:id', component: ArticulosComponent },
+  //{ path: 'blog', component: BlogComponent },
+  //{ path: 'articulos/:id', component: ArticulosComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'historial', component: HistorialComprasComponent },
+  { path: 'tienda', component: ProductosComponent },
   { path: 'paneladmin', loadChildren: () => import('./panel-admin/panel-admin.module').then(m => m.PanelAdminModule) },
   { path: 'home', redirectTo: '' },
   { path: '**', redirectTo: '' }

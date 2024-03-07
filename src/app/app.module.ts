@@ -19,10 +19,11 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+import { ProductosComponent } from './productos/productos.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavbarComponent,
     FooterComponent,
@@ -36,7 +37,8 @@ import { HistorialComprasComponent } from './historial-compras/historial-compras
     BlogComponent,
     ArticulosComponent,
     CarritoComponent,
-    HistorialComprasComponent
+    HistorialComprasComponent,
+      ProductosComponent
    ],
   imports: [
     BrowserModule,

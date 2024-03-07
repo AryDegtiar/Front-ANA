@@ -1,4 +1,4 @@
-import { ProductoService } from 'src/app/service/productos/producto.service';
+import { ClasesService } from 'src/app/service/clases/clases.service';
 import { ChangeDetectionStrategy,ChangeDetectorRef, Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -17,7 +17,7 @@ export class ModificarClaseComponent {
     urlImagen: ""
   }
 
-  constructor(private ProductoService:ProductoService ,private cdr:ChangeDetectorRef, private router:Router) { }
+  constructor(private ClasesService:ClasesService ,private cdr:ChangeDetectorRef, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +28,7 @@ export class ModificarClaseComponent {
     console.log(this.clase);
 
     this.cdr.detectChanges();
-    
+
     /*
       for (const key in this.clase) {
         for (const elemento of event.target) {
