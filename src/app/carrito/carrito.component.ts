@@ -76,7 +76,7 @@ export class CarritoComponent implements OnInit {
         if (logeoValue == null) {
           console.log("entre en el get logeo");
           Swal.fire({
-            icon: 'error',
+            icon: 'info',
             text: 'Debe logearse para comprar'
           }).then((result) => {
             if (result) {
@@ -84,10 +84,11 @@ export class CarritoComponent implements OnInit {
             }
           });
 
+        }else{
+          //this.cartService.comprar(this.items ,this.metodoPagoInput, this.direccionInput);
+          this.removeAll();
+          this.router.navigate(['home']);
         }
-        //this.cartService.comprar(this.items ,this.metodoPagoInput, this.direccionInput);
-        //this.removeAll();
-        //this.router.navigate(['productos']);
       } else {
         Swal.fire({
           icon: 'error',

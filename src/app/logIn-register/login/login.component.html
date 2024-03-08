@@ -4,7 +4,8 @@
       <img class="mb-2" src="../../../assets/img/ChakanaLogo.png" alt="" width="300" height="72">
       <input [(ngModel)]="email" name="email" type="email" class="form-control p-3" id="floatingInput" placeholder="Email">
       <input [(ngModel)]="password" name="password" type="password" class="form-control p-3" id="floatingPassword" placeholder="Password">
-      <button class="w-100 btn btn-lg btn-grey mb-2" type="submit">Iniciar sesion</button>
+      <button class="w-100 btn btn-lg btn-grey mb-4" type="submit">Iniciar sesion</button>
+      <a [routerLink]="['/registrar']" class="link-secondary">¿No tienes cuenta? Registrate</a>
     </form>
   </main>
 </div>
