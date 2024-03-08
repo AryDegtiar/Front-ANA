@@ -7,8 +7,9 @@ import { CrearClaseComponent } from './crear-clase/crear-clase.component';
 import { ModificarArticuloBlogComponent } from './modificar-articulo-blog/modificar-articulo-blog.component';
 import { ModificarClaseComponent } from './modificar-clase/modificar-clase.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
+
 const routes: Routes = [
-  { path: '', component: PanelClasesComponent},
+  { path: '', component: HomeAdminComponent},
   { path: 'creararticulo', component: CrearArticuloBlogComponent},
   { path: 'crearclase', component: CrearClaseComponent},
   { path: 'modificararticulo', component: ModificarArticuloBlogComponent},

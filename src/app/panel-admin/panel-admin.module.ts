@@ -18,7 +18,7 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
     ModificarClaseComponent,
     PanelArticulosBlogComponent,
     PanelClasesComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
   ],
   imports: [
     CommonModule,

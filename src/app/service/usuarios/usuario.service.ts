@@ -12,8 +12,15 @@ export class UsuarioService {
 
   private url = 'http://localhost:8086/api/v1';
 
-  usuarioID?: Number;
+  usuarioID?: {
+    id: number;
+    email: string;
+    nombre: string;
+    roles: any;
+  };
+
   logeo$ = new BehaviorSubject<any>(this.usuarioID);
+
 
   constructor(private http: HttpClient) {
 
@@ -65,7 +72,18 @@ export class UsuarioService {
       }
 
       //guardo en una variable el usuario logeado
+      /*
       setLogeo(usuario: any){
+        this.logeo$.next(usuario);
+      }
+      */
+      setLogeo(response: any){
+        const usuario = {
+          id: response.id,
+          email: response.email,
+          nombre: response.nombre,
+          roles: response.roles
+        }
         this.logeo$.next(usuario);
       }
 

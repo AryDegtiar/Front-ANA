@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light custom-navbar pb-1 mb-md-5 fixed-top" id="navbar">
+<nav *ngIf="esUsuario" class="navbar navbar-expand-lg navbar-light custom-navbar pb-1 mb-md-5 fixed-top" id="navbar">
   <div class="container">
     <a class="navbar-brand" routerLink="/">
       <img src="../../../assets/img/ChakanaLogo.png" width="120" height="30" alt="">
@@ -6,25 +6,6 @@
     <button class="navbar-toggler order-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- <ul class="account-desktop navbar-nav flex-row ml-auto order-1 px-4" style="gap: 10px;">
-        <li class="nav-item">
-            <a class="text-decoration-none text-w">
-                <button type="button" class="btn btn-orange position-relative me-4" routerLink="/carrito">
-                    <i class="fas fa-shopping-cart"></i>
-                  Carrito
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger px-2">
-                    0
-                  </span>
-                </button>
-            </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/registrar">Register</a>
-        </li>
-    </ul> -->
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
       <button class="navbar-toggler py-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
@@ -37,27 +18,12 @@
         <li class="nav-item py-2">
           <a class="nav-link" routerLink="/clases">Clases</a>
         </li>
-        <!--
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" routerLink="/clases" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Clases
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a *ngFor="let categoria of categorias" class="dropdown-item text-muted" routerLink="/subclase">{{categoria.nombre}}</a>
-            </div>
-          </li>
-          -->
         <li class="nav-item py-2">
           <a class="nav-link" routerLink="/tienda">Tienda</a>
         </li>
         <li class="nav-item py-2">
           <a class="nav-link" routerLink="/about">About</a>
         </li>
-        <!--
-        <li class="nav-item py-2">
-          <a class="nav-link" routerLink="/blog">Blog</a>
-        </li>
-        -->
         <li class="nav-item py-2">
           <a class="nav-link" routerLink="/contacto">Contact</a>
         </li>
@@ -124,8 +90,69 @@
           </ul>
         </div>
       </li>
-
     </ul>
   </div>
 </nav>
 
+<!-- SECCION ADMIN -->
+<nav *ngIf="esAdmin" class="navbar navbar-expand-lg navbar-light custom-navbar pb-1 mb-md-5 fixed-top" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/img/ChakanaLogo.png" width="120" height="30" alt="">
+    </a>
+    <button class="navbar-toggler order-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <button class="navbar-toggler py-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+        <span class="fas fa-arrow-right"></span>
+      </button>
+      <ul class="navbar-nav h-100 d-flex justify-content-center align-items-center">
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/paneladmin">Panel Admin</a>
+        </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/clases">Usuarios</a>
+        </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/tienda">Profesores</a>
+        </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/about">Clases</a>
+        </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/contacto">Productos</a>
+        </li>
+        <li class="nav-item py-2">
+          <a class="nav-link" routerLink="/contacto">Aulas</a>
+        </li>
+      </ul>
+    </div>
+     <ul class="desktop-only navbar-nav flex-row ml-auto order-1 px-4" style="gap: 10px;">
+
+      <li *ngIf="!estaLogeado" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!estaLogeado" class="nav-item">
+          <a class="nav-link" routerLink="/registrar">Register</a>
+       </li>
+      <li>
+        <div *ngIf="estaLogeado" class="dropdown text-end">
+          <a class="d-block link-dark text-decoration-none dropdown-toggle px-2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img
+              src="../../../assets/img/user.png"
+              alt="mdo"
+              width="32"
+              height="32"
+              class="rounded-circle"
+            />
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" (click)="logOut()">Cerrar sesion</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

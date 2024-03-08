@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
                     console.error('Error al enviar la solicitud:', error);
                   }
                 );
-                //this.usuarioService.setLogeo(response.body);
+                //this.usuarioService.setLogeo(response);
                 this.cdr.detectChanges();
                 //this.router.navigate(['/home']);
                 console.log("Usuario logeado");
