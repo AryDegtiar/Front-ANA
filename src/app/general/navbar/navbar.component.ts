@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit,ChangeDetectorRef } from '@a
 import { Router } from '@angular/router';
 import { CategoriaService } from 'src/app/service/categorias/categoria.service';
 import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
+import { CarritoComponentService } from 'src/app/service/carrito/carrito.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,9 +16,10 @@ export class NavbarComponent implements OnInit {
   esUsuario = true;
   esAdmin = false;
   esProfesor = false;
+  totalItems = 0;
 
   constructor(private usuarioService: UsuarioService, private cdr: ChangeDetectorRef, private router: Router,
-              private categoriaService: CategoriaService) { }
+              private categoriaService: CategoriaService, private cartService: CarritoComponentService) { }
 
   ngOnInit(): void {
     this.verificarLogeo();
@@ -26,6 +28,17 @@ export class NavbarComponent implements OnInit {
       this.categorias = data;
       this.cdr.detectChanges();
     });
+
+    this.cartService.getProducts().subscribe((data: any) => {
+      this.totalItems = 0;
+      for (let i = 0; i < data.length; i++) {
+        this.totalItems += data[i].cantidad;
+      }
+      console.log("totalItems: " + this.totalItems);
+      this.cdr.detectChanges();
+      console.log("totalItems despues del cmabio: " + this.totalItems);
+    });
+
   }
 
   verificarLogeo(){
@@ -73,6 +86,9 @@ export class NavbarComponent implements OnInit {
   logOut(){
     this.usuarioService.cerrarSesion();
     this.estaLogeado = false;
+    this.esUsuario = true;
+    this.esAdmin = false;
+    this.esProfesor = false;
     this.cdr.detectChanges();
     this.router.navigate(['/home']);
   }

@@ -1,4 +1,4 @@
-<section id="carrito" class="h-100 h-custom">
+<section class="h-100 h-custom" style="background-color: #a3d5ce">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
@@ -14,31 +14,43 @@
                     class="d-flex justify-content-between align-items-center mb-5"
                   >
                     <h1 class="fw-bold mb-0 text-black">Carrito de compras</h1>
-                    <h6 class="mb-0 text-muted">2 items</h6>
+                    <h6 class="mb-0 text-muted">{{cantItems}} items</h6>
                   </div>
 
                   <hr class="my-4" />
 
-                  <div *ngFor="let item of [1,2]"
+                  <div *ngFor="let item of items"
                     class="row mb-4 d-flex justify-content-between align-items-center"
                   >
                     <div class="col-md-2 col-lg-2 col-xl-2">
+                      <!--
                       <img
-                        src="../../assets/img/classes/classes-1.jpg"
+                        src="{{ item.urlImagen }}"
                         class="img-fluid rounded-3"
                         alt="Cotton T-shirt"
                       />
+                      -->
+                      <img
+                        src="../../../assets/img/classes/classes-1.jpg"
+                        class="img-fluid rounded-3"
+                        alt="Cotton T-shirt"
+                      />
+
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
-                      <h6 class="text-muted">Producto</h6>
+
+                      <h6 class="text-muted">{{ item.nombre }}</h6>
+                      <!--
                       <h6 class="text-black mb-0">
-                        Tienda: tienda
+                        Tienda: {{ item.vendedor.nombreTienda }}
                       </h6>
+                      -->
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                       <button
                         class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        (click)="decrement(item)"
                       >
                       <i class="fa fa-minus"></i>
                       </button>
@@ -47,6 +59,7 @@
                         id="form1"
                         min="1"
                         name="quantity"
+                        value="{{ item.cantidad }}"
                         type="number"
                         class="form-control form-control-sm"
                         style="min-width: 30px; "
@@ -55,23 +68,24 @@
                       <button
                         class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                        (click)="increment(item)"
                       >
                         <i class="fa fa-plus"></i>
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">$ 99999</h6>
+                      <h6 class="mb-0">$ {{ item.precioPesos * item.cantidad }} </h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a class="text-muted"
+                      <a (click)="removeItem(item)" class="text-muted"
                         ><i class="fa fa-times"></i
                       ></a>
                     </div>
                   </div>
 
-                  <div *ngIf="false">
+                  <div *ngIf="items.length == 0">
                     <img
-                      src="../../assets/images/empty_cart_retina.png"
+                      src="../../assets/img/empty_cart_retina.png"
                       style="width: 100%"
                     />
                     <h2 class="text-center my-4">Carrito vacio</h2>
@@ -87,6 +101,7 @@
                   </div>
                   <div class="col-6 text-end">
                     <button
+                      (click)="removeAll()"
                       type="button"
                       class="btn btn-secondary btn-block btn-lg"
                       data-mdb-ripple-color="dark"
@@ -102,26 +117,44 @@
                   <hr class="my-4" />
 
                   <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">items 2</h5>
-                    <h5>$ 99999</h5>
+                    <h5 class="text-uppercase">items {{cantItems}}</h5>
+                    <h5>$ {{grandTotal}}</h5>
                   </div>
 
                   <h5 class="text-uppercase mb-3">Metodos de pago</h5>
 
                   <div class="mb-4 pb-2">
-                    <select class="select">
-                      <option *ngFor="let metodoPago of [1,2]" value="EFECTIVO}">metodopago</option>
+                    <select class="select" [(ngModel)]="metodoPagoInput" >
+                      <option *ngFor="let metodoPago of metodosPagos" value="{{metodoPago}}">{{metodoPago}}</option>
                     </select>
                   </div>
+
+                  <!--
+                  <h5 class="text-uppercase mb-3">Direccion:</h5>
+                  <div class="mb-5">
+                    <div class="form-outline">
+                      <input
+                        [(ngModel)]="direccionInput"
+                        type="text"
+                        id="form3Examplea2"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="form3Examplea2"
+                        >Calle, altura, localidad</label
+                      >
+                    </div>
+                  </div>
+                  -->
 
                   <hr class="my-4" />
 
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Precio total</h5>
-                    <h5>$ 99999 </h5>
+                    <h5>$ {{grandTotal}} </h5>
                   </div>
 
                   <button
+                    (click)="comprar()"
                     type="button"
                     class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark"

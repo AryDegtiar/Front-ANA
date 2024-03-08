@@ -12,6 +12,7 @@ export class UsuarioService {
 
   private url = 'http://localhost:8086/api/v1';
 
+  /* esto arregla el reading id del pricipio pero no sirve para buscar si esta logeado
   usuarioID?: {
     id: number;
     email: string;
@@ -20,7 +21,8 @@ export class UsuarioService {
   };
 
   logeo$ = new BehaviorSubject<any>(this.usuarioID);
-
+  */
+  logeo$ = new BehaviorSubject<any>(null);
 
   constructor(private http: HttpClient) {
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ProductosService } from '../service/productos/productos.service';
 import { CategoriasProductosService } from '../service/categoriasProductos/categoriasProductos.service';
+import Swal from 'sweetalert2';
+import { CarritoComponentService } from '../service/carrito/carrito.service';
 
 @Component({
   selector: 'app-productos',
@@ -20,7 +22,8 @@ export class ProductosComponent implements OnInit {
   paginadoTop3Productos : any;
   top3Productos : any = [];
 
-  constructor(private productosService: ProductosService, private categoriaProdService: CategoriasProductosService, private crd: ChangeDetectorRef) { }
+  constructor(private productosService: ProductosService, private categoriaProdService: CategoriasProductosService,
+    private crd: ChangeDetectorRef, private carritoService: CarritoComponentService) { }
 
 
   ngOnInit(): void {
@@ -55,9 +58,17 @@ export class ProductosComponent implements OnInit {
 
   }
 
-  sumarAlCarrito(productoID: String){
-
+  sumarAlCarrito(producto: any){
+    this.carritoService.addProduct(producto);
+    Swal.fire({
+      title: 'Articulo agregado al carrito',
+      imageUrl: '../../../assets/img/carro-de-la-carretilla.png',
+      imageWidth: 70,
+      imageHeight: 70,
+      imageAlt: 'Custom image',
+    });
   }
+
 
   obtenerTop3Productos(){
 

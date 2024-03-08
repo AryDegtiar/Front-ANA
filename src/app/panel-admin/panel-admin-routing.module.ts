@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'modificarclase', component: ModificarClaseComponent},
   { path: 'panelarticulos', component: PanelArticulosBlogComponent},
   { path: 'panelclases', component: PanelClasesComponent},
-  { path: 'homeadmin', component: HomeAdminComponent},
   { path: 'home', redirectTo: '' },
   { path: '**', redirectTo: '' }
 ];

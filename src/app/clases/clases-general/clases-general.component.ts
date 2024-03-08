@@ -1,6 +1,8 @@
 import { ClasesService } from '../../service/clases/clases.service';
 import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CategoriaService } from 'src/app/service/categorias/categoria.service';
+import Swal from 'sweetalert2';
+import { CarritoComponentService } from 'src/app/service/carrito/carrito.service';
 
 @Component({
   selector: 'app-clases-general',
@@ -22,7 +24,7 @@ export class ClasesGeneralComponent implements OnInit {
 
 
   constructor(private productosService: ClasesService, private crd: ChangeDetectorRef,
-              private categoriaService: CategoriaService){}
+              private categoriaService: CategoriaService, private carritoService: CarritoComponentService){}
 
   ngOnInit(): void {
     this.getProductPage(this.numPage);
@@ -60,14 +62,22 @@ export class ClasesGeneralComponent implements OnInit {
     }
   }
 
-  sumarAlCarrito(productoID: String){
-    this.productosService.sumarVisita(productoID).subscribe(
+  sumarAlCarrito(producto: any){
+    this.productosService.sumarVisita(producto.id).subscribe(
       (data) => {
         console.log(data);
         this.crd.detectChanges();
       }
     , error => {
       console.log(error);
+    });
+    this.carritoService.addProduct(producto);
+    Swal.fire({
+      title: 'Articulo agregado al carrito',
+      imageUrl: '../../../assets/img/carro-de-la-carretilla.png',
+      imageWidth: 70,
+      imageHeight: 70,
+      imageAlt: 'Custom image',
     });
   }
 
