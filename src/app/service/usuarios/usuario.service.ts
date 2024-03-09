@@ -54,8 +54,12 @@ export class UsuarioService {
 
       console.log('Encabezados desde obtencion de admin:', headers);
 
-      // Realizar la solicitud HTTP GET con los encabezados
-      return this.http.get(this.url + '/admins/email/' + email, { headers: headers });
+      if (roles.includes('ROLE_ADMIN')) {
+        // Realizar la solicitud HTTP GET con los encabezados
+        return this.http.get(this.url + '/admins/email/' + email, { headers: headers });
+      }else{
+        return this.http.get(this.url + '/usuarios/email/' + email, { headers: headers });
+      }
     }
 
 
@@ -80,13 +84,7 @@ export class UsuarioService {
       }
       */
       setLogeo(response: any){
-        const usuario = {
-          id: response.id,
-          email: response.email,
-          nombre: response.nombre,
-          roles: response.roles
-        }
-        this.logeo$.next(usuario);
+        this.logeo$.next(response);
       }
 
       cerrarSesion(){

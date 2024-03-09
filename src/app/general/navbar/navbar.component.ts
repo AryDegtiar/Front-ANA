@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CategoriaService } from 'src/app/service/categorias/categoria.service';
 import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
 import { CarritoComponentService } from 'src/app/service/carrito/carrito.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -42,8 +43,9 @@ export class NavbarComponent implements OnInit {
   }
 
   verificarLogeo(){
+    console.log("verificarLogeo");
     this.usuarioService.getLogeo().subscribe(usuario => {
-      console.log("id behavior: " + usuario.id);
+      console.log("usuario behaviorSubject: " + JSON.stringify(usuario));
       if (usuario.id == null || usuario.id == undefined) {
         this.estaLogeado = false;
       } else {
@@ -52,8 +54,16 @@ export class NavbarComponent implements OnInit {
         let esUsuario = false;
 
         let flag = true;
+
+        // si es admin la estructura es usuario.roles
+        let usuarioRoles = usuario.roles;
+        // si es usuario la estructura es usuario.user.roles
+        if (usuarioRoles == null && usuarioRoles == undefined) {
+          usuarioRoles = usuario.user.roles;
+        }
+
         // Recorremos el array de roles
-        for (const rol of usuario.roles) {
+        for (const rol of usuarioRoles) {
           if (flag) {
             // Buscamos el rol "admin" o "profesor"
             switch (rol.nombre) {
@@ -67,6 +77,7 @@ export class NavbarComponent implements OnInit {
                 flag = false;
                 break;
               default:
+                esUsuario = true;
                 flag = false;
                 break;
             }

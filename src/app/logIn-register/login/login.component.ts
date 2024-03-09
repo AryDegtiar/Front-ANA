@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   email: string = "";
   password: string = "";
 
+  usuarioGuardado: any;
+
     constructor(private usuarioService:UsuarioService, private cdr:ChangeDetectorRef,private router:Router, private http: HttpClient) { } // Agregamos HttpClient aquí
 
     ngOnInit(): void {
@@ -30,7 +32,7 @@ export class LoginComponent implements OnInit {
             console.log('Cuerpo de la respuesta:', response.body);
 
             // Obtener el token de autorización (Bearer token) directamente de los encabezados
-            const authorizationHeader = response.headers.get('Authorization');
+            const authorizationHeader: string | null = response.headers.get('Authorization');
             const token = authorizationHeader ? authorizationHeader.split(' ')[1] : null; // Extraer el token del encabezado
             console.log('Token:', token);
 
@@ -47,7 +49,7 @@ export class LoginComponent implements OnInit {
                   .split(',') // Separar los roles utilizando la coma como delimitador
 
               // Limpiar y normalizar los roles
-              roles = rolesArray.map(role => role.trim().toLowerCase());
+              roles = rolesArray.map(role => role.trim().toUpperCase());
 
               console.log('Roles separados:', roles);
             } else {
@@ -60,6 +62,8 @@ export class LoginComponent implements OnInit {
                   response => {
                     console.log('Usuario logeado:', response);
                     this.usuarioService.setLogeo(response);
+                    this.usuarioGuardado = this.usuarioService.getLogeo();
+                    console.log("Usuario guardado: ", this.usuarioGuardado);
                     this.cdr.detectChanges();
                     this.router.navigate(['/home']);
                   },
