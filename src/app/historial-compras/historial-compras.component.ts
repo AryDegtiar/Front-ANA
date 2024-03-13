@@ -43,6 +43,7 @@ export class HistorialComprasComponent implements OnInit {
         precio: compra.precio,
         metodoPago: compra.metodoPago
       });
+      console.log("historialCompras en el loop: " + JSON.stringify(historialCompras));
     }
 
     return historialCompras;
@@ -72,7 +73,7 @@ export class HistorialComprasComponent implements OnInit {
     let clases = [];
     for (let clase of compra.clases) {
       // Buscar la clase en el historial de compras por su nombre
-      let claseExistenteIndex = clases.findIndex(item => item.clase.nombre === clase.nombre);
+      let claseExistenteIndex = clases.findIndex(item => item.clase.clase.nombre === clase.clase.nombre);
 
       if (claseExistenteIndex !== -1) {
         // Si la clase ya está en el historial de compras, incrementar su cantidad

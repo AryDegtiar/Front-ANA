@@ -12,6 +12,7 @@
               <tr>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Producto</th>
+                <th scope="col">Clases Disponibles</th>
                 <th scope="col">P.Unitario</th>
                 <th scope="col">Subtotal</th>
               </tr>
@@ -20,14 +21,16 @@
               <tr *ngFor="let prod of compra.productos">
                 <th scope="row">{{prod.cantidad}}</th>
                 <td>{{prod.producto.nombre}}</td>
+                <td> - </td>
                 <td>$ {{prod.producto.precioPesos}}</td>
                 <td>$ {{prod.producto.precioPesos * prod.cantidad}}</td>
               </tr>
-              <tr *ngFor="let clase of compra.clases">
-                <th scope="row">{{clase.cantidad}}</th>
-                <td>{{clase.clase.nombre}}</td>
-                <td>$ {{clase.clase.precioPesos}}</td>
-                <td>$ {{clase.clase.precioPesos * clase.cantidad}}</td>
+              <tr *ngFor="let c of compra.clases">
+                <th scope="row">{{c.cantidad}}</th>
+                <td>{{c.clase.clase.nombre}}</td>
+                <td>{{c.clase.cantidadDisponible}}</td>
+                <td>$ {{c.clase.clase.precioPesos}}</td>
+                <td>$ {{c.clase.clase.precioPesos * c.cantidad}}</td>
               </tr>
             </tbody>
           </table>
