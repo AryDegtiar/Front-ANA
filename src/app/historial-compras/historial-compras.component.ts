@@ -20,7 +20,12 @@ export class HistorialComprasComponent implements OnInit {
   ngOnInit(): void {
     this.comprasRealizadas.getAllComprasRealizadas().subscribe((res: any) => {
       this.historialCompras = this.convertirComprasRealizadasAHistorialCompras(res);
-      this.mostrarHistorial = true;
+      if (this.historialCompras.length > 0) {
+        this.mostrarHistorial = true;
+      }else{
+        this.mostrarHistorial = false;
+      }
+
       console.log("historialCompras: " + JSON.stringify(this.historialCompras));
     });
   }
@@ -82,6 +87,5 @@ export class HistorialComprasComponent implements OnInit {
     }
     return clases;
   }
-
 
 }

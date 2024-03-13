@@ -1,8 +1,9 @@
 <div class="container" style="min-height: 100vmin; margin-top:100px">
   <div *ngIf="mostrarHistorial">
+    <h1 class="my-4"><b>Historial de compras:</b></h1>
     <div *ngFor="let compra of historialCompras" class="card my-5 text-center" style="background-color: #e9fcfa;">
-      <div class="card-header">
-        Fecha: {{compra.fecha}}
+      <div class="card-header fw-bold">
+        Fecha: {{ compra.fecha | date:'dd/MM/yyyy HH:mm' }}
       </div>
       <div class="card-body">
         <div class="row">
@@ -33,7 +34,7 @@
         </div>
       </div>
       <div class="card-footer text-muted">
-        <p class="card-text">Total: ${{compra.precio}} - {{compra.metodoPago}}</p>
+        <p class="card-text fw-bold">Total: ${{compra.precio}} - {{compra.metodoPago}}</p>
       </div>
         <!--
         <p class="card-text">Total: ${{compra.precio}} - {{compra.metodoPago}}</p>
