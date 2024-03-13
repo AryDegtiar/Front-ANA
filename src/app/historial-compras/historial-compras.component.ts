@@ -38,10 +38,11 @@ export class HistorialComprasComponent implements OnInit {
       let clases = this.obtenerClases(compra);
       historialCompras.push({
         fecha: compra.fecha,
-        productos: prods,
-        clases: clases,
         precio: compra.precio,
-        metodoPago: compra.metodoPago
+        metodoPago: compra.metodoPago,
+        estadoCompra: compra.estado,
+        clases: clases,
+        productos: prods,
       });
       console.log("historialCompras en el loop: " + JSON.stringify(historialCompras));
     }

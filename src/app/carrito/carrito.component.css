@@ -29,3 +29,7 @@ input[type=number] { -moz-appearance:textfield; }
   --bs-btn-disabled-bg: #6c757d;
   --bs-btn-disabled-border-color: #6c757d;
 }
+
+.fs-7{
+  font-size: 0.8rem;
+}

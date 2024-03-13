@@ -20,7 +20,6 @@ export class CarritoComponent implements OnInit {
 
   metodoPagoInput: any = null;
 
-  direccionInput: any = null;
 
   constructor(private cartService: CarritoComponentService, private router: Router, private usuarioService: UsuarioService) { }
 
@@ -29,7 +28,6 @@ export class CarritoComponent implements OnInit {
       this.items = res;
       this.grandTotal = this.cartService.getTotalPrice();
       this.cantItems = this.cartService.getTotalCant();
-      console.log("res: " + JSON.stringify(res));
       /*
       console.log("res: " + JSON.stringify(res));
       console.log("items: " + JSON.stringify(this.items));

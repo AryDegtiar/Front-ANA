@@ -129,6 +129,19 @@
                     </select>
                   </div>
 
+                  <div *ngIf="metodoPagoInput == 'TRANSFERENCIA'" class="border border-secondary rounded text-center">
+                    <p class="text-muted fw-bold">Datos para transferencia</p>
+                    <p class="text-muted">
+                      <span class="text-decoration-underline">Banco:</span> Santander
+                      <br>
+                      <span class="text-decoration-underline">CBU:</span> 123456789
+                      <br>
+                      <span class="text-decoration-underline">Alias:</span> tiendaonline
+                      <br>
+                      <span class="text-decoration-underline">CUIT:</span> 123456789
+                    </p>
+                    <p class="text-muted fst-italic fs-7">Estos datos seran enviados por mail</p>
+                  </div>
                   <!--
                   <h5 class="text-uppercase mb-3">Direccion:</h5>
                   <div class="mb-5">

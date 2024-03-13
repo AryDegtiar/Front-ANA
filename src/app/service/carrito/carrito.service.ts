@@ -147,11 +147,17 @@ comprar(items:any ,metodoPagoInput:any, grandTotal: any): Observable<boolean> {
     let clases = this.obtenerClases(items);
     console.log("clases obtenidas: " + JSON.stringify(clases));
 
+    let estadoCompra = "PENDIENTE";
+    if (metodoPagoInput == "MERCADOPAGO"){
+      estadoCompra = "PAGADO";
+    }
+
     let compra = {
       precio: grandTotal,
+      metodoPago: metodoPagoInput,
+      estado: estadoCompra,
       productos: productos,
-      clases: clases,
-      metodoPago: metodoPagoInput
+      clases: clases
     }
 
     let cliente = this.usuarioService.getLogeo().getValue();

@@ -3,6 +3,8 @@
     <h1 class="my-4"><b>Historial de compras:</b></h1>
     <div *ngFor="let compra of historialCompras" class="card my-5 text-center" style="background-color: #e9fcfa;">
       <div class="card-header fw-bold">
+        {{ compra.estadoCompra }}
+        |
         Fecha: {{ compra.fecha | date:'dd/MM/yyyy HH:mm' }}
       </div>
       <div class="card-body">
