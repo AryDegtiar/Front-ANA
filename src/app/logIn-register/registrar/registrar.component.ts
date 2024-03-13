@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit,ChangeDetectorRef } from '@a
 import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-registrar',
   templateUrl: './registrar.component.html',
@@ -12,8 +13,10 @@ export class RegistrarComponent implements OnInit {
 
   email: string = "";
   password: string = "";
+  nombre: string = "";
 
-  constructor(private cdr: ChangeDetectorRef, private usuarioService: UsuarioService, private router:Router) { }
+  constructor(private cdr: ChangeDetectorRef, private usuarioService: UsuarioService,
+              private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -39,11 +42,14 @@ export class RegistrarComponent implements OnInit {
     event.preventDefault();
     console.log(this.email);
     console.log(this.password);
-    this.usuarioService.registrar(this.email, this.password).subscribe(
+    console.log(this.nombre);
+    this.usuarioService.registrar(this.email, this.password, this.nombre).subscribe(
       (res: any) => {
         alert("Usuario registrado");
         this.cdr.detectChanges();
-        this.usuarioService.setLogeo(res);
+
+        //this.loginComponent.login(event);
+
         this.router.navigate(['/home']);
       },
       (err: any) => {

@@ -1,8 +1,8 @@
 <div class="container" style="min-height: 100vmin; margin-top:100px">
   <div *ngIf="mostrarHistorial">
-    <div *ngFor="let compra of listCompras" class="card my-5 text-center" style="background-color: #e9fcfa;">
+    <div *ngFor="let compra of historialCompras" class="card my-5 text-center" style="background-color: #e9fcfa;">
       <div class="card-header">
-        Fecha: {{compra.fecha}} | Hora: {{compra.hora}}
+        Fecha: {{compra.fecha}}
       </div>
       <div class="card-body">
         <div class="row">
@@ -16,21 +16,32 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let producto of compra.productos">
-                <th scope="row">{{producto.cantidad}}</th>
-                <td>{{producto.nombre}}</td>
-                <td>$ {{producto.precio}}</td>
-                <td>$ {{producto.precio * producto.cantidad}}</td>
+              <tr *ngFor="let prod of compra.productos">
+                <th scope="row">{{prod.cantidad}}</th>
+                <td>{{prod.producto.nombre}}</td>
+                <td>$ {{prod.producto.precioPesos}}</td>
+                <td>$ {{prod.producto.precioPesos * prod.cantidad}}</td>
+              </tr>
+              <tr *ngFor="let clase of compra.clases">
+                <th scope="row">{{clase.cantidad}}</th>
+                <td>{{clase.clase.nombre}}</td>
+                <td>$ {{clase.clase.precioPesos}}</td>
+                <td>$ {{clase.clase.precioPesos * clase.cantidad}}</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="card-text">Total: ${{compra.total}} - {{compra.metodoPago}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        <p class="card-text">Total: ${{compra.precio}} - {{compra.metodoPago}}</p>
+      </div>
+        <!--
+        <p class="card-text">Total: ${{compra.precio}} - {{compra.metodoPago}}</p>
       </div>
       <div class="card-footer text-muted">
          Direccion envio: {{compra.direccionEnvio}} | Tienda: {{compra.productos[0].tienda}}
       </div>
-
+        -->
     </div>
   </div>
 

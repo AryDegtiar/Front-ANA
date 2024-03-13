@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       console.log(this.password);
       event.preventDefault();
 
+      // pasar esto el service
       this.http.post<any>('http://localhost:8086/api/v1/login', { email: this.email, password: this.password }, { observe: 'response' })
         .subscribe(
           response => {
@@ -61,7 +62,12 @@ export class LoginComponent implements OnInit {
                 this.usuarioService.login(this.email, token, roles).subscribe(
                   response => {
                     console.log('Usuario logeado:', response);
+                    let sesion = {
+                      token: token,
+                      roles: roles,
+                    }
                     this.usuarioService.setLogeo(response);
+                    this.usuarioService.setSesion(sesion);
                     this.usuarioGuardado = this.usuarioService.getLogeo();
                     console.log("Usuario guardado: ", this.usuarioGuardado);
                     this.cdr.detectChanges();

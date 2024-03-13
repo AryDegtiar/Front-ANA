@@ -1,17 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UsuarioService } from '../usuarios/usuario.service';
 @Injectable({
   providedIn: 'root'
 })
 export class CompraRealizadaService {
 
-  private url = 'http://localhost:8086/api/v1/comprasRealizadas';
+  private url = 'http://localhost:8086/api/v1/cliente';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
 
    }
      getAllComprasRealizadas(){
-       return this.http.get(this.url);
+       let usuarioID = this.usuarioService.getLogeo().getValue().id;
+
+       let sesionString  = localStorage.getItem('sesion');
+
+      // Analizar la cadena JSON almacenada en sesionString
+      let sesion = sesionString ? JSON.parse(sesionString) : null;
+
+       const headers = new HttpHeaders({
+        'Authorization': `Bearer ${sesion.token}`,
+        'Role': sesion.roles
+      });
+       return this.http.get(this.url + "/" + usuarioID + '/compraRealizadas', { headers: headers });
      };
 
      getComprasRealizadasById(id: number){

@@ -63,31 +63,31 @@ export class UsuarioService {
     }
 
 
-      registrar(email:string, password:string){
+      registrar(email:string, password:string, nombre:string){
         const usu ={
           email: email,
-          password: password
+          password: password,
+          nombre: nombre
         }
-        return this.http.post(this.url + '/usuarios', usu);
+        return this.http.post(this.url + '/usuarios/signup', usu);
       }
 
 //guardo en una variable el usuario logeado
+
+      setSesion(sesion: { token: string; roles: string[]; }) {
+        localStorage.setItem('sesion', JSON.stringify(sesion));
+      }
 
       getLogeo(){
         return this.logeo$;
       }
 
-      //guardo en una variable el usuario logeado
-      /*
-      setLogeo(usuario: any){
-        this.logeo$.next(usuario);
-      }
-      */
       setLogeo(response: any){
         this.logeo$.next(response);
       }
 
       cerrarSesion(){
         this.logeo$.next(null);
+        localStorage.removeItem('sesion');
       }
 }

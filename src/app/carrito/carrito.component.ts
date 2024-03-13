@@ -29,12 +29,14 @@ export class CarritoComponent implements OnInit {
       this.items = res;
       this.grandTotal = this.cartService.getTotalPrice();
       this.cantItems = this.cartService.getTotalCant();
+      console.log("res: " + JSON.stringify(res));
       /*
       console.log("res: " + JSON.stringify(res));
       console.log("items: " + JSON.stringify(this.items));
       console.log("grandTotal: " + this.grandTotal);
       console.log("cantItems: " + this.cantItems);
       */
+
     });
 
     this.cartService.getMetodosPagos().subscribe((res: any) => {
@@ -51,8 +53,7 @@ export class CarritoComponent implements OnInit {
 
   removeAll() {
     this.cartService.removeAllCart();
-    this.metodosPagos = [];
-    this.direccionInput = "";
+    console.log("items: " + JSON.stringify(this.items));
   }
 
   decrement(item: any) {
@@ -64,14 +65,29 @@ export class CarritoComponent implements OnInit {
   }
 
   comprar() {
-    if (this.items.length == 0) {
-        this.removeAll();
+    let datosCorrectos = this.verificarDatosCarrito();
+
+    if (datosCorrectos) {
+      this.cartService.comprar(this.items, this.metodoPagoInput, this.grandTotal).subscribe(compraExitosa => {
+        if (compraExitosa) {
+          // Si la compra fue exitosa, borra el carrito
+          this.cartService.removeAllCart();
+          this.router.navigate(['/historial']);
+        }
+      });
+    }
+  }
+
+
+  verificarDatosCarrito(){
+      let res = false;
+      if (this.items.length == 0) {
+        //this.removeAll();
         Swal.fire({
           icon: 'error',
           text: 'No hay productos en el carrito'
         });
-      } else{
-      if (this.metodoPagoInput != null || (this.metodoPagoInput != undefined)) {
+      } else if (this.metodoPagoInput != null || (this.metodoPagoInput != undefined)) {
         let logeoValue = this.usuarioService.getLogeo().getValue();
         if (logeoValue == null) {
           console.log("entre en el get logeo");
@@ -86,8 +102,7 @@ export class CarritoComponent implements OnInit {
 
         }else{
           //this.cartService.comprar(this.items ,this.metodoPagoInput, this.direccionInput);
-          this.removeAll();
-          this.router.navigate(['home']);
+          res = true;
         }
       } else {
         Swal.fire({
@@ -95,8 +110,8 @@ export class CarritoComponent implements OnInit {
           text: 'Debe seleccionar un metodo de pago'
         });
       }
-    }
-  }
 
+      return res;
+  }
 
 }
