@@ -63,6 +63,57 @@ export class UsuarioService {
     }
 
 
+    async obtenerUsuarioLogeado(email: string, password: string): Promise<any> {
+      try {
+        const response = await this.http.post<any>('http://localhost:8086/api/v1/login', { email, password }, { observe: 'response' }).toPromise();
+
+        let token: string | null = null;
+        let roles: string[] = [];
+
+        if (response) {
+          console.log('Encabezados de respuesta:', response.headers);
+          console.log('Cuerpo de la respuesta:', response.body);
+
+          // Obtener el token de autorización (Bearer token) directamente de los encabezados
+          const authorizationHeader: string | null = response.headers.get('Authorization');
+          token = authorizationHeader ? authorizationHeader.split(' ')[1] : null; // Extraer el token del encabezado
+          console.log('Token:', token);
+
+          // Acceder al valor del encabezado 'rol' directamente desde los encabezados
+          const rolesHeaderValue = response.headers.get('Role');
+          console.log('Valor del encabezado rol:', rolesHeaderValue);
+
+          // Verificar si rolesHeaderValue es una cadena válida
+          if (rolesHeaderValue) {
+            // Separar los roles utilizando la coma como delimitador y eliminar los corchetes
+            const rolesArray = rolesHeaderValue
+                .replace(/\[|\]/g, '') // Eliminar los corchetes
+                .split(',') // Separar los roles utilizando la coma como delimitador
+
+            // Limpiar y normalizar los roles
+            roles = rolesArray.map(role => role.trim().toUpperCase());
+
+            console.log('Roles separados:', roles);
+          } else {
+            console.error('No se encontraron roles en el encabezado.');
+          }
+        }
+
+        let sesion = {
+          body: response ? response.body : null,
+          headers: response ? response.headers : null,
+          token: token,
+          roles: roles,
+        }
+
+        return sesion;
+      } catch (error) {
+        console.error('Error al enviar la solicitud:', error);
+        throw new Error('Error al obtener el usuario logeado');
+      }
+    }
+
+
       registrar(email:string, password:string, nombre:string){
         const usu ={
           email: email,

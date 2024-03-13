@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit,ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-registrar',
@@ -15,30 +14,16 @@ export class RegistrarComponent implements OnInit {
   password: string = "";
   nombre: string = "";
 
+  usuarioGuardado: any;
+  responseLogin: any;
+
   constructor(private cdr: ChangeDetectorRef, private usuarioService: UsuarioService,
-              private router:Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
   }
-/*
-  register(){
-    console.log(this.email);
-    console.log(this.password);
-    this.usuarioService.registrar(this.email, this.password).subscribe(
-      (res: any) => {
-        alert("Usuario registrado");
-        console.log(res);
-        this.cdr.detectChanges();
-      },
-      (err: any) => {
-        alert("Error al registrar usuario");
-        console.log(err);
-        this.cdr.detectChanges();
-      }
-    )
-  }
-*/
-  register(event: Event){
+
+  register(event: Event) {
     event.preventDefault();
     console.log(this.email);
     console.log(this.password);
@@ -48,9 +33,32 @@ export class RegistrarComponent implements OnInit {
         alert("Usuario registrado");
         this.cdr.detectChanges();
 
-        //this.loginComponent.login(event);
-
-        this.router.navigate(['/home']);
+        // Obtener el usuario logeado después del registro
+        this.usuarioService.obtenerUsuarioLogeado(this.email, this.password).then((response) => {
+          this.responseLogin = response;
+          if (this.responseLogin.body !== "Usuario o contraseña invalidos" &&
+              this.responseLogin.token !== null && this.responseLogin.roles !== null) {
+            // Realizar el login con los datos obtenidos
+            this.usuarioService.login(this.email, this.responseLogin.token, this.responseLogin.roles).subscribe(
+              response => {
+                let sesion = {
+                  token: this.responseLogin.token,
+                  roles: this.responseLogin.roles,
+                }
+                this.usuarioService.setLogeo(response);
+                this.usuarioService.setSesion(sesion);
+                this.usuarioGuardado = this.usuarioService.getLogeo();
+                this.cdr.detectChanges();
+                this.router.navigate(['/home']);
+              },
+              error => {
+                console.error('Error al enviar la solicitud:', error);
+              }
+            );
+          }
+        }).catch(error => {
+          console.error('Error al obtener la respuesta del login:', error);
+        });
       },
       (err: any) => {
         alert("Error al registrar usuario");
