@@ -23,7 +23,7 @@ import { ProductosComponent } from './productos/productos.component';
 
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,

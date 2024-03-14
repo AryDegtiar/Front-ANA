@@ -28,7 +28,14 @@ export class UsuarioService {
 
    }
      getAllusuarios(){
-       return this.http.get(this.url + '/usuarios');
+       let sesion = localStorage.getItem('sesion');
+       let headers = new HttpHeaders();
+        if (sesion) {
+          const { token, roles } = JSON.parse(sesion);
+          headers = headers.set('Authorization', `Bearer ${token}`);
+          headers = headers.set('Role', roles.join(', '));
+        }
+       return this.http.get(this.url + '/usuarios', { headers: headers });
      };
 
      getusuariosById(id: number){
