@@ -45,7 +45,14 @@ export class LoginComponent implements OnInit {
                 this.usuarioGuardado = this.usuarioService.getLogeo();
                 //console.log("Usuario guardado: ", this.usuarioGuardado);
                 this.cdr.detectChanges();
-                this.router.navigate(['/home']);
+                console.log("Usuario logeado", localStorage.getItem('sesion'));
+                if (sesion.roles.includes('ROLE_ADMIN')){
+                  console.log("Es admin");
+                  this.router.navigate(['/paneladmin']);
+                }else{
+                  this.router.navigate(['/home']);
+                  console.log("Es usuario");
+                }
               },
               error => {
                 console.error('Error al enviar la solicitud:', error);

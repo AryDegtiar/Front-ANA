@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrearClaseComponent } from './crear-clase.component';
+import { PanelUsuariosComponent } from './panel-usuarios.component';
 
-describe('CrearClaseComponent', () => {
-  let component: CrearClaseComponent;
-  let fixture: ComponentFixture<CrearClaseComponent>;
+describe('PanelUsuariosComponent', () => {
+  let component: PanelUsuariosComponent;
+  let fixture: ComponentFixture<PanelUsuariosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrearClaseComponent ]
+      declarations: [ PanelUsuariosComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CrearClaseComponent);
+    fixture = TestBed.createComponent(PanelUsuariosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

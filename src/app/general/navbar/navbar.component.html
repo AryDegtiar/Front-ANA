@@ -97,7 +97,7 @@
 <!-- SECCION ADMIN -->
 <nav *ngIf="esAdmin" class="navbar navbar-expand-lg navbar-light custom-navbar pb-1 mb-md-5 fixed-top" id="navbar">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">
+    <a class="navbar-brand" routerLink="/paneladmin">
       <img src="../../../assets/img/ChakanaLogo.png" width="120" height="30" alt="">
     </a>
     <button class="navbar-toggler order-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
@@ -113,19 +113,19 @@
           <a class="nav-link" routerLink="/paneladmin">Panel Admin</a>
         </li>
         <li class="nav-item py-2">
-          <a class="nav-link" routerLink="/clases">Usuarios</a>
+          <a class="nav-link" routerLink="/paneladmin/panelusuarios">Usuarios</a>
         </li>
         <li class="nav-item py-2">
           <a class="nav-link" routerLink="/paneladmin/panelarticulos">Profesores</a>
         </li>
         <li class="nav-item py-2">
-          <a class="nav-link" routerLink="/about">Clases</a>
+          <a class="nav-link" routerLink="/paneladmin/panelclases">Clases</a>
         </li>
         <li class="nav-item py-2">
           <a class="nav-link" routerLink="/paneladmin/panelarticulos">Productos</a>
         </li>
         <li class="nav-item py-2">
-          <a class="nav-link" routerLink="/contacto">Aulas</a>
+          <a class="nav-link" routerLink="/paneladmin/panelaulas">Aulas</a>
         </li>
       </ul>
     </div>

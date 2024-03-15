@@ -28,13 +28,7 @@ export class UsuarioService {
 
    }
      getAllusuarios(){
-       let sesion = localStorage.getItem('sesion');
-       let headers = new HttpHeaders();
-        if (sesion) {
-          const { token, roles } = JSON.parse(sesion);
-          headers = headers.set('Authorization', `Bearer ${token}`);
-          headers = headers.set('Role', roles.join(', '));
-        }
+       let headers = this.getHeaders();
        return this.http.get(this.url + '/usuarios', { headers: headers });
      };
 
@@ -42,8 +36,9 @@ export class UsuarioService {
        return this.http.get(this.url + '/usuarios/' + id);
      };
 
-     getusuariosPage(page: number){
-       return this.http.get(this.url + "/usuarios/page?page=" + page + "&size=6");
+     getusuariosPage(page: number, esActivo: boolean = true){
+       let headers = this.getHeaders();
+       return this.http.get(this.url + "/usuarios/page?page=" + page + "&size=10&activo=" + esActivo, { headers: headers });
      }
 
      login(email: string, token: string, roles: Array<string> ) {
@@ -120,20 +115,45 @@ export class UsuarioService {
       }
     }
 
+    eliminar(id: number){
+      let headers = this.getHeaders();
+      return this.http.delete(this.url + '/usuarios/delete/' + id, { headers: headers });
+    }
 
-      registrar(email:string, password:string, nombre:string){
-        const usu ={
-          email: email,
-          password: password,
-          nombre: nombre
-        }
-        return this.http.post(this.url + '/usuarios/signup', usu);
+    modificar(usuario: any){
+      let headers = this.getHeaders();
+      return this.http.put(this.url + '/usuarios/update/'+usuario.id, usuario, { headers: headers });
+    }
+
+    activarUsuario(id: number){
+      let headers = this.getHeaders();
+      return this.http.put(this.url + '/usuarios/activar/' + id, null, { headers: headers });
+    }
+
+    registrar(email:string, password:string, nombre:string){
+      const usu ={
+        email: email,
+        password: password,
+        nombre: nombre
       }
+      return this.http.post(this.url + '/usuarios/signup', usu);
+    }
 
 //guardo en una variable el usuario logeado
 
       setSesion(sesion: { token: string; roles: string[]; }) {
         localStorage.setItem('sesion', JSON.stringify(sesion));
+      }
+
+      getHeaders() {
+        let sesion = localStorage.getItem('sesion');
+        let headers = new HttpHeaders();
+         if (sesion) {
+           const { token, roles } = JSON.parse(sesion);
+           headers = headers.set('Authorization', `Bearer ${token}`);
+           headers = headers.set('Role', roles.join(', '));
+         }
+        return headers;
       }
 
       getLogeo(){
