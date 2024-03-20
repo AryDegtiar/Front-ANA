@@ -5,7 +5,7 @@
       <p><span class="fw-bold">Nombre: </span>{{datosUsuario.nombre}} <span class="fw-bold ps-4">Email: </span>{{datosUsuario.email}}</p>
       <button type="button" class="btn btn-success" (click)="guardarCambios()">Guardar</button>
     </div>
-    <div *ngFor="let compra of historialCompras" class="card my-4 text-center" style="background-color: #e9fcfa;">
+    <div *ngFor="let compra of historialCompras; let indiceCompra = index" class="card my-4 text-center" style="background-color: #e9fcfa;">
       <div class="card-header fw-bold d-flex justify-content-between">
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,11 +39,12 @@
                 <td>$ {{prod.producto.precioPesos}}</td>
                 <td>$ {{prod.producto.precioPesos * prod.cantidad}}</td>
               </tr>
-              <tr *ngFor="let c of compra.clases">
+              <tr *ngFor="let c of compra.clases; let indiceClase = index">
                 <th scope="row">{{c.cantidad}}</th>
                 <td>{{c.clase.clase.nombre}}</td>
                 <td class="d-flex justify-content-center">
-                  <input min="1" name="quantity" [(ngModel)]="c.clase.cantidadDisponible" type="number" class="form-control form-control-sm" style="width: 50px;" (input)="cambiarCantClasesDisp(c.clase, $event)"/>
+                  <input min="1" name="quantity" [value]="c.clase.cantidadDisponible" type="number"
+                  class="form-control form-control-sm" style="width: 50px;" (change)="cambiarCantClasesDisp($event, indiceCompra ,indiceClase)"/>
                 </td>
                 <!--
                 <td>{{c.clase.cantidadDisponible}}</td>

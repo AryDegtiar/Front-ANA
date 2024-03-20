@@ -87,22 +87,13 @@ date: any;
     return clases;
   }
 
-  cambiarCantClasesDisp(clase: any , event: any) {
+  cambiarCantClasesDisp(event: any, indiceCompra: number, indiceClase: number) {
     const nuevoValor = event.target.value;
+
     if (nuevoValor !== null) {
-        clase.clase.cantidadDisponible = parseInt(nuevoValor);
-
-        // Buscar la clase en el historial de compras y actualizar su cantidad disponible
-        const compra = this.historialCompras.find((compra: any) => { // Explicitly specify the type of 'compra'
-          return compra.clases.some((c: any) => c.clase.id === clase.clase.id);
-        });
-
-        if (compra) {
-          const claseEnCompra = compra.clases.find((c: any) => c.clase.id === clase.clase.id);
-          if (claseEnCompra) {
-            claseEnCompra.clase.cantidadDisponible = parseInt(nuevoValor);
-          }
-        }
+      const compra = this.historialCompras[indiceCompra];
+      compra.clases[indiceClase].clase.cantidadDisponible = parseInt(nuevoValor);
+      this.historialCompras[indiceCompra] = compra;
     }
   }
 
@@ -129,6 +120,8 @@ date: any;
         clases: clases, // Cambiado aquí
         productos: compra.productos
       };
+
+      console.log("historialCompras PARA MODIFICAR: " + JSON.stringify(historialCompras));
 
       // Enviar la compra a la base de datos
       this.compraRealizadasService.updateCompraRealizada(historialCompras).subscribe(
