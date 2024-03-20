@@ -5,10 +5,12 @@ import { PanelArticulosBlogComponent } from './panel-articulos-blog/panel-articu
 import { ModificarClaseComponent } from './modificar-clase/modificar-clase.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { PanelUsuariosComponent } from './panel-usuarios/panel-usuarios.component';
+import { ModificarCompraComponent } from './modificar-compra/modificar-compra.component';
 
 const routes: Routes = [
   { path: '', component: HomeAdminComponent},
   { path: 'modificarclase', component: ModificarClaseComponent},
+  { path: 'modificarcompra', component: ModificarCompraComponent},
   { path: 'panelarticulos', component: PanelArticulosBlogComponent},
   { path: 'panelclases', component: PanelClasesComponent},
   { path: 'panelusuarios', component: PanelUsuariosComponent},

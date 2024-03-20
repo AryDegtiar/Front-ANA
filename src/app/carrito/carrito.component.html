@@ -2,26 +2,19 @@
   <div class="container">
     <div class="row d-flex justify-content-center align-content-center pb-5" style="padding-top: 12vh;">
       <div class="col-12 ">
-        <div
-          class="card card-registration card-registration-2"
-          style="border-radius: 15px"
-        >
+        <div class="card card-registration card-registration-2" style="border-radius: 15px">
           <div class="card-body p-0">
             <div class="row g-0">
               <div class="col-lg-8">
                 <div class="p-5">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-5"
-                  >
+                  <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Carrito de compras</h1>
                     <h6 class="mb-0 text-muted">{{cantItems}} items</h6>
                   </div>
 
                   <hr class="my-4" />
 
-                  <div *ngFor="let item of items"
-                    class="row mb-4 d-flex justify-content-between align-items-center"
-                  >
+                  <div *ngFor="let item of items" class="row mb-4 d-flex justify-content-between align-items-center">
                     <div class="col-md-2 col-lg-2 col-xl-2">
                       <!--
                       <img
@@ -30,11 +23,8 @@
                         alt="Cotton T-shirt"
                       />
                       -->
-                      <img
-                        src="../../../assets/img/classes/classes-1.jpg"
-                        class="img-fluid rounded-3"
-                        alt="Cotton T-shirt"
-                      />
+                      <img src="../../../assets/img/classes/classes-1.jpg" class="img-fluid rounded-3"
+                        alt="Cotton T-shirt" />
 
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
@@ -47,29 +37,18 @@
                       -->
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                      <button
-                        class="btn btn-link px-2"
+                      <button class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                        (click)="decrement(item)"
-                      >
-                      <i class="fa fa-minus"></i>
+                        (click)="decrement(item)">
+                        <i class="fa fa-minus"></i>
                       </button>
 
-                      <input
-                        id="form1"
-                        min="1"
-                        name="quantity"
-                        value="{{ item.cantidad }}"
-                        type="number"
-                        class="form-control form-control-sm"
-                        style="min-width: 30px; "
-                      />
+                      <input id="form1" min="1" name="quantity" value="{{ item.cantidad }}" type="number"
+                        class="form-control form-control-sm" style="min-width: 30px; " />
 
-                      <button
-                        class="btn btn-link px-2"
+                      <button class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                        (click)="increment(item)"
-                      >
+                        (click)="increment(item)">
                         <i class="fa fa-plus"></i>
                       </button>
                     </div>
@@ -77,17 +56,12 @@
                       <h6 class="mb-0">$ {{ item.precioPesos * item.cantidad }} </h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a (click)="removeItem(item)" class="text-muted"
-                        ><i class="fa fa-times"></i
-                      ></a>
+                      <a (click)="removeItem(item)" class="text-muted"><i class="fa fa-times"></i></a>
                     </div>
                   </div>
 
                   <div *ngIf="items.length == 0">
-                    <img
-                      src="../../assets/img/empty_cart_retina.png"
-                      style="width: 100%"
-                    />
+                    <img src="../../assets/img/empty_cart_retina.png" style="width: 100%" />
                     <h2 class="text-center my-4">Carrito vacio</h2>
                   </div>
 
@@ -95,17 +69,13 @@
 
                   <div class="pt-5 row">
                     <div class="col-6 d-flex align-items-center">
-                    <h6 class="mb-0">
-                      <a [routerLink]="['/productos']" class="text-body">Volver a productos</a>
-                    </h6>
-                  </div>
-                  <div class="col-6 text-end">
-                    <button
-                      (click)="removeAll()"
-                      type="button"
-                      class="btn btn-secondary btn-block btn-lg"
-                      data-mdb-ripple-color="dark"
-                    >Vaciar</button>
+                      <h6 class="mb-0">
+                        <a [routerLink]="['/productos']" class="text-body">Volver a productos</a>
+                      </h6>
+                    </div>
+                    <div class="col-6 text-end">
+                      <button (click)="removeAll()" type="button" class="btn btn-secondary btn-block btn-lg"
+                        data-mdb-ripple-color="dark">Vaciar</button>
                     </div>
                   </div>
 
@@ -124,7 +94,7 @@
                   <h5 class="text-uppercase mb-3">Metodos de pago</h5>
 
                   <div class="mb-4 pb-2">
-                    <select class="select" [(ngModel)]="metodoPagoInput" >
+                    <select class="select" [(ngModel)]="metodoPagoInput">
                       <option *ngFor="let metodoPago of metodosPagos" value="{{metodoPago}}">{{metodoPago}}</option>
                     </select>
                   </div>
@@ -166,12 +136,8 @@
                     <h5>$ {{grandTotal}} </h5>
                   </div>
 
-                  <button
-                    (click)="comprar()"
-                    type="button"
-                    class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark"
-                  >
+                  <button (click)="comprar()" type="button" class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark">
                     Comprar
                   </button>
                 </div>

@@ -1,0 +1,70 @@
+<div class="container" style="min-height: 100vmin; margin-top:100px">
+  <div>
+    <h1 class="my-4"><b>Historial de compras:</b></h1>
+    <div class="d-flex justify-content-between">
+      <p><span class="fw-bold">Nombre: </span>{{datosUsuario.nombre}} <span class="fw-bold ps-4">Email: </span>{{datosUsuario.email}}</p>
+      <button type="button" class="btn btn-success" (click)="guardarCambios()">Guardar</button>
+    </div>
+    <div *ngFor="let compra of historialCompras" class="card my-4 text-center" style="background-color: #e9fcfa;">
+      <div class="card-header fw-bold d-flex justify-content-between">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ compra.selectedEstado || compra.estadoCompra }}
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let estado of estadosCompra">
+              <a class="dropdown-item" (click)="compra.estadoCompra = estado">{{estado}}</a>
+            </li>
+          </ul>
+        </div>
+        <p>Fecha: {{ compra.fecha | date:'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Clases Disponibles</th>
+                <th scope="col">P.Unitario</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prod of compra.productos">
+                <th scope="row">{{prod.cantidad}}</th>
+                <td>{{prod.producto.nombre}}</td>
+                <td> - </td>
+                <td>$ {{prod.producto.precioPesos}}</td>
+                <td>$ {{prod.producto.precioPesos * prod.cantidad}}</td>
+              </tr>
+              <tr *ngFor="let c of compra.clases">
+                <th scope="row">{{c.cantidad}}</th>
+                <td>{{c.clase.clase.nombre}}</td>
+                <td class="d-flex justify-content-center">
+                  <input min="1" name="quantity" [(ngModel)]="c.clase.cantidadDisponible" type="number" class="form-control form-control-sm" style="width: 50px;" (input)="cambiarCantClasesDisp(c.clase, $event)"/>
+                </td>
+                <!--
+                <td>{{c.clase.cantidadDisponible}}</td>
+                -->
+                <td>$ {{c.clase.clase.precioPesos}}</td>
+                <td>$ {{c.clase.clase.precioPesos * c.cantidad}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        <p class="card-text fw-bold">Total: ${{compra.precio}} - {{compra.metodoPago}}</p>
+      </div>
+        <!--
+        <p class="card-text">Total: ${{compra.precio}} - {{compra.metodoPago}}</p>
+      </div>
+      <div class="card-footer text-muted">
+         Direccion envio: {{compra.direccionEnvio}} | Tienda: {{compra.productos[0].tienda}}
+      </div>
+        -->
+    </div>
+  </div>
+</div>

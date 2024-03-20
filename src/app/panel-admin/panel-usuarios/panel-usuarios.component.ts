@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/service/usuarios/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-panel-usuarios',
@@ -20,7 +21,7 @@ export class PanelUsuariosComponent implements OnInit {
   }  = { email: '', password: '', nombre: '' };
   usuarioActivos: boolean = true;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerUsuariosPage();
@@ -103,6 +104,11 @@ export class PanelUsuariosComponent implements OnInit {
       this.obtenerUsuariosPage(this.paginaActual);
     });
     this.closeEditModal();
+  }
+
+  editarCompra(){
+    this.usuarioService.serCompraSeleccionada(this.usuarioSeleccionado);
+    this.router.navigate(['/paneladmin/modificarcompra']);
   }
 
   activarUsuario(idUsuario: number) {

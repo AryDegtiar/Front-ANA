@@ -7,6 +7,7 @@ import { PanelArticulosBlogComponent } from './panel-articulos-blog/panel-articu
 import { PanelClasesComponent } from './panel-clases/panel-clases.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { PanelUsuariosComponent } from './panel-usuarios/panel-usuarios.component';
+import { ModificarCompraComponent } from './modificar-compra/modificar-compra.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { PanelUsuariosComponent } from './panel-usuarios/panel-usuarios.componen
     PanelClasesComponent,
     HomeAdminComponent,
     PanelUsuariosComponent,
+    ModificarCompraComponent,
   ],
   imports: [
     CommonModule,

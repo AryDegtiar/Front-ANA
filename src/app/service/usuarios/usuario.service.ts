@@ -23,6 +23,7 @@ export class UsuarioService {
   logeo$ = new BehaviorSubject<any>(this.usuarioID);
   */
   logeo$ = new BehaviorSubject<any>(null);
+  compraSeleccionada: any;
 
   constructor(private http: HttpClient) {
 
@@ -162,6 +163,14 @@ export class UsuarioService {
 
       setLogeo(response: any){
         this.logeo$.next(response);
+      }
+
+      serCompraSeleccionada(compra: any){
+        this.compraSeleccionada = compra;
+      }
+
+      getCompraSeleccionada(){
+        return this.compraSeleccionada;
       }
 
       cerrarSesion(){
