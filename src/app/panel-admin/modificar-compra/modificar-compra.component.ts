@@ -121,8 +121,6 @@ date: any;
         productos: compra.productos
       };
 
-      console.log("historialCompras PARA MODIFICAR: " + JSON.stringify(historialCompras));
-
       // Enviar la compra a la base de datos
       this.compraRealizadasService.updateCompraRealizada(historialCompras).subscribe(
         (data: any) => {
