@@ -33,36 +33,30 @@ export class PanelUsuariosComponent implements OnInit {
 
   openModal() {
     this.isModalOpen = true;
-    console.log('Add Employee Modal opened!');
   }
 
   closeModal() {
     this.isModalOpen = false;
-    console.log('Add Employee Modal closed!');
   }
 
   openDeleteModal(usuario: any) {
     this.isDeleteModalOpen = true;
     this.usuarioSeleccionado = usuario;
-    console.log('Delete Employee Modal opened!');
   }
 
   closeDeleteModal() {
     this.isDeleteModalOpen = false;
     this.usuarioSeleccionado = null;
-    console.log('Delete Employee Modal closed!');
   }
 
   openEditModal(usuario: any) {
     this.isEditModalOpen = true;
     this.usuarioSeleccionado = usuario;
-    console.log('Edit Employee Modal opened!');
   }
 
   closeEditModal() {
     this.isEditModalOpen = false;
     this.usuarioSeleccionado = null;
-    console.log('Edit Employee Modal closed!');
   }
 
   cambiarPagina(pagina: number, esActivo: boolean = true): void {
@@ -78,9 +72,7 @@ export class PanelUsuariosComponent implements OnInit {
   }
 
   registrarUsuario() {
-    console.log("USUARIO A REGISTRAR: ", this.usuario);
     this.usuarioService.registrar(this.usuario.email, this.usuario.password, this.usuario.nombre).subscribe((data: any) => {
-      console.log("USUARIO REGISTRADO: ", data);
       this.obtenerUsuariosPage(this.paginaActual);
     });
     this.closeModal();
@@ -88,13 +80,11 @@ export class PanelUsuariosComponent implements OnInit {
   }
 
   eliminarUsuario() {
-    console.log("USUARIO A ELIMINAR: ", this.usuarioSeleccionado);
     this.usuarioService.eliminar(this.usuarioSeleccionado.id).subscribe((data: any) => {
-      console.log("USUARIO ELIMINADO: ", data);
       this.obtenerUsuariosPage(this.paginaActual);
     });
     this.closeDeleteModal();
-    this.obtenerUsuariosPage(this.paginaActual);
+    //this.obtenerUsuariosPage(this.paginaActual);
   }
 
   modificarUsu(){
@@ -113,31 +103,18 @@ export class PanelUsuariosComponent implements OnInit {
 
   activarUsuario(idUsuario: number) {
     this.usuarioService.activarUsuario(idUsuario).subscribe((data: any) => {
-      console.log("USUARIO ACTIVADO: ", data);
       this.obtenerUsuariosPage(this.paginaActual);
     });
   }
 
   obtenerUsuariosPage(pagina: number = 0, esActivo: boolean = true) {
     this.usuarioService.getusuariosPage(pagina, esActivo).subscribe((data: any) => {
-
-      console.log("DATA: ", data);
-
       this.paginaActual = data.number;
       this.totalPaginas = data.totalPages;
       this.usuarios = data.content;
-
-      console.log("PAGINA ACTUAL: ", this.paginaActual);
-      console.log("TOTAL PAGINAS: ", this.totalPaginas);
-
-      console.log("LISTA DE USUARIOS: ", this.usuarios);
-      console.log("USUARIO 1: ", this.usuarios[0].user);
-      // Generar las páginas disponibles
       this.generarPaginas();
     });
-
     this.usuarioActivos = esActivo;
-    console.log("USUARIOS ACTIVOS: ", this.usuarioActivos);
   }
 
 
@@ -157,7 +134,6 @@ export class PanelUsuariosComponent implements OnInit {
         clases: clases,
         productos: prods,
       });
-      console.log("historialCompras en el loop: " + JSON.stringify(historialCompras));
     }
 
     // Ordenar el historial de compras por fecha
