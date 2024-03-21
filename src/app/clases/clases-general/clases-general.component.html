@@ -1,102 +1,121 @@
 <!-- Breadcrumb Begin -->
-<section class="breadcrumb-option set-bg object-fit-cover" >
+<section class="breadcrumb-option set-bg object-fit-cover">
 
 </section>
 <!-- Breadcrumb End -->
 
 <!-- Classes Section Begin -->
 <section class="classes spad">
- <div class="container">
-     <div class="classes__filter">
-         <div class="row">
-             <div class="col-lg-12">
-                <!--<form>-->
-                  <div class="formualrio">
-                     <div class="class__filter__select">
-                         <p>Level:</p>
-                         <select class="class-select nice-select" [(ngModel)]="nivelSeleccionado" (ngModelChange)="getProductPage(0)">
-                            <option class=".option" value="">Todos</option>
-                            <option class=".option" value="inicial">Inicial</option>
-                            <option class=".option" value="intermedio">Intermedio</option>
-                            <option class=".option" value="avanzado">Avanzado</option>
-                          </select>
-                     </div>
-                     <div class="class__filter__select ms-4">
-                         <p>Style:</p>
-                         <select class="class-select nice-select" [(ngModel)]="categoriaSeleccionada" (ngModelChange)="getProductPage(0)">
-                          <option class=".option" value="">Todos</option>
-                          <option *ngFor="let categoria of categorias" class=".option" [value]="categoria.nombre">{{categoria.nombre}}</option>
-                        </select>
-                     </div>
-                  </div>
-                 <!--</form>-->
-             </div>
-         </div>
-     </div>
-     <div class="row">
-         <div class="col-lg-4 col-md-6" *ngFor="let producto of productosPage">
-             <div class="classes__item classes__item__page">
-                 <div class="classes__item__pic set-bg object-fit-cover">
-                     <span>{{producto.nivel}}</span>
-                 </div>
-                 <div class="classes__item__text">
-                     <h4 class="mb-2"><a>{{producto.nombre}}</a></h4>
-                     <p class="mb-3">{{producto.descripcion}}</p>
-                     <div class="row">
-                      <h6 class="col-8">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
-                      <p class="col-4 text-end pe-5">Online</p>
-                     </div>
-                     <a class="class-btn" (click)="sumarAlCarrito(producto)" >Añadir al Carrito</a>
-                    <!-- <a [routerLink]="['/']" class="class-btn">Read More</a> -->
-                 </div>
-             </div>
-         </div>
+  <div class="container">
+    <div class="classes__filter">
+      <div class="row">
+        <div class="col-lg-12">
+          <!--<form>-->
+          <div class="formualrio">
+            <div class="class__filter__select">
+              <p>Level:</p>
+              <select class="class-select nice-select" [(ngModel)]="nivelSeleccionado"
+                (ngModelChange)="getProductPage(0)">
+                <option class=".option" value="">Todos</option>
+                <option class=".option" value="inicial">Inicial</option>
+                <option class=".option" value="intermedio">Intermedio</option>
+                <option class=".option" value="avanzado">Avanzado</option>
+              </select>
+            </div>
+            <div class="class__filter__select ms-4">
+              <p>Style:</p>
+              <select class="class-select nice-select" [(ngModel)]="categoriaSeleccionada"
+                (ngModelChange)="getProductPage(0)">
+                <option class=".option" value="">Todos</option>
+                <option *ngFor="let categoria of categorias" class=".option" [value]="categoria.nombre">
+                  {{categoria.nombre}}</option>
+              </select>
+            </div>
+          </div>
+          <!--</form>-->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6" *ngFor="let producto of productosPage">
+        <div class="classes__item classes__item__page">
+          <div class="classes__item__pic set-bg object-fit-cover">
+            <span>{{producto.nivel}}</span>
+          </div>
+          <div class="classes__item__text">
+            <h4 class="mb-2"><a>{{producto.nombre}}</a></h4>
+            <p class="mb-3">{{producto.descripcion}}</p>
+            <div class="row">
+              <h6 class="col-8 mb-4">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
+              <p class="col-4 text-end pe-5">Online</p>
+            </div>
+            <div class="dropdown me-4 d-inline-block">
+              <button class="class-btn-horario dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{ diaHorarioSelected.diaHorario && diaHorarioSelected.producto.id === producto.id ?
+                  diaHorarioSelected.diaHorario.dia + ' ' + diaHorarioSelected.diaHorario.hora.slice(0, 5) : 'Horarios' }}
+              </button>
+              <ul class="dropdown-menu" style="max-height: 200px; overflow-y: auto;">
+                <li>
+                  <a class="dropdown-item" (click)="selectDiaHorario(null, null)">Ninguno</a>
+                </li>
+                <li *ngFor="let horario of producto.horariosDisponibles">
+                  <a class="dropdown-item" (click)="selectDiaHorario(producto, horario)">{{horario.dia}} {{horario.hora | slice: 0:5 }}</a>
+                </li>
+              </ul>
+            </div>
+            <a class="class-btn d-inline-block" (click)="sumarAlCarrito(producto)">Añadir al Carrito</a>
+            <!-- <a [routerLink]="['/']" class="class-btn">Read More</a> -->
+          </div>
+        </div>
+      </div>
 
-         <div class="col-lg-12">
-             <div class="classes__pagination">
-                 <a *ngIf="numPage > 0"(click)= "paginaAnterior()"><span class="arrow_carrot-left"></span></a>
-                 <a>{{numPage+1}}</a>
-                 <a *ngIf="(numPage < totalPages-1)"(click)="siguientePagina()">   <span class="arrow_carrot-right"></span></a>
-             </div>
-         </div>
-     </div>
- </div>
+      <div class="col-lg-12">
+        <div class="classes__pagination">
+          <a *ngIf="numPage > 0" (click)="paginaAnterior()"><span class="arrow_carrot-left"></span></a>
+          <a>{{numPage+1}}</a>
+          <a *ngIf="(numPage < totalPages-1)" (click)="siguientePagina()"> <span class="arrow_carrot-right"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- Classes Section End -->
 
 <!-- Upcoming Classes Section Begin -->
 <section class="upcoming-classes top-classes spad">
- <div class="container">
-     <div class="row">
-         <div class="col-lg-12">
-             <div class="section-title normal-title">
-                 <h2>Top Classes</h2>
-                 <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa (flow)<br /> and
-                     Yin Yoga.</p>
-             </div>
-         </div>
-     </div>
-     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let producto of top3Productos; let i = index">
-            <div class="classes__item">
-                <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-1.jpg">
-                  <span class="px-2 py-1 text-white " style="background-color: #ca9e67;"><i class="bi bi-star-fill"></i> Top {{i+1}}</span>
-                </div>
-                <div class="classes__item__text">
-                  <p>{{producto.nombre}}</p>
-                  <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
-                  <div class="row">
-                   <h6 class="col-8">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
-                   <p class="col-4 text-end pe-5">Online</p>
-                  </div>
-                  <div class="text-center p-0 m-0">
-                    <a class="class-btn" (click)="sumarAlCarrito(producto)" >Añadir al Carrito</a>
-                  </div>
-                 <!-- <a [routerLink]="['/']" class="class-btn">Read More</a> -->
-              </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title normal-title">
+          <h2>Top Classes</h2>
+          <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa (flow)<br /> and
+            Yin Yoga.</p>
         </div>
-          <!--
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let producto of top3Productos; let i = index">
+        <div class="classes__item">
+          <div class="classes__item__pic set-bg bg-gallery5" data-setbg="../../assets/img/classes/classes-1.jpg">
+            <span class="px-2 py-1 text-white " style="background-color: #ca9e67;"><i class="bi bi-star-fill"></i> Top
+              {{i+1}}</span>
+          </div>
+          <div class="classes__item__text">
+            <p>{{producto.nombre}}</p>
+            <h4><a [routerLink]="['/']">{{producto.descripcion}}</a></h4>
+            <div class="row">
+              <h6 class="col-8">Ana Hepner <span>- {{producto.categoria.nombre}} Teacher</span></h6>
+              <p class="col-4 text-end pe-5">Online</p>
+            </div>
+            <div class="text-center p-0 m-0">
+              <a class="class-btn" (click)="sumarAlCarrito(producto)">Añadir al Carrito</a>
+            </div>
+            <!-- <a [routerLink]="['/']" class="class-btn">Read More</a> -->
+          </div>
+        </div>
+      </div>
+      <!--
          <div class="col-lg-4 col-md-6">
              <div class="classes__item">
                  <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-11.jpg">
@@ -124,7 +143,7 @@
              </div>
          </div>
          -->
-     </div>
- </div>
+    </div>
+  </div>
 </section>
 <!-- Upcoming Classes Section End -->

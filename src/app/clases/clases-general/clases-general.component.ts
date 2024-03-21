@@ -21,6 +21,7 @@ export class ClasesGeneralComponent implements OnInit {
   numPage : number = 0;
   paginadoTop3Productos : any;
   top3Productos : any = [];
+  diaHorarioSelected: any = {producto: null, diaHorario: null};
 
 
   constructor(private productosService: ClasesService, private crd: ChangeDetectorRef,
@@ -63,22 +64,34 @@ export class ClasesGeneralComponent implements OnInit {
   }
 
   sumarAlCarrito(producto: any){
-    this.productosService.sumarVisita(producto.id).subscribe(
-      (data) => {
-        console.log(data);
-        this.crd.detectChanges();
-      }
-    , error => {
-      console.log(error);
-    });
-    this.carritoService.addProduct(producto);
-    Swal.fire({
-      title: 'Articulo agregado al carrito',
-      imageUrl: '../../../assets/img/carro-de-la-carretilla.png',
-      imageWidth: 70,
-      imageHeight: 70,
-      imageAlt: 'Custom image',
-    });
+    if(this.diaHorarioSelected.producto != null && this.diaHorarioSelected.producto.id == producto.id){
+      producto.horarioClase = this.diaHorarioSelected.diaHorario;
+      this.productosService.sumarVisita(producto.id).subscribe(
+        (data) => {
+          console.log(data);
+          this.crd.detectChanges();
+        }
+      , error => {
+        console.log(error);
+      });
+      this.carritoService.addProduct(producto);
+      Swal.fire({
+        title: 'Articulo agregado al carrito',
+        imageUrl: '../../../assets/img/carro-de-la-carretilla.png',
+        imageWidth: 70,
+        imageHeight: 70,
+        imageAlt: 'Custom image',
+      });
+      this.diaHorarioSelected = {producto: null, diaHorario: null};
+    }else{
+      Swal.fire({
+        title: 'Debe seleccionar un horario para la clase',
+        icon: 'info',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+
   }
 
   obtenerTop3Productos(){
@@ -91,4 +104,8 @@ export class ClasesGeneralComponent implements OnInit {
     );
   }
 
+  selectDiaHorario(producto: any, diaHorario: any){
+    this.diaHorarioSelected = {producto: producto, diaHorario: diaHorario};
+    console.log(this.diaHorarioSelected);
+  }
 }
