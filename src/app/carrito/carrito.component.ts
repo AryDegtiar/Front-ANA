@@ -28,12 +28,6 @@ export class CarritoComponent implements OnInit {
       this.items = res;
       this.grandTotal = this.cartService.getTotalPrice();
       this.cantItems = this.cartService.getTotalCant();
-      /*
-      console.log("res: " + JSON.stringify(res));
-      console.log("items: " + JSON.stringify(this.items));
-      console.log("grandTotal: " + this.grandTotal);
-      console.log("cantItems: " + this.cantItems);
-      */
 
     });
 
@@ -51,7 +45,6 @@ export class CarritoComponent implements OnInit {
 
   removeAll() {
     this.cartService.removeAllCart();
-    console.log("items: " + JSON.stringify(this.items));
   }
 
   decrement(item: any) {
@@ -87,8 +80,7 @@ export class CarritoComponent implements OnInit {
         });
       } else if (this.metodoPagoInput != null || (this.metodoPagoInput != undefined)) {
         let logeoValue = this.usuarioService.getLogeo().getValue();
-        if (logeoValue == null) {
-          console.log("entre en el get logeo");
+        if (logeoValue == null) {;
           Swal.fire({
             icon: 'info',
             text: 'Debe logearse para comprar'

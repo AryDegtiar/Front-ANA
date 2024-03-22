@@ -25,9 +25,6 @@ export class RegistrarComponent implements OnInit {
 
   register(event: Event) {
     event.preventDefault();
-    console.log(this.email);
-    console.log(this.password);
-    console.log(this.nombre);
     this.usuarioService.registrar(this.email, this.password, this.nombre).subscribe(
       (res: any) => {
         alert("Usuario registrado");

@@ -44,8 +44,6 @@ export class ClasesGeneralComponent implements OnInit {
         this.productosPage = this.dataPaginada.content;
         this.totalPages = this.dataPaginada.totalPages;
         this.crd.detectChanges();
-        console.log("Productos Page:");
-        console.log(this.productosPage);
       }
     );
   }
@@ -68,7 +66,6 @@ export class ClasesGeneralComponent implements OnInit {
       producto.horarioClase = this.diaHorarioSelected.diaHorario;
       this.productosService.sumarVisita(producto.id).subscribe(
         (data) => {
-          console.log(data);
           this.crd.detectChanges();
         }
       , error => {
@@ -106,6 +103,5 @@ export class ClasesGeneralComponent implements OnInit {
 
   selectDiaHorario(producto: any, diaHorario: any){
     this.diaHorarioSelected = {producto: producto, diaHorario: diaHorario};
-    console.log(this.diaHorarioSelected);
   }
 }

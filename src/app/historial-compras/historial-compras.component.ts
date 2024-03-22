@@ -26,7 +26,6 @@ export class HistorialComprasComponent implements OnInit {
         this.mostrarHistorial = false;
       }
 
-      console.log("historialCompras: " + JSON.stringify(this.historialCompras));
     });
   }
 
@@ -44,7 +43,6 @@ export class HistorialComprasComponent implements OnInit {
         clases: clases,
         productos: prods,
       });
-      console.log("historialCompras en el loop: " + JSON.stringify(historialCompras));
     }
 
     return historialCompras;

@@ -16,17 +16,11 @@ date: any;
 
   ngOnInit(): void {
     this.datosUsuario = this.usuarioService.getCompraSeleccionada().user;
-    console.log("data: " + JSON.stringify(this.usuarioService.getCompraSeleccionada()));
     this.historialCompras = this.convertirComprasRealizadasAHistorialCompras(this.usuarioService.getCompraSeleccionada().comprasRealizadas).reverse();
-    console.log("datosUsuario: " + JSON.stringify(this.datosUsuario));
-    console.log("historialCompras: " + JSON.stringify(this.historialCompras));
-
+    
     this.compraRealizadasService.getEstadosCompra().subscribe((data: any) => {
       this.estadosCompra = data;
-      console.log("estadosCompra: " + JSON.stringify(this.estadosCompra));
-    }, (error: any) => {
-      console.log("Error al obtener los estados de compra: " + error);
-    });
+      });
   }
 
   datosUsuario: any;
@@ -48,8 +42,7 @@ date: any;
         clases: clases,
         productos: prods,
       });
-      console.log("historialCompras en el loop: " + JSON.stringify(historialCompras));
-    }
+      }
 
     return historialCompras;
   }

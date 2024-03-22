@@ -31,8 +31,6 @@ export class ProductosComponent implements OnInit {
 
     this.categoriaProdService.getAllcategoriasProducto().subscribe(data => {
       this.categorias = data;
-      console.log("Categorias:");
-      console.log(this.categorias);
       this.crd.detectChanges();
     });
   }
@@ -45,9 +43,7 @@ export class ProductosComponent implements OnInit {
         this.productosPage = this.dataPaginada.content;
         this.totalPages = this.dataPaginada.totalPages;
         this.crd.detectChanges();
-        console.log("Productos Page:");
-        console.log(this.productosPage);
-      }
+        }
     );
   }
 

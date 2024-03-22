@@ -23,19 +23,15 @@ export class LoginComponent implements OnInit {
     }
 
     login(event: Event){
-      //console.log(this.email);
-      //console.log(this.password);
       event.preventDefault();
 
       // pasar esto el service
       this.usuarioService.obtenerUsuarioLogeado(this.email, this.password).then((response) => {
         this.responseLogin = response;
-        //console.log("Respuesta del login: ", this.responseLogin);
         if (this.responseLogin.body != "Usuario o contraseña invalidos") {
           if (this.responseLogin.token !== null && this.responseLogin.rolesHeaderValue !== null) {
             this.usuarioService.login(this.email, this.responseLogin.token, this.responseLogin.roles).subscribe(
               response => {
-                //console.log('Usuario logeado:', response);
                 let sesion = {
                   token: this.responseLogin.token,
                   roles: this.responseLogin.roles,
@@ -43,15 +39,11 @@ export class LoginComponent implements OnInit {
                 this.usuarioService.setLogeo(response);
                 this.usuarioService.setSesion(sesion);
                 this.usuarioGuardado = this.usuarioService.getLogeo();
-                //console.log("Usuario guardado: ", this.usuarioGuardado);
                 this.cdr.detectChanges();
-                console.log("Usuario logeado", localStorage.getItem('sesion'));
                 if (sesion.roles.includes('ROLE_ADMIN')){
-                  console.log("Es admin");
                   this.router.navigate(['/paneladmin']);
                 }else{
                   this.router.navigate(['/home']);
-                  console.log("Es usuario");
                 }
               },
               error => {
@@ -61,8 +53,6 @@ export class LoginComponent implements OnInit {
             //this.usuarioService.setLogeo(response);
             this.cdr.detectChanges();
             //this.router.navigate(['/home']);
-            //console.log("Usuario logeado");
-            //console.log(this.responseLogin.body);
             //localStorage.setItem('token', response.body.token);
           }
         }

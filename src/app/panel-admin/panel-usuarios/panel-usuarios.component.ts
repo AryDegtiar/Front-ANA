@@ -88,9 +88,7 @@ export class PanelUsuariosComponent implements OnInit {
   }
 
   modificarUsu(){
-    console.log("USUARIO sin MODIFICAR: ", this.usuarioSeleccionado, " id: ", this.usuarioSeleccionado.id);
     this.usuarioService.modificar(this.usuarioSeleccionado).subscribe((data: any) => {
-      console.log("USUARIO MODIFICADO: ", data);
       this.obtenerUsuariosPage(this.paginaActual);
     });
     this.closeEditModal();

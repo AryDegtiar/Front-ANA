@@ -109,9 +109,7 @@ export class CarritoComponentService {
         metodoPagoId: metodoPagoInput
       };
 
-      console.log("publicacionesId: " + body.publicacionesId);
-      console.log("metodoPagoId: " + body.metodoPagoId);
-
+      
       let res= this.http.post<any>(this.url + '/cliente/' + cliente.id + '/compraRealizadas', body);
       res.subscribe((data) => {
         Swal.fire({
@@ -143,10 +141,8 @@ export class CarritoComponentService {
 comprar(items:any ,metodoPagoInput:any, grandTotal: any): Observable<boolean> {
   return new Observable<boolean>((observer) => {
     let productos = this.obtenerProductos(items);
-    console.log("productos obtenidos: " + JSON.stringify(productos));
     let clases = this.obtenerClases(items);
-    console.log("clases obtenidas: " + JSON.stringify(clases));
-
+    
     let estadoCompra = "PENDIENTE";
     if (metodoPagoInput == "MERCADOPAGO"){
       estadoCompra = "PAGADO";

@@ -34,7 +34,6 @@ export class InicioComponent implements OnInit {
   sumarAlCarrito(producto: any){
     this.ClasesService.sumarVisita(producto.id).subscribe(
       (data) => {
-        console.log(data);
         this.cdr.detectChanges();
       }
     , error => {

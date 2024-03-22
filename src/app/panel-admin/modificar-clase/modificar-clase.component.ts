@@ -23,10 +23,7 @@ export class ModificarClaseComponent {
   }
 
   modificarClase(event:any){
-    console.log("entre a la funcion");
-
-    console.log(this.clase);
-
+    
     this.cdr.detectChanges();
 
     /*

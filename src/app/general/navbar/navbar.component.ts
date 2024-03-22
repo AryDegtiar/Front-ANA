@@ -35,17 +35,13 @@ export class NavbarComponent implements OnInit {
       for (let i = 0; i < data.length; i++) {
         this.totalItems += data[i].cantidad;
       }
-      console.log("totalItems: " + this.totalItems);
       this.cdr.detectChanges();
-      console.log("totalItems despues del cmabio: " + this.totalItems);
     });
 
   }
 
   verificarLogeo(){
-    console.log("verificarLogeo");
     this.usuarioService.getLogeo().subscribe(usuario => {
-      console.log("usuario behaviorSubject: " + JSON.stringify(usuario));
       if (usuario.id == null || usuario.id == undefined) {
         this.estaLogeado = false;
       } else {

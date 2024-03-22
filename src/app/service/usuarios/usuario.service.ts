@@ -55,8 +55,7 @@ export class UsuarioService {
         'Role': rolesHeaderWithoutBrackets
       });
 
-      console.log('Encabezados desde obtencion de admin:', headers);
-
+      
       if (roles.includes('ROLE_ADMIN')) {
         // Realizar la solicitud HTTP GET con los encabezados
         return this.http.get(this.url + '/admins/email/' + email, { headers: headers });
@@ -74,18 +73,14 @@ export class UsuarioService {
         let roles: string[] = [];
 
         if (response) {
-          console.log('Encabezados de respuesta:', response.headers);
-          console.log('Cuerpo de la respuesta:', response.body);
-
+          
           // Obtener el token de autorización (Bearer token) directamente de los encabezados
           const authorizationHeader: string | null = response.headers.get('Authorization');
           token = authorizationHeader ? authorizationHeader.split(' ')[1] : null; // Extraer el token del encabezado
-          console.log('Token:', token);
-
+          
           // Acceder al valor del encabezado 'rol' directamente desde los encabezados
           const rolesHeaderValue = response.headers.get('Role');
-          console.log('Valor del encabezado rol:', rolesHeaderValue);
-
+         
           // Verificar si rolesHeaderValue es una cadena válida
           if (rolesHeaderValue) {
             // Separar los roles utilizando la coma como delimitador y eliminar los corchetes
@@ -96,8 +91,8 @@ export class UsuarioService {
             // Limpiar y normalizar los roles
             roles = rolesArray.map(role => role.trim().toUpperCase());
 
-            console.log('Roles separados:', roles);
-          } else {
+           }
+           else {
             console.error('No se encontraron roles en el encabezado.');
           }
         }
