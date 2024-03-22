@@ -11,21 +11,21 @@ import { CarritoComponentService } from 'src/app/service/carrito/carrito.service
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class ClasesGeneralComponent implements OnInit {
-  categorias:any = null;
+  categorias: any = null;
   categoriaSeleccionada = "";
   nivelSeleccionado = "";
-  productos:any = [ ];
-  productosPage:any = [ ];
-  dataPaginada : any;
-  totalPages : number = 0;
-  numPage : number = 0;
-  paginadoTop3Productos : any;
-  top3Productos : any = [];
-  diaHorarioSelected: any = {producto: null, diaHorario: null};
+  productos: any = [];
+  productosPage: any = [];
+  dataPaginada: any;
+  totalPages: number = 0;
+  numPage: number = 0;
+  paginadoTop3Productos: any;
+  top3Productos: any = [];
+  diaHorarioSelected: any = { producto: null, diaHorario: null };
 
 
   constructor(private productosService: ClasesService, private crd: ChangeDetectorRef,
-              private categoriaService: CategoriaService, private carritoService: CarritoComponentService){}
+    private categoriaService: CategoriaService, private carritoService: CarritoComponentService) { }
 
   ngOnInit(): void {
     this.getProductPage(this.numPage);
@@ -37,7 +37,7 @@ export class ClasesGeneralComponent implements OnInit {
     });
   }
 
-  getProductPage(page: number){
+  getProductPage(page: number) {
     this.productosService.getProductsPage(this.numPage, this.categoriaSeleccionada, this.nivelSeleccionado).subscribe(
       (data) => {
         this.dataPaginada = data;
@@ -50,31 +50,33 @@ export class ClasesGeneralComponent implements OnInit {
     );
   }
 
-  siguientePagina(){
-    if(this.numPage < this.dataPaginada.totalPages-1){
+  siguientePagina() {
+    if (this.numPage < this.dataPaginada.totalPages - 1) {
       this.numPage++;
       this.getProductPage(this.numPage);
     }
   }
-  paginaAnterior(){
-    if(this.numPage > 0){
+  paginaAnterior() {
+    if (this.numPage > 0) {
       this.numPage--;
       this.getProductPage(this.numPage);
     }
   }
 
-  sumarAlCarrito(producto: any){
-    if(this.diaHorarioSelected.producto != null && this.diaHorarioSelected.producto.id == producto.id){
+  sumarAlCarrito(producto: any) {
+    if (this.diaHorarioSelected.producto != null && this.diaHorarioSelected.producto.id == producto.id) {
       producto.horarioClase = this.diaHorarioSelected.diaHorario;
-      this.productosService.sumarVisita(producto.id).subscribe(
-        (data) => {
-          console.log(data);
-          this.crd.detectChanges();
-        }
-      , error => {
-        console.log(error);
-      });
-      this.carritoService.addProduct(producto);
+      console.log(" ---- Producto a agregar al carrito ----- ");
+      console.log(producto);
+      let seAgrego = this.carritoService.addProduct(producto);
+      if (!seAgrego) {
+        Swal.fire({
+          title: 'Clase ya agregada al carrito con el mismo horario',
+          icon: 'info',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } else{
       Swal.fire({
         title: 'Articulo agregado al carrito',
         imageUrl: '../../../assets/img/carro-de-la-carretilla.png',
@@ -82,8 +84,9 @@ export class ClasesGeneralComponent implements OnInit {
         imageHeight: 70,
         imageAlt: 'Custom image',
       });
-      this.diaHorarioSelected = {producto: null, diaHorario: null};
-    }else{
+      this.diaHorarioSelected = { producto: null, diaHorario: null };
+      }
+    } else {
       Swal.fire({
         title: 'Debe seleccionar un horario para la clase',
         icon: 'info',
@@ -91,10 +94,17 @@ export class ClasesGeneralComponent implements OnInit {
         timer: 1500
       });
     }
-
+    this.productosService.sumarVisita(producto.id).subscribe(
+      (data) => {
+        console.log(data);
+        this.crd.detectChanges();
+      }
+      , error => {
+        console.log(error);
+      });
   }
 
-  obtenerTop3Productos(){
+  obtenerTop3Productos() {
     this.productosService.gettop3ProductsPage(0).subscribe(
       (data) => {
         this.paginadoTop3Productos = data;
@@ -104,8 +114,8 @@ export class ClasesGeneralComponent implements OnInit {
     );
   }
 
-  selectDiaHorario(producto: any, diaHorario: any){
-    this.diaHorarioSelected = {producto: producto, diaHorario: diaHorario};
+  selectDiaHorario(producto: any, diaHorario: any) {
+    this.diaHorarioSelected = { producto: producto, diaHorario: diaHorario };
     console.log(this.diaHorarioSelected);
   }
 }

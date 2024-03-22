@@ -43,7 +43,7 @@
                 <th scope="row">{{c.cantidad}}</th>
                 <td>{{c.clase.clase.nombre}}</td>
                 <td class="d-flex justify-content-center">
-                  <input min="1" name="quantity" [value]="c.clase.cantidadDisponible" type="number"
+                  <input min="0" name="quantity" [value]="c.clase.cantidadDisponible" type="number"
                   class="form-control form-control-sm" style="width: 50px;" (change)="cambiarCantClasesDisp($event, indiceCompra ,indiceClase)"/>
                 </td>
                 <!--

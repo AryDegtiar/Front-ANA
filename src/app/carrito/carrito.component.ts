@@ -28,6 +28,7 @@ export class CarritoComponent implements OnInit {
       this.items = res;
       this.grandTotal = this.cartService.getTotalPrice();
       this.cantItems = this.cartService.getTotalCant();
+
       /*
       console.log("res: " + JSON.stringify(res));
       console.log("items: " + JSON.stringify(this.items));
@@ -75,7 +76,6 @@ export class CarritoComponent implements OnInit {
       });
     }
   }
-
 
   verificarDatosCarrito(){
       let res = false;

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 import { ProductosComponent } from './productos/productos.component';
-
+import { DatePipe } from '@angular/common'; // Importar DatePipe desde @angular/common
 
 @NgModule({
   declarations: [
@@ -38,8 +37,8 @@ import { ProductosComponent } from './productos/productos.component';
     ArticulosComponent,
     CarritoComponent,
     HistorialComprasComponent,
-      ProductosComponent
-   ],
+    ProductosComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,7 +46,9 @@ import { ProductosComponent } from './productos/productos.component';
     FormsModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    DatePipe // Agregar DatePipe como un proveedor
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
